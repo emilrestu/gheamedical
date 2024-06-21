@@ -1,5 +1,4 @@
-// src/App.jsx
-function App() {
+const App = () => {
     return (
         <>
             <div className="flex justify-center align-middle">
@@ -10,6 +9,6 @@ function App() {
             </div>
         </>
     );
-}
+};
 
 export default App;
