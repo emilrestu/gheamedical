@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
-const Page: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    return <div>{children}</div>;
+const Page: React.FC<{ style?: CSSProperties; children: React.ReactNode }> = ({ style, children }) => {
+    return <div style={{ padding: 16, ...style }}>{children}</div>;
 };
 
 export default Page;

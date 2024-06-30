@@ -1,16 +1,33 @@
+import { Layout, Menu } from 'antd';
 import NavLink from '../navlink';
-import { useParams } from 'react-router-dom';
+import { useMemo } from 'react';
+
+const { Header } = Layout;
 
 const Navbar = () => {
-    const { lang_code } = useParams();
+    const menuItems = useMemo(
+        () => [
+            { key: 'home', label: <NavLink path={`/`} title="Home" /> },
+            { key: 'about-us', label: <NavLink path={`/about-us`} title="About Us" /> },
+            { key: 'services', label: <NavLink path={`/services`} title="Services" /> },
+            { key: 'contact-us', label: <NavLink path={`/contact-us`} title="Contact Us" /> },
+        ],
+        []
+    );
 
     return (
-        <header className={`p-4 flex ${lang_code === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
-            <NavLink path={`/${lang_code}/`} title="Home" />
-            <NavLink path={`/${lang_code}/about-us`} title="About Us" />
-            <NavLink path={`/${lang_code}/services`} title="Services" />
-            <NavLink path={`/${lang_code}/contact-us`} title="Contact Us" />
-        </header>
+        <Header
+            style={{
+                position: 'sticky',
+                top: 0,
+                zIndex: 1,
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+            }}
+        >
+            <Menu mode="horizontal" items={menuItems} />
+        </Header>
     );
 };
 
