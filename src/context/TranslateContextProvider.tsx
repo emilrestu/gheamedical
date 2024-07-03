@@ -12,7 +12,7 @@ const TranslateContextProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         const ArrHostName = window?.location.hostname.split('.');
         const lang_code = ArrHostName?.[0];
 
-        if (ArrHostName.length === 3 && import.meta.env.MODE === 'production') {
+        if (ArrHostName.length === 3 && process.env.NODE_ENV === 'production') {
             setLangCode(lang_code);
         }
     };

@@ -7,7 +7,7 @@ type TranslateType = {
 };
 
 const Translate: React.FC<TranslateType> = ({ textId, children }) => {
-    const updatedTextID = useMemo(() => (textId || children).toString().replaceAll(' ', '_').toLowerCase(), []);
+    const updatedTextID = useMemo(() => (textId || children).toString().replaceAll(' ', '_').toLowerCase(), [textId, children]);
     const translateValue = useTranslate(updatedTextID, children);
 
     return <div text-id={updatedTextID}>{translateValue}</div>;
