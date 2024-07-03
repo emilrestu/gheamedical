@@ -51,38 +51,55 @@ app.use('*', async (req, res) => {
 
         let didError = false;
 
-        const { pipe, abort } = render(url, ssrManifest, {
-            onShellError() {
-                res.status(500);
-                res.set({ 'Content-Type': 'text/html' });
-                res.send('<h1>Something went wrong</h1>');
+        const helmetContext = {};
+
+        const { pipe, abort } = render(
+            url,
+            ssrManifest,
+            {
+                onShellError() {
+                    res.status(500);
+                    res.set({ 'Content-Type': 'text/html' });
+                    res.send('<h1>Something went wrong</h1>');
+                },
+                onShellReady() {
+                    res.status(didError ? 500 : 200);
+                    res.set({ 'Content-Type': 'text/html' });
+
+                    const transformStream = new Transform({
+                        transform(chunk, encoding, callback) {
+                            res.write(chunk, encoding);
+                            callback();
+                        },
+                    });
+
+                    const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`);
+
+                    res.write(htmlStart);
+
+                    // Collect helmet data from the stream
+                    const helmetData = helmetContext.helmet;
+
+                    if (helmetData) {
+                        res.write(helmetData.title.toString());
+                        res.write(helmetData.meta.toString());
+                        res.write(helmetData.link.toString());
+                        res.write(helmetData.script.toString());
+                    }
+
+                    transformStream.on('finish', () => {
+                        res.end(htmlEnd);
+                    });
+
+                    pipe(transformStream);
+                },
+                onError(error) {
+                    didError = true;
+                    console.error(error);
+                },
             },
-            onShellReady() {
-                res.status(didError ? 500 : 200);
-                res.set({ 'Content-Type': 'text/html' });
-
-                const transformStream = new Transform({
-                    transform(chunk, encoding, callback) {
-                        res.write(chunk, encoding);
-                        callback();
-                    },
-                });
-
-                const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`);
-
-                res.write(htmlStart);
-
-                transformStream.on('finish', () => {
-                    res.end(htmlEnd);
-                });
-
-                pipe(transformStream);
-            },
-            onError(error) {
-                didError = true;
-                console.error(error);
-            },
-        });
+            { helmetContext }
+        );
 
         setTimeout(() => {
             abort();
