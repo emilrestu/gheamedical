@@ -12,8 +12,6 @@ const Testimonial = () => {
         arrow: false,
         infinite: true,
         // centerMode: true,
-        // slidesToShow: 1,
-        // slidesToScroll: 1,
         variableWidth: true,
         draggable: true,
         slidesToShow: 1,
@@ -30,16 +28,23 @@ const Testimonial = () => {
                 {Array.from({ length: 20 })
                     .map((_, i) => ({
                         from: `From ${i}`,
-                        testi: `XXX xxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxx xxxxxxxxx
-                        \n xxxxx `,
+                        testi: `Lorem Ipsum Dolor Setamot Lorem Ipsum Dolor Setamot Lorem Ipsum Dolor Setamot `,
                     }))
                     .map((item, i) => (
                         <div key={i}>
-                            <div style={{ padding: 16, margin: 16, height: 150, minWidth: 100, backgroundColor: 'white', borderRadius: 16 }}>
-                                <Typography.Paragraph>
-                                    <Typography.Title level={3}>{item.from}</Typography.Title>
-                                    <blockquote style={{ whiteSpace: 'pre-wrap' }}>{item.testi}</blockquote>
-                                </Typography.Paragraph>
+                            <div
+                                style={{
+                                    padding: 16,
+                                    margin: 16,
+                                    minHeight: 150,
+                                    minWidth: 250,
+                                    maxWidth: 300,
+                                    backgroundColor: 'white',
+                                    borderRadius: 16,
+                                }}
+                            >
+                                <Typography.Title level={3}>{item.from}</Typography.Title>
+                                <Typography.Paragraph>{item.testi}</Typography.Paragraph>
                             </div>
                         </div>
                     ))}

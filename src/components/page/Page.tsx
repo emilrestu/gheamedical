@@ -1,7 +1,16 @@
+import Head from 'next/head';
 import React, { CSSProperties } from 'react';
+import MetaHead from '../meta-head';
 
-const Page: React.FC<{ style?: CSSProperties; children: React.ReactNode }> = ({ style, children }) => {
-    return <div style={{ padding: 16, ...style }}>{children}</div>;
+type PageType = { pageTitle?: string; style?: CSSProperties; children: React.ReactNode };
+
+const Page: React.FC<PageType> = ({ pageTitle, style, children }) => {
+    return (
+        <>
+            <MetaHead pageTitle={pageTitle} />
+            <div style={{ padding: 16, ...style }}>{children}</div>
+        </>
+    );
 };
 
 export default Page;

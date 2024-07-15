@@ -3,7 +3,7 @@ import { ConfigProvider } from 'antd';
 import React, { useState } from 'react';
 import ThemesContext from './ThemesContext';
 
-const colorPrimary = '#61d7b4';
+const colorPrimary = '#0CD3B3';
 
 const initialThemes: ThemeConfig = {
     token: {
