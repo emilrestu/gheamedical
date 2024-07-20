@@ -27,6 +27,7 @@ const TranslateContextProvider: React.FC<{ children: React.ReactNode }> = ({ chi
                 translations,
                 setTranslations,
                 langCode,
+                setLangCode,
             }}
         >
             {children}

@@ -1,23 +1,32 @@
 import type { ThemeConfig } from 'antd';
 import { ConfigProvider } from 'antd';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import ThemesContext from './ThemesContext';
+import { useTranslateContext } from './TranslateContext';
 
-const colorPrimary = '#0CD3B3';
+const colorPrimary = '#3BB4A3';
 
 const initialThemes: ThemeConfig = {
     token: {
+        fontFamily: 'Montserrat',
         colorPrimary,
         colorInfo: colorPrimary,
+        borderRadius: 16,
+        borderRadiusLG: 16,
+        colorText: '#303133',
+        colorTextSecondary: '#A8AAAD',
     },
 };
 
 const ThemesContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [theme, setTheme] = useState(initialThemes);
+    const { langCode } = useTranslateContext();
+    const isArabic = useMemo(() => langCode.toUpperCase() === 'AR', [langCode]);
 
     return (
         <ThemesContext.Provider
             value={{
+                isArabic,
                 setTheme: (newThemes) => {
                     setTheme((prevThemes) => ({ ...prevThemes, ...newThemes }));
                 },
