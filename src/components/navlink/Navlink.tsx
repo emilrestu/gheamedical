@@ -1,4 +1,3 @@
-// import { NavLink as RNavlink } from 'react-router-dom';
 import Link from 'next/link';
 import Translate from '../translate';
 import { CSSProperties, useMemo } from 'react';

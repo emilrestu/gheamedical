@@ -27,6 +27,41 @@ body {
 
     .ant-layout-content {
         min-height: calc(100vh - 100px);
+
+        .banner-container {
+            position: relative;
+            height: 646px;
+
+            .ant-carousel {
+                height: 480px;
+
+                .banner-card {
+                    border-radius: 16px;
+                    background-color: #128c7e;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 480px;
+                }
+
+                .slick-slide {
+                    .banner-card-wrapper {
+                        padding: 8px;
+                    }
+                }
+            }
+
+            .book-services-card {
+                position: absolute;
+                left: 56px;
+                bottom: 0;
+                width: 360px;
+
+                .ant-picker {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .whatsapp-button {

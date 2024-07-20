@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import React, { CSSProperties } from 'react';
 import MetaHead from '../meta-head';
 
@@ -8,7 +7,7 @@ const Page: React.FC<PageType> = ({ pageTitle, style, children }) => {
     return (
         <>
             <MetaHead pageTitle={pageTitle} />
-            <div style={{ padding: 16, ...style }}>{children}</div>
+            <div style={{ paddingInline: 120, ...style }}>{children}</div>
         </>
     );
 };

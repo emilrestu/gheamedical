@@ -5,8 +5,9 @@ import TranslateContextProvider from '../context/TranslateContextProvider';
 import ThemesContextProvider from '../context/ThemesContextProvider';
 import { FloatButton, Layout } from 'antd';
 import Footer from '../components/footer';
-import '../themes/main.scss';
 import { WhatsAppOutlined } from '@ant-design/icons';
+import { PHONE_NUMBER } from '@/data/contants';
+import '../themes/main.scss';
 
 const { Content } = Layout;
 
@@ -25,10 +26,10 @@ const App = ({ Component, pageProps }: AppProps) => (
 
             <FloatButton
                 className="whatsapp-button"
-                icon={<WhatsAppOutlined style={{color: 'white'}} />}
+                icon={<WhatsAppOutlined style={{ color: 'white' }} />}
                 style={{ color: 'white', width: 65, height: 65 }}
                 onClick={() => {
-                    window.open('https://wa.me/+966541142624', '_blank');
+                    window.open(`https://wa.me/${PHONE_NUMBER}`, '_blank');
                 }}
             />
         </ThemesContextProvider>

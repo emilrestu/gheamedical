@@ -16,6 +16,17 @@ const initialThemes: ThemeConfig = {
         colorText: '#303133',
         colorTextSecondary: '#A8AAAD',
     },
+    components: {
+        Input: {
+            borderRadius: 4,
+        },
+        Select: {
+            borderRadius: 4,
+        },
+        DatePicker: {
+            borderRadius: 4,
+        },
+    },
 };
 
 const ThemesContextProvider = ({ children }: { children: React.ReactNode }) => {
