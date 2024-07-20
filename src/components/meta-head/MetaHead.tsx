@@ -10,12 +10,9 @@ const MetaHead: React.FC<MetaHeadType> = ({ pageTitle = 'Ghea Medical' }) => {
         <Head>
             <title>{pageTitle}</title>
             <meta name="viewport" content="width=device-width,shrink-to-fit=no,initial-scale=1,maximum-scale=1,user-scalable=0" />
-            <meta
-                name="description"
-                content="Get the best home care services with home care nurses per month to help them practice their lives. Book now"
-            />
+            <meta name="description" content="خدمات استشارات الرعاية الصحية بالمملكة العربية السعودية" />
             <meta name="keywords" content="ابشر افراد" />
-            <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         </Head>
     );
 };
