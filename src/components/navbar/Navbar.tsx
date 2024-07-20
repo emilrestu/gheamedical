@@ -1,42 +1,69 @@
-import { Layout, Menu, Grid, Button, Row, Col } from 'antd';
+import { Layout, Menu, Grid, Button, Row, Col, Space, Select, theme } from 'antd';
 import NavLink from '../navlink';
 import { useMemo } from 'react';
 import CompanyLogo from '../company-logo';
 import { MenuOutlined } from '@ant-design/icons';
+import Translate from '../translate';
+import { useTranslateContext } from '@/context/TranslateContext';
+import { useThemesContext } from '@/context/ThemesContext';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 const Navbar = () => {
     const { xs } = useBreakpoint();
-    const menuItems = useMemo(
+    const { langCode, setLangCode } = useTranslateContext();
+    const { isArabic } = useThemesContext();
+
+    const ArrLang = [
+        {
+            label: 'English',
+            value: 'en',
+        },
+        {
+            label: 'Arabic',
+            value: 'ar',
+        },
+    ];
+    const MenuItems = useMemo(
         () =>
             [
                 { key: 'home', label: <NavLink path={`/`} title="Home" />, order: 1 },
                 { key: 'about-us', label: <NavLink path={`/about-us`} title="About Us" />, order: 2 },
                 { key: 'services', label: <NavLink path={`/services`} title="Services" />, order: 3 },
-                { key: 'contact-us', label: <NavLink path={`/contact-us`} title="Contact Us" />, order: 4 },
-            ].sort((a, b) => b.order - a.order),
-        []
+                { key: 'reservations', label: <NavLink path={`/reservations`} title="Reservations" />, order: 4 },
+            ].sort((a, b) => (langCode.toUpperCase() === 'AR' ? b.order - a.order : a.order - b.order)),
+        [langCode]
     );
 
     return (
-        <Header
-            style={{
-                position: 'sticky',
-                top: 0,
-                zIndex: 1,
-                width: '100%',
-                padding: 0,
-                paddingInline: 16,
-            }}
-        >
-            <Row style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', padding: 8, width: '100%' }}>
-                <Col style={{ display: 'flex', justifyContent: 'flex-start' }}>
+        <Header className="header-wrapper">
+            <Row style={{ display: 'flex', alignItems: 'center', flexDirection: isArabic ? 'row-reverse' : 'row', width: '100%' }}>
+                <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <CompanyLogo />
                 </Col>
-                <Col flex={1} style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                    {xs ? <Button icon={<MenuOutlined />} /> : <Menu mode="horizontal" items={menuItems} />}
+                <Col flex={1}>
+                    <div className="menu-wrapper">
+                        {MenuItems.map((item, index) => (
+                            <div key={index}>{item.label}</div>
+                        ))}
+                    </div>
+                </Col>
+                <Col>
+                    <Space>
+                        <Button ghost type="primary">
+                            <Translate>Contact Us</Translate>
+                        </Button>
+
+                        <Select
+                            value={langCode}
+                            labelInValue
+                            options={ArrLang}
+                            onSelect={(val) => {
+                                setLangCode((val as unknown as { value: string }).value);
+                            }}
+                        />
+                    </Space>
                 </Col>
             </Row>
         </Header>
