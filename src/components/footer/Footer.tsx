@@ -10,7 +10,7 @@ const { Footer: Footer_ } = Layout;
 
 const Footer = () => {
     const {
-        token: { colorTextSecondary },
+        token: { colorPrimary, colorTextSecondary },
     } = theme.useToken();
 
     const PageItems = useMemo(
@@ -72,7 +72,7 @@ const Footer = () => {
                     </div>
                 </Col>
             </Row>
-            <Row gutter={[8, 8]} style={{ padding: 16 }}>
+            <Row gutter={[8, 8]} style={{ padding: 16, borderTop: `1px solid ${colorPrimary}` }}>
                 <Col span={24} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Image src={LogoFooter} height={32} alt="Ghea Services" />
                 </Col>
