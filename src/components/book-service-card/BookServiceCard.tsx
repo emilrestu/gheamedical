@@ -73,7 +73,7 @@ const BookServiceCard = () => {
                         <Row gutter={[8, 8]}>
                             <Col flex={1}>
                                 <Button type="primary" block>
-                                    <Link href="tel:88888" passHref>
+                                    <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref>
                                         <Translate>Book Now</Translate>
                                     </Link>
                                 </Button>
