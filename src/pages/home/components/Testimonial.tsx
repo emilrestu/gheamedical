@@ -35,7 +35,7 @@ const Testimonial = () => {
     };
 
     const TestiData = useMemo(() => {
-        if (langCode === 'ar') return TestiArabic;
+        if (langCode === 'ar') return splitArrayIntoTwo(TestiArabic);
 
         return splitArrayIntoTwo(TestiEnglish);
     }, [langCode]);
@@ -56,7 +56,10 @@ const Testimonial = () => {
                                             <Image className="ellips-01" src={EllipsOne} alt="Ghea SERVICES Testimonials" />
                                             <Image className="ellips-02" src={EllipsTwo} alt="Ghea SERVICES Testimonials" />
                                             <div className="content-wrapper">
-                                                <Typography.Paragraph className="content-text" style={{ marginBottom: 24 }}>
+                                                <Typography.Paragraph
+                                                    className="content-text"
+                                                    style={{ marginBottom: 24, textAlign: langCode === 'ar' ? 'right' : 'left' }}
+                                                >
                                                     {item.content}
                                                 </Typography.Paragraph>
                                             </div>
