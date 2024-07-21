@@ -20,7 +20,6 @@ body {
         .menu-wrapper {
             display: flex;
             justify-content: center;
-            // gap: 12px;
             column-gap: 12px;
         }
     }
@@ -59,6 +58,18 @@ body {
 
                 .ant-picker {
                     width: 100%;
+                }
+            }
+        }
+
+        .testimonial-wrapper {
+            margin-inline: -120px;
+
+            .testi-card-wrapper {
+                padding: 8px;
+
+                .testi-card {
+                    width: 422px;
                 }
             }
         }

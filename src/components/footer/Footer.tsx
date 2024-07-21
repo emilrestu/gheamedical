@@ -5,6 +5,7 @@ import Translate from '../translate';
 import Link from 'next/link';
 import { useMemo } from 'react';
 import SVGIcon from '../svg-icon';
+import { DARK_BACKGROUND } from '@/data/contants';
 
 const { Footer: Footer_ } = Layout;
 
@@ -33,7 +34,7 @@ const Footer = () => {
     );
 
     return (
-        <Footer_ style={{ background: '#0F3630', paddingBlock: 24, paddingInline: 120 }}>
+        <Footer_ style={{ background: DARK_BACKGROUND, paddingBlock: 24, paddingInline: 120 }}>
             <Row gutter={[8, 8]} style={{ padding: 16 }}>
                 <Col span={12}>
                     <div style={{ width: 249 }}>

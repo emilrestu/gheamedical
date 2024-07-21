@@ -1,3 +1,4 @@
+import { DARK_BACKGROUND } from '@/data/contants';
 import { Card, Carousel, Col, Row, Typography, theme } from 'antd';
 import React from 'react';
 
@@ -19,13 +20,9 @@ const Testimonial = () => {
     };
 
     return (
-        <Row style={{ marginInline: -120 }}>
+        <Row className="testimonial-wrapper" style={{ backgroundColor: DARK_BACKGROUND }}>
             <Col span={24}>
-                <div
-                    style={{
-                        background: colorPrimary,
-                    }}
-                >
+                <div>
                     <Carousel {...settings}>
                         {Array.from({ length: 20 })
                             .map((_, i) => ({
@@ -34,19 +31,11 @@ const Testimonial = () => {
                             }))
                             .map((item, i) => (
                                 <div key={i}>
-                                    <div
-                                        style={{
-                                            padding: 16,
-                                            margin: 16,
-                                            minHeight: 150,
-                                            minWidth: 250,
-                                            maxWidth: 300,
-                                            backgroundColor: 'white',
-                                            borderRadius: 16,
-                                        }}
-                                    >
-                                        <Typography.Title level={3}>{item.from}</Typography.Title>
-                                        <Typography.Paragraph>{item.testi}</Typography.Paragraph>
+                                    <div className="testi-card-wrapper">
+                                        <Card className="testi-card">
+                                            <Typography.Title level={3}>{item.from}</Typography.Title>
+                                            <Typography.Paragraph>{item.testi}</Typography.Paragraph>
+                                        </Card>
                                     </div>
                                 </div>
                             ))}
