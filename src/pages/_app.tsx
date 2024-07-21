@@ -17,7 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => (
             <Layout>
                 <Navbar />
 
-                <Content>
+                <Content className="content-wrapper">
                     <Component {...pageProps} />
                 </Content>
 

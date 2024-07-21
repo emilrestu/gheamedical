@@ -5,7 +5,7 @@ body {
         background: #fff;
     }
 
-    .ant-layout-header {
+    .header-wrapper {
         background: #fff;
         height: 100px;
 
@@ -21,6 +21,16 @@ body {
             display: flex;
             justify-content: center;
             column-gap: 12px;
+        }
+
+        .ant-select-selector {
+            border: 0 !important;
+        }
+
+        .ant-select-focused {
+            .ant-select-selector {
+                box-shadow: unset !important;
+            }
         }
     }
 
