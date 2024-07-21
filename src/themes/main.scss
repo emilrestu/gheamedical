@@ -65,11 +65,77 @@ body {
         .testimonial-wrapper {
             margin-inline: -120px;
 
+            .testi-title {
+                padding-top: 40px;
+                // padding-bottom: 32px;
+
+                div {
+                    text-align: center;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 24px;
+                }
+            }
+
+            .testi-carousel-wrapper {
+                margin-block: 16px;
+
+                .carousel-1 {
+                    .slick-list {
+                        margin-left: -120px;
+                    }
+                }
+            }
+
             .testi-card-wrapper {
-                padding: 8px;
+                padding: 12px;
 
                 .testi-card {
                     width: 422px;
+                    height: 200px;
+                    overflow: hidden;
+
+                    .ant-card-body {
+                        padding: 16px;
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+
+                        .ellips-01 {
+                            position: absolute;
+                            right: -1px;
+                            top: -1px;
+                        }
+
+                        .ellips-02 {
+                            position: absolute;
+                            right: -1px;
+                            top: 16px;
+                        }
+
+                        .content-text {
+                            font-size: 16px;
+                            font-weight: 600;
+                            line-height: 24px;
+                        }
+
+                        .title-wrapper {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-top: auto;
+                            text-transform: capitalize;
+
+                            span {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    * {
+                        color: white;
+                    }
                 }
             }
         }

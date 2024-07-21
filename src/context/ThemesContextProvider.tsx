@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react';
 import ThemesContext from './ThemesContext';
 import { useTranslateContext } from './TranslateContext';
 
-const colorPrimary = '#3BB4A3';
+const colorPrimary = '#32998B';
 
 const initialThemes: ThemeConfig = {
     token: {
@@ -25,6 +25,10 @@ const initialThemes: ThemeConfig = {
         },
         DatePicker: {
             borderRadius: 4,
+        },
+        Card: {
+            borderRadius: 8,
+            borderRadiusLG: 8,
         },
     },
 };
