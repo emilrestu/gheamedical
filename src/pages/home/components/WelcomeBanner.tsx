@@ -12,7 +12,7 @@ const WelcomeBanner: React.FC = () => {
     const textexceptionalcareforyouandyourfamily = useTranslate('EXCEPTIONALCAREFORYOUANDYOURFAMILY', 'Exceptional Care for You and Your Family');
 
     return (
-        <Row className="welcome-banner-wrapper" gutter={[16, 16]}>
+        <Row className="home-content-wrapper welcome-banner-wrapper" gutter={[16, 16]}>
             <Col span={14} className="welcome-banner-image">
                 <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
                 <div style={{ display: 'flex', flex: 1, rowGap: 16, flexDirection: 'column' }}>
@@ -22,25 +22,25 @@ const WelcomeBanner: React.FC = () => {
                 <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
             </Col>
             <Col span={10}>
-                <Typography.Paragraph className="welcome-title">
+                <Typography.Paragraph className="title welcome-title">
                     {textwelcometogheaserviceswherewedeliver}{' '}
                     <Typography.Text italic underline style={{ color: colorPrimary }}>
                         {textexceptionalcareforyouandyourfamily}
                     </Typography.Text>
                 </Typography.Paragraph>
 
-                <Typography.Paragraph className="welcome-description">
+                <Typography.Paragraph className="description welcome-description">
                     <Translate>
                         GHEA Services is a top provider specializing in comprehensive family support for all ages and needs. We supply individuals
                         trained to meet client&apos;s needs.
                     </Translate>
                 </Typography.Paragraph>
 
-                <Typography.Paragraph className="welcome-description">
+                <Typography.Paragraph className="description welcome-description">
                     <Translate>We aspire to provide our services to everyone to gain their trust and let us be their first choice.</Translate>
                 </Typography.Paragraph>
 
-                <Typography.Paragraph className="welcome-description">
+                <Typography.Paragraph className="description welcome-description">
                     <Translate>We are dedicated to delivering exceptional assistance, and facilitating our client&apos;s daily lives.</Translate>
                 </Typography.Paragraph>
             </Col>

@@ -96,20 +96,29 @@ body {
             }
         }
 
+        .home-content-wrapper {
+            padding-block: 80px;
+
+            .title {
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+        }
+
         .welcome-banner-wrapper {
             height: 475px;
-            padding-block: 80px;
 
             .welcome-banner-image {
                 display: flex;
                 gap: 16px;
             }
+        }
 
-            .welcome-title,
-            .welcome-title .ant-typography {
-                font-size: 24px;
-                font-weight: 700;
-            }
+        .why-choose-container {
         }
 
         .testimonial-wrapper {

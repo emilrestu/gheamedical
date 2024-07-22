@@ -4,6 +4,9 @@ import Page from '@/components/page';
 import Banner from './components/Banner';
 import Testimonial from './components/Testimonial';
 import WelcomeBanner from './components/WelcomeBanner';
+import WhyChoose from './components/WhyChoose';
+import Services from '../services';
+import HowWeWork from './components/HowWeWork';
 
 const Home: React.FC = () => {
     const textGheaMedicalServicesCompanyHealthCareCenter = useTranslate(
@@ -15,6 +18,9 @@ const Home: React.FC = () => {
         <Page pageTitle={textGheaMedicalServicesCompanyHealthCareCenter}>
             <Banner />
             <WelcomeBanner />
+            <WhyChoose />
+            <Services />
+            <HowWeWork />
             <Testimonial />
         </Page>
     );
