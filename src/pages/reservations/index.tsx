@@ -1,7 +1,3 @@
-import React from 'react';
+import Reservations from './Reservations';
 
-const index = () => {
-    return <div>index</div>;
-};
-
-export default index;
+export default Reservations;

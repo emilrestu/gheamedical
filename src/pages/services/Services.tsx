@@ -1,7 +1,8 @@
+import Page from '@/components/page';
 import React from 'react';
 
 const Services: React.FC = () => {
-    return <div>Services</div>;
+    return <Page>Services</Page>;
 };
 
 export default Services;
