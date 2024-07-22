@@ -24,16 +24,6 @@ const Testimonial = () => {
     } = theme.useToken();
     const { langCode } = useTranslateContext();
 
-    const settings = {
-        dots: false,
-        arrow: false,
-        infinite: true,
-        variableWidth: true,
-        draggable: true,
-        slidesToShow: 1,
-        autoplay: true,
-    };
-
     const TestiData = useMemo(() => {
         if (langCode === 'ar') return splitArrayIntoTwo(TestiArabic);
 
@@ -48,7 +38,18 @@ const Testimonial = () => {
             <Col span={24} className="testi-carousel-wrapper">
                 {TestiData.map((testi, i) => {
                     return (
-                        <Carousel key={`carousel-${i}`} {...settings} className={`carousel-${i + 1}`}>
+                        <Carousel
+                            key={`carousel-${i}`}
+                            dots={false}
+                            arrows={false}
+                            infinite
+                            variableWidth
+                            draggable
+                            slidesToShow={1}
+                            autoplay
+                            speed={3000}
+                            className={`carousel-${i + 1}`}
+                        >
                             {(testi as { content: string; title: string }[]).map((item, i) => (
                                 <div key={i}>
                                     <div className="testi-card-wrapper">

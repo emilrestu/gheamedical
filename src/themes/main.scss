@@ -45,12 +45,36 @@ body {
                 height: 480px;
 
                 .banner-card {
+                    position: relative;
                     border-radius: 16px;
                     background-color: #128c7e;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     height: 480px;
+                    padding: 16px;
+
+                    .testi-title {
+                        position: absolute;
+                        right: 16px;
+                        top: 72px;
+                        width: 574px;
+
+                        .ant-typography {
+                            font-size: 30px;
+                            font-weight: 600;
+                            line-height: 42px;
+                            color: white;
+                        }
+
+                        &.arabic {
+                            text-align: right;
+
+                            .ant-typography {
+                                text-align: right;
+                            }
+                        }
+                    }
                 }
 
                 .slick-slide {

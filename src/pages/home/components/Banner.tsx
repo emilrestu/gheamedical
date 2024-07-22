@@ -1,17 +1,31 @@
 import BookServiceCard from '@/components/book-service-card';
-import { Carousel, Row, Col } from 'antd';
+import { Carousel, Row, Col, Typography } from 'antd';
+import BannerEnglish from '@/data/banner/en.json';
+import BannerArabic from '@/data/banner/ar.json';
+import { useMemo } from 'react';
+import { useTranslateContext } from '@/context/TranslateContext';
 
 const Banner = () => {
-    const ArrImage = Array.from({ length: 2 }).map((_, i) => ({ index: i, alt: `image-${i}`, src: `./source/image-${i}` }));
+    const { langCode } = useTranslateContext();
+
+    const BannerData = useMemo(() => {
+        if (langCode === 'ar') return BannerArabic;
+
+        return BannerEnglish;
+    }, [langCode]);
 
     return (
         <Row className="banner-container">
             <Col span={24}>
                 <Carousel arrows={false} dots={false} draggable autoplay>
-                    {ArrImage.map((item, index) => (
+                    {BannerData.map((item, index) => (
                         <div key={index}>
                             <div className="banner-card-wrapper">
-                                <div className="banner-card">{item.alt}</div>
+                                <div className="banner-card">
+                                    <div className={`testi-title ${langCode === 'ar' ? 'arabic' : ''}`.trim()}>
+                                        <Typography.Text>{item.title}</Typography.Text>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}
