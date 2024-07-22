@@ -20,12 +20,6 @@ const WelcomeBanner: React.FC = () => {
                     <Card style={{ background: colorPrimary, height: '50%', flex: 1 }} />
                 </div>
                 <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
-                {/* <Card style={{ background: colorPrimary, height: '100%', flex: 1, width: 300 }} />
-                <div>
-                    <Card style={{ background: colorPrimary, height: '100%' }} />
-                    <Card style={{ background: colorPrimary, height: '100%' }} />
-                </div>
-                <Card style={{ background: colorPrimary, height: '100%', width: 180 }} /> */}
             </Col>
             <Col span={10}>
                 <Typography.Paragraph className="welcome-title">
