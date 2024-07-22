@@ -96,6 +96,22 @@ body {
             }
         }
 
+        .welcome-banner-wrapper {
+            height: 475px;
+            padding-block: 80px;
+
+            .welcome-banner-image {
+                display: flex;
+                gap: 16px;
+            }
+
+            .welcome-title,
+            .welcome-title .ant-typography {
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+
         .testimonial-wrapper {
             margin-inline: -120px;
 

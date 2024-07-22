@@ -3,6 +3,7 @@ import useTranslate from '@/hooks/useTranslate';
 import Page from '@/components/page';
 import Banner from './components/Banner';
 import Testimonial from './components/Testimonial';
+import WelcomeBanner from './components/WelcomeBanner';
 
 const Home: React.FC = () => {
     const textGheaMedicalServicesCompanyHealthCareCenter = useTranslate(
@@ -13,7 +14,7 @@ const Home: React.FC = () => {
     return (
         <Page pageTitle={textGheaMedicalServicesCompanyHealthCareCenter}>
             <Banner />
-
+            <WelcomeBanner />
             <Testimonial />
         </Page>
     );
