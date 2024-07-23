@@ -55,8 +55,7 @@ const Navbar = () => {
                         </Button>
 
                         <Select
-                            value={langCode}
-                            labelInValue
+                            value={langCode.toString()}
                             options={ArrLang}
                             onSelect={(val) => {
                                 setLangCode((val as unknown as { value: string }).value);
