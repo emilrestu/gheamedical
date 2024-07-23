@@ -171,6 +171,38 @@ body {
             }
         }
 
+        .how-we-work-wrapper {
+            padding-top: 48px;
+            padding-bottom: 24px;
+
+            .how-we-work-header {
+                .ant-col {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .text-wrapper {
+                        width: 594px;
+
+                        .title {
+                            line-height: 32px;
+                            font-size: 24px;
+                            text-align: center;
+                            font-weight: 700;
+                        }
+
+                        .description {
+                            font-size: 16px;
+                            text-align: center;
+                            line-height: 24px;
+                            font-weight: 400;
+                            color: #a8aaad;
+                        }
+                    }
+                }
+            }
+        }
+
         .testimonial-wrapper {
             margin-inline: -120px;
 
