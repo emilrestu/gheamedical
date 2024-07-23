@@ -5,7 +5,7 @@ import Translate from '../translate';
 import Link from 'next/link';
 import { useMemo } from 'react';
 import SVGIcon from '../svg-icon';
-import { DARK_BACKGROUND } from '@/data/contants';
+import { DARK_BACKGROUND } from '@/data/constants';
 
 const { Footer: Footer_ } = Layout;
 

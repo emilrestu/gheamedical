@@ -99,8 +99,11 @@ body {
         .home-content-wrapper {
             padding-block: 80px;
 
-            .title {
+            .title,
+            .title i,
+            .title u {
                 font-size: 24px;
+                line-height: 32px;
                 font-weight: 700;
             }
 
@@ -119,6 +122,53 @@ body {
         }
 
         .why-choose-container {
+            .card-slider {
+                background-color: white;
+                transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                border: 1px solid #abdfd7;
+
+                .title {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    font-weight: 600;
+
+                    .ant-typography {
+                        line-height: 28px;
+                        font-size: 20px;
+                    }
+                }
+
+                .icon-container {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 8px;
+
+                    border: 1px solid #32998b;
+
+                    svg * {
+                        stroke: #32998b;
+                        stroke-width: 1px;
+                    }
+                }
+
+                &.active {
+                    .ant-typography {
+                        color: white;
+                    }
+
+                    .icon-container {
+                        svg * {
+                            stroke: white;
+                            stroke-width: 1px;
+                        }
+                    }
+                }
+            }
         }
 
         .testimonial-wrapper {

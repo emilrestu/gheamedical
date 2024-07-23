@@ -2,7 +2,7 @@ import Translate from '@/components/translate';
 import useTranslate from '@/hooks/useTranslate';
 import { CalendarOutlined, EnvironmentOutlined, MailOutlined, MedicineBoxOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
 import { theme, Row, Col, Card, Typography, Form, Input, DatePicker, Select, Button } from 'antd';
-import { PHONE_NUMBER } from '@/data/contants';
+import { PHONE_NUMBER } from '@/data/constants';
 import Link from 'next/link';
 
 const BookServiceCard = () => {

@@ -6,7 +6,7 @@ import ThemesContextProvider from '../context/ThemesContextProvider';
 import { FloatButton, Layout } from 'antd';
 import Footer from '../components/footer';
 import { WhatsAppOutlined } from '@ant-design/icons';
-import { PHONE_NUMBER } from '@/data/contants';
+import { PHONE_NUMBER } from '@/data/constants';
 import '../themes/main.scss';
 
 const { Content } = Layout;

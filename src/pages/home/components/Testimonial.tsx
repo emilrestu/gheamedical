@@ -1,4 +1,4 @@
-import { DARK_BACKGROUND } from '@/data/contants';
+import { DARK_BACKGROUND } from '@/data/constants';
 import { Card, Carousel, Col, Row, Typography, theme } from 'antd';
 import Image from 'next/image';
 import React, { useMemo } from 'react';
