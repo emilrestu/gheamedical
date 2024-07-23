@@ -1,18 +1,16 @@
 import { Layout, Grid, Button, Row, Col, Space, Select } from 'antd';
 import NavLink from '../navlink';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import CompanyLogo from '../company-logo';
 import Translate from '../translate';
 import { useTranslateContext } from '@/context/TranslateContext';
 import { useThemesContext } from '@/context/ThemesContext';
-import SVGIcon from '../svg-icon';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 const Navbar = () => {
     const { xs } = useBreakpoint();
-    const [openLanguage, setOpenLanguage] = useState(false);
     const { langCode, setLangCode } = useTranslateContext();
     const { isArabic } = useThemesContext();
 
@@ -57,14 +55,10 @@ const Navbar = () => {
                         </Button>
 
                         <Select
-                            suffixIcon={<SVGIcon icon="caret-down" style={{ pointerEvents: 'none' }} />}
-                            // open={openLanguage}
                             value={langCode}
                             labelInValue
                             options={ArrLang}
-                            // onClick={() => setOpenLanguage(true)}
                             onSelect={(val) => {
-                                // setOpenLanguage(false);
                                 setLangCode((val as unknown as { value: string }).value);
                             }}
                         />

@@ -5,6 +5,10 @@ body {
         background: #fff;
     }
 
+    .anticon svg {
+        fill: currentColor;
+    }
+
     .header-wrapper {
         background: #fff;
         height: 100px;
@@ -153,6 +157,7 @@ body {
                     svg * {
                         stroke: #32998b;
                         stroke-width: 1px;
+                        fill: none;
                     }
                 }
 
@@ -171,33 +176,88 @@ body {
             }
         }
 
-        .how-we-work-wrapper {
+        .how-we-work-header-wrapper {
             padding-top: 48px;
             padding-bottom: 24px;
 
-            .how-we-work-header {
-                .ant-col {
+            .ant-col {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .text-wrapper {
+                    width: 594px;
+
+                    .title {
+                        line-height: 32px;
+                        font-size: 24px;
+                        text-align: center;
+                        font-weight: 700;
+                    }
+
+                    .description {
+                        font-size: 16px;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: 400;
+                        color: #a8aaad;
+                    }
+                }
+            }
+        }
+
+        .how-we-work-icons-wrapper {
+            margin-inline: -120px;
+            padding-top: 16px;
+            padding-bottom: 48px;
+            height: 256px;
+            position: relative;
+            margin-bottom: 50px;
+
+            .bg-wrapper {
+                position: absolute;
+                // top: 50%;
+                margin-top: 20px;
+            }
+
+            .icons-group-container {
+                display: flex;
+                flex-direction: row;
+                padding-inline: 120px;
+                width: 100%;
+
+                .icons-container {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    flex-direction: column;
+                    gap: 16px;
+                    flex: 1;
+                    z-index: 1;
 
-                    .text-wrapper {
-                        width: 594px;
+                    .icons {
+                        background-color: white;
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
 
-                        .title {
-                            line-height: 32px;
-                            font-size: 24px;
-                            text-align: center;
-                            font-weight: 700;
+                        box-shadow: 0px 2px 8px 0px #3333331f;
+
+                        svg {
+                            width: 24px;
+                            height: 24px;
                         }
+                    }
 
-                        .description {
-                            font-size: 16px;
-                            text-align: center;
-                            line-height: 24px;
-                            font-weight: 400;
-                            color: #a8aaad;
-                        }
+                    .description {
+                        font-size: 20px;
+                        line-height: 28px;
+                        text-align: center;
+                        font-weight: 600;
+                        color: #303133;
                     }
                 }
             }
