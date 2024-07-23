@@ -48,8 +48,6 @@ const WhyChoose: React.FC = () => {
     const [activeSlide, setActiveSlide] = useState(0);
     const sliderRef = useRef<CarouselRef>(null);
 
-    console.log(sliderRef.current);
-
     return (
         <Row className="home-content-wrapper why-choose-container" gutter={[16, 16]}>
             <Col span={12}>
@@ -71,7 +69,10 @@ const WhyChoose: React.FC = () => {
                             <Card
                                 className={`card-slider ${activeSlide === i ? 'active' : ''}`.trim()}
                                 {...(activeSlide === i && { style: { backgroundColor: colorPrimary } })}
-                                onClick={() => sliderRef?.current?.goTo(i)}
+                                onClick={() => {
+                                    sliderRef?.current?.goTo(i);
+                                    // setActiveSlide(i);
+                                }}
                             >
                                 <Row gutter={[16, 16]}>
                                     <Col span={24} className="title">
@@ -100,7 +101,8 @@ const WhyChoose: React.FC = () => {
                     slidesToShow={1}
                     autoplay
                     autoplaySpeed={5000}
-                    beforeChange={(currentSlide) => setActiveSlide(currentSlide)}
+                    beforeChange={(_, currentSlide) => setActiveSlide(currentSlide)}
+                    afterChange={(currentSlide) => setActiveSlide(currentSlide)}
                 >
                     {WhyChooseData.map((item, i) => (
                         <div key={i}>
