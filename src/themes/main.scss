@@ -102,30 +102,22 @@ body {
 
         .home-content-wrapper {
             padding-block: 80px;
-
-            .title,
-            .title i,
-            .title u {
-                font-size: 24px;
-                line-height: 32px;
-                font-weight: 700;
-            }
-
-            .description {
-                font-size: 16px;
-            }
         }
 
         .welcome-banner-wrapper {
             height: 475px;
 
-            .welcome-banner-image {
-                display: flex;
-                gap: 16px;
+            .title,
+            .description {
+                text-align: left;
             }
         }
 
         .why-choose-container {
+            .title {
+                text-align: left;
+            }
+
             .card-slider {
                 background-color: white;
                 transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -176,6 +168,35 @@ body {
             }
         }
 
+        .service-container {
+            height: 784px;
+            padding-block: 80px;
+
+            .service-image {
+                flex-direction: column;
+                padding: 0 !important;
+            }
+
+            .service-description {
+                .service-description-header {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 8px;
+
+                    .title,
+                    .description {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        .service-image,
+        .welcome-banner-image {
+            display: flex;
+            gap: 16px;
+        }
+
         .how-we-work-header-wrapper {
             padding-top: 48px;
             padding-bottom: 24px;
@@ -188,18 +209,7 @@ body {
                 .text-wrapper {
                     width: 594px;
 
-                    .title {
-                        line-height: 32px;
-                        font-size: 24px;
-                        text-align: center;
-                        font-weight: 700;
-                    }
-
                     .description {
-                        font-size: 16px;
-                        text-align: center;
-                        line-height: 24px;
-                        font-weight: 400;
                         color: #a8aaad;
                     }
                 }
@@ -216,7 +226,6 @@ body {
 
             .bg-wrapper {
                 position: absolute;
-                // top: 50%;
                 margin-top: 20px;
             }
 
@@ -268,7 +277,6 @@ body {
 
             .testi-title {
                 padding-top: 40px;
-                // padding-bottom: 32px;
 
                 div {
                     text-align: center;
@@ -339,6 +347,23 @@ body {
                     }
                 }
             }
+        }
+
+        .title,
+        .title i,
+        .title u {
+            line-height: 32px;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .description {
+            font-size: 16px;
+            text-align: center;
+            line-height: 24px;
+            font-weight: 400;
+            color: #505154;
         }
     }
 

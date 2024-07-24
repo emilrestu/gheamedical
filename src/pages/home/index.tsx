@@ -5,7 +5,7 @@ import Banner from './components/Banner';
 import Testimonial from './components/Testimonial';
 import WelcomeBanner from './components/WelcomeBanner';
 import WhyChoose from './components/WhyChoose';
-import Services from '../services';
+import Services from './components/Services';
 import HowWeWork from './components/HowWeWork';
 
 const Home: React.FC = () => {

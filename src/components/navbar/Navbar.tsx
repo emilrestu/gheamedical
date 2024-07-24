@@ -58,7 +58,7 @@ const Navbar = () => {
                             value={langCode.toString()}
                             options={ArrLang}
                             onSelect={(val) => {
-                                setLangCode((val as unknown as { value: string }).value);
+                                setLangCode(val);
                             }}
                         />
                     </Space>

@@ -36,7 +36,7 @@ const initialThemes: ThemeConfig = {
 const ThemesContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [theme, setTheme] = useState(initialThemes);
     const { langCode } = useTranslateContext();
-    const isArabic = useMemo(() => langCode.toUpperCase() === 'AR', [langCode]);
+    const isArabic = useMemo(() => langCode?.toUpperCase() === 'AR', [langCode]);
 
     return (
         <ThemesContext.Provider
