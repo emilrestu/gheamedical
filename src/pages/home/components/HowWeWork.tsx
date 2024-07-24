@@ -2,7 +2,7 @@ import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
 import { Col, Row, Typography } from 'antd';
 import React from 'react';
-import HowWeWorkIconsBG from './HowWeWorkIconsBG.svg';
+import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.svg';
 
 const HowWeWork: React.FC = () => {
     return (
