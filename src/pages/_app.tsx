@@ -5,7 +5,7 @@ import TranslateContextProvider from '../context/TranslateContextProvider';
 import ThemesContextProvider from '../context/ThemesContextProvider';
 import { FloatButton, Layout } from 'antd';
 import Footer from '../components/footer';
-import { WhatsAppOutlined } from '@ant-design/icons';
+import { PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { PHONE_NUMBER } from '@/data/constants';
 import '../themes/main.scss';
 
@@ -31,6 +31,22 @@ const App = ({ Component, pageProps }: AppProps) => (
                 onClick={() => {
                     window.open(`https://wa.me/${PHONE_NUMBER}`, '_blank');
                 }}
+            />
+
+            <FloatButton
+                type="primary"
+                className="phone-button"
+                icon={<PhoneOutlined style={{ color: 'white' }} />}
+                style={{ color: 'white', width: 65, height: 65, marginBottom: 80 }}
+                onClick={() => {
+                    window.open(`tel:${PHONE_NUMBER}`, '_blank');
+                }}
+            />
+
+            <FloatButton.BackTop
+                className="backtop-button"
+                visibilityHeight={1000}
+                style={{ color: 'white', width: 65, height: 65, marginBottom: 160 }}
             />
         </ThemesContextProvider>
     </TranslateContextProvider>
