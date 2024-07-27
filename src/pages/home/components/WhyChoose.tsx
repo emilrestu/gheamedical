@@ -92,7 +92,7 @@ const WhyChoose: React.FC = () => {
                 </Row>
             </Col>
 
-            <Col span={12} style={{ height: 642 }}>
+            <Col span={12} style={{ height: 687 }}>
                 <Carousel
                     ref={sliderRef}
                     arrows={false}
@@ -106,7 +106,7 @@ const WhyChoose: React.FC = () => {
                 >
                     {WhyChooseData.map((item, i) => (
                         <div key={i}>
-                            <Card style={{ background: colorPrimary, flex: 1, height: 642 }}>{item.title}</Card>
+                            <Card style={{ background: colorPrimary, flex: 1, height: 687 }}>{item.title}</Card>
                         </div>
                     ))}
                 </Carousel>
