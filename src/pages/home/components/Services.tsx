@@ -22,12 +22,12 @@ const Services: React.FC = () => {
     return (
         <Row className="service-container" gutter={[48, 48]}>
             <Col span={12} className="service-image">
-                <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
+                <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
                 <div style={{ display: 'flex', flex: 1, gap: 16, flexDirection: 'row' }}>
-                    <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
-                    <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
+                    <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
+                    <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
                 </div>
-                <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
+                <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
             </Col>
             <Col span={12} className="service-description">
                 <Row>
