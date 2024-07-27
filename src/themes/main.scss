@@ -11,11 +11,11 @@ body {
         fill: currentColor;
     }
 
-    /* .company-logo {
+    .company-logo {
         display: flex;
         justify-content: center;
         align-items: center;
-    } */
+    }
 
     .header-wrapper {
         background: #fff;
@@ -57,55 +57,28 @@ body {
                 height: 480px;
 
                 .banner-card {
-                    position: relative;
-                    border-radius: 16px;
-                    background-color: #128c7e;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     height: 480px;
+                }
 
-                    background-size: cover;
-                    background-position: center;
+                .testi-title {
+                    position: absolute;
+                    right: 16px;
+                    top: 72px;
+                    width: 574px;
+                    z-index: 2;
 
-                    .banner-card-mask {
-                        position: absolute;
-                        border-radius: 16px;
-                        left: 0;
-                        right: 0;
-                        top: 0;
-                        bottom: 0;
-                        z-index: 1;
-                        background: linear-gradient(
-                            90deg,
-                            rgba(140, 201, 201, 0.3) 0%,
-                            rgba(76, 146, 136, 0.432762) 27.08%,
-                            rgba(28, 80, 73, 0.6) 54.59%,
-                            rgba(22, 74, 67, 0.6) 73.52%,
-                            rgba(6, 37, 33, 0.8) 100%
-                        );
+                    .ant-typography {
+                        font-size: 30px;
+                        font-weight: 600;
+                        line-height: 42px;
+                        color: white;
                     }
 
-                    .testi-title {
-                        position: absolute;
-                        right: 16px;
-                        top: 72px;
-                        width: 574px;
-                        z-index: 2;
+                    &.arabic {
+                        text-align: right;
 
                         .ant-typography {
-                            font-size: 30px;
-                            font-weight: 600;
-                            line-height: 42px;
-                            color: white;
-                        }
-
-                        &.arabic {
                             text-align: right;
-
-                            .ant-typography {
-                                text-align: right;
-                            }
                         }
                     }
                 }
@@ -346,9 +319,11 @@ body {
 
                         box-shadow: 0px 2px 8px 0px #3333331f;
 
-                        svg {
-                            width: 24px;
-                            height: 24px;
+                        svg,
+                        svg * {
+                            // width: 24px;
+                            // height: 24px;
+                            fill: #2a8074;
                         }
                     }
 
@@ -440,6 +415,131 @@ body {
             }
         }
 
+        .about-us-main-header {
+            padding-top: 64px;
+            padding-bottom: 40px;
+
+            .ant-col {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .text-wrapper {
+                    width: 800px;
+                    gap: 16px;
+                    flex-direction: column;
+                    display: flex;
+
+                    .title {
+                        font-size: 30px;
+                        font-weight: 600;
+                        line-height: 42px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .about-us-highlight {
+            padding-block: 40px;
+
+            .banner-card {
+                height: 400px;
+            }
+        }
+
+        .about-us-vision-mission {
+            padding-block: 46px;
+            padding-inline: 104px;
+
+            .ant-card {
+                background-color: #ebf8f6;
+                border-color: #ebf8f6;
+                border-radius: 8px;
+
+                .ant-card-body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    .button-title {
+                        background-color: #2a8074;
+                        width: max-content;
+                        height: 32px;
+                        padding: 5px 8px 5px 8px;
+                        border-radius: 20px;
+                        color: white;
+                    }
+
+                    .title {
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: 28px;
+                        text-align: left;
+                    }
+
+                    .description {
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        .about-us-strength-wrapper {
+            margin-inline: -120px;
+            padding-block: 80px;
+
+            .about-us-strength {
+                padding-inline: 224px;
+
+                .strenght-card-wrapper {
+                    .ant-card-body {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                    }
+                }
+
+                .ant-card.strenght-card {
+                    background-color: #ebf8f6;
+                    border-color: #ebf8f6;
+                    border-radius: 8px;
+
+                    .ant-card-body {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        .button-title {
+                            background-color: #2a8074;
+                            width: max-content;
+                            height: 32px;
+                            padding: 5px 8px 5px 8px;
+                            border-radius: 20px;
+                            color: white;
+                        }
+
+                        .title {
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 28px;
+                            text-align: left;
+                        }
+
+                        .description {
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 24px;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+
         .title,
         .title i,
         .title u {
@@ -455,6 +555,36 @@ body {
             line-height: 24px;
             font-weight: 400;
             color: #505154;
+        }
+
+        .banner-card {
+            position: relative;
+            border-radius: 16px;
+            background-color: #128c7e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-size: cover;
+            background-position: center;
+
+            .banner-card-mask {
+                position: absolute;
+                border-radius: 16px;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+                background: linear-gradient(
+                    90deg,
+                    rgba(140, 201, 201, 0.3) 0%,
+                    rgba(76, 146, 136, 0.432762) 27.08%,
+                    rgba(28, 80, 73, 0.6) 54.59%,
+                    rgba(22, 74, 67, 0.6) 73.52%,
+                    rgba(6, 37, 33, 0.8) 100%
+                );
+            }
         }
     }
 
