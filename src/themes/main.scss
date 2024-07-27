@@ -216,7 +216,7 @@ body {
         }
 
         .service-container {
-            min-height: 784px;
+            min-height: 800px;
             padding-block: 80px;
 
             .service-image {
@@ -245,6 +245,9 @@ body {
                 .ant-collapse-header,
                 .ant-collapse-content-box {
                     padding: 0px;
+                }
+                .ant-collapse-content {
+                    padding-block: 16px;
                 }
             }
 

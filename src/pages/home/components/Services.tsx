@@ -9,12 +9,14 @@ import Services03 from '../assets/services-01.png';
 import Services04 from '../assets/services-02.png';
 import { useTranslateContext } from '@/context/TranslateContext';
 import SVGIcon from '@/components/svg-icon';
+import { useThemesContext } from '@/context/ThemesContext';
 
 const Services: React.FC = () => {
     const {
         token: { colorPrimary },
     } = theme.useToken();
     const { langCode } = useTranslateContext();
+    const { isArabic } = useThemesContext();
     const [activeKey, setActiveKey] = useState<string[]>(['0']);
 
     const ServiceData = useMemo(() => {
@@ -55,7 +57,7 @@ const Services: React.FC = () => {
                         </Typography.Paragraph>
                     </Col>
 
-                    <Col span={24} className="service-accordion">
+                    <Col span={24} className={`service-accordion ${isArabic ? 'arabic' : ''}`.trim()}>
                         <Collapse
                             accordion
                             ghost
