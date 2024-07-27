@@ -16,22 +16,14 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isArabic } = useThemesContext();
 
     return (
-        <Layout className={isArabic ? 'arabic' : 'english'}>
-            <Navbar />
+        <>
+            <Layout className={isArabic ? 'arabic' : 'english'}>
+                <Navbar />
 
-            <Content className="content-wrapper">{children}</Content>
+                <Content className="content-wrapper">{children}</Content>
 
-            <Footer />
-        </Layout>
-    );
-};
-
-const App = ({ Component, pageProps }: AppProps) => (
-    <TranslateContextProvider>
-        <ThemesContextProvider>
-            <InnerApp_>
-                <Component {...pageProps} />
-            </InnerApp_>
+                <Footer />
+            </Layout>
 
             <FloatButton
                 className="whatsapp-button"
@@ -57,6 +49,16 @@ const App = ({ Component, pageProps }: AppProps) => (
                 visibilityHeight={1000}
                 style={{ color: 'white', width: 65, height: 65, marginBottom: 160 }}
             />
+        </>
+    );
+};
+
+const App = ({ Component, pageProps }: AppProps) => (
+    <TranslateContextProvider>
+        <ThemesContextProvider>
+            <InnerApp_>
+                <Component {...pageProps} />
+            </InnerApp_>
         </ThemesContextProvider>
     </TranslateContextProvider>
 );
