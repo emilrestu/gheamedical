@@ -1,6 +1,6 @@
 import type { ThemeConfig } from 'antd';
 import { ConfigProvider } from 'antd';
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import ThemesContext from './ThemesContext';
 import { useTranslateContext } from './TranslateContext';
 
@@ -37,6 +37,14 @@ const ThemesContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [theme, setTheme] = useState(initialThemes);
     const { langCode } = useTranslateContext();
     const isArabic = useMemo(() => langCode?.toUpperCase() === 'AR', [langCode]);
+
+    const updateHTMLLang = useCallback(() => {
+        document.querySelector('html')?.setAttribute('lang', isArabic ? 'ar' : 'en');
+    }, [isArabic]);
+
+    useEffect(() => {
+        updateHTMLLang();
+    }, [isArabic, updateHTMLLang]);
 
     return (
         <ThemesContext.Provider

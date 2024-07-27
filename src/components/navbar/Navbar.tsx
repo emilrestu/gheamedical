@@ -4,7 +4,6 @@ import { useMemo } from 'react';
 import CompanyLogo from '../company-logo';
 import Translate from '../translate';
 import { useTranslateContext } from '@/context/TranslateContext';
-import { useThemesContext } from '@/context/ThemesContext';
 import Link from 'next/link';
 
 const { Header } = Layout;
@@ -13,7 +12,6 @@ const { useBreakpoint } = Grid;
 const Navbar = () => {
     const { xs } = useBreakpoint();
     const { langCode, setLangCode } = useTranslateContext();
-    const { isArabic } = useThemesContext();
 
     const ArrLang = [
         {
@@ -21,7 +19,7 @@ const Navbar = () => {
             value: 'en',
         },
         {
-            label: 'Arabic',
+            label: 'عربي',
             value: 'ar',
         },
     ];
@@ -38,7 +36,7 @@ const Navbar = () => {
 
     return (
         <Header className="header-wrapper">
-            <Row style={{ display: 'flex', alignItems: 'center', flexDirection: isArabic ? 'row-reverse' : 'row', width: '100%' }}>
+            <Row style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
                 {xs ? (
                     <>
                         <Col xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -71,6 +69,7 @@ const Navbar = () => {
                                     onSelect={(val) => {
                                         setLangCode(val);
                                     }}
+                                    popupMatchSelectWidth={false}
                                 />
                             </Space>
                         </Col>
