@@ -148,6 +148,7 @@ body {
             }
 
             .card-slider {
+                cursor: pointer;
                 background-color: white;
                 transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
                 border: 1px solid #abdfd7;
