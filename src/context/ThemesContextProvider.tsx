@@ -40,6 +40,7 @@ const ThemesContextProvider = ({ children }: { children: React.ReactNode }) => {
 
     const updateHTMLLang = useCallback(() => {
         document.querySelector('html')?.setAttribute('lang', isArabic ? 'ar' : 'en');
+        document.querySelector('html')?.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
     }, [isArabic]);
 
     useEffect(() => {
