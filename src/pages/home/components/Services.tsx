@@ -3,6 +3,10 @@ import { Button, Card, Col, Collapse, Row, theme, Typography } from 'antd';
 import React, { useMemo, useState } from 'react';
 import ServicesEnglish from '@/data/services/en.json';
 import ServicesArabic from '@/data/services/ar.json';
+import Services01 from '../assets/banner-03.jpeg';
+import Services02 from '../assets/banner-04.jpeg';
+import Services03 from '../assets/services-01.png';
+import Services04 from '../assets/services-02.png';
 import { useTranslateContext } from '@/context/TranslateContext';
 import SVGIcon from '@/components/svg-icon';
 
@@ -22,12 +26,20 @@ const Services: React.FC = () => {
     return (
         <Row className="service-container" gutter={[48, 48]}>
             <Col span={12} className="service-image">
-                <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
+                <Card style={{ minHeight: 240, height: 240, flex: 1, backgroundImage: `url(${Services01.src})` }}>
+                    <div className="image-mask" />
+                </Card>
                 <div style={{ display: 'flex', flex: 1, gap: 16, flexDirection: 'row' }}>
-                    <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
-                    <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
+                    <Card style={{ minHeight: 240, height: 240, flex: 1, backgroundImage: `url(${Services02.src})` }}>
+                        <div className="image-mask" />
+                    </Card>
+                    <Card style={{ minHeight: 240, height: 240, flex: 1, backgroundImage: `url(${Services03.src})` }}>
+                        <div className="image-mask" />
+                    </Card>
                 </div>
-                <Card style={{ background: colorPrimary, minHeight: 240, height: 240, flex: 1 }} />
+                <Card style={{ minHeight: 240, height: 240, flex: 1, backgroundImage: `url(${Services04.src})` }}>
+                    <div className="image-mask" />
+                </Card>
             </Col>
             <Col span={12} className="service-description">
                 <Row>
