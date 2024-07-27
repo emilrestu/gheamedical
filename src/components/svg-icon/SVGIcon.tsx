@@ -1,5 +1,4 @@
 import React, { CSSProperties } from 'react';
-import Icon from '@ant-design/icons';
 import _Alzheimer from '@/assets/icon/alzheimer.svg';
 import _Badge from '@/assets/icon/badge.svg';
 import _BestHomeServices from '@/assets/icon/best-home-services.svg';
@@ -72,47 +71,49 @@ type SVGIconTypes = {
         | 'website'
         | 'wellness';
     style?: CSSProperties;
+    width?: number;
+    height?: number;
 };
 
-const SVGIcon: React.FC<SVGIconTypes> = ({ icon, style = {} }) => {
+const SVGIcon: React.FC<SVGIconTypes> = ({ icon, ...props }) => {
     const iconList = {
-        alzheimer: _Alzheimer,
-        badge: _Badge,
-        'best-home-services': _BestHomeServices,
-        'best-prices': _BestPrices,
-        'best-staff': _BestStaff,
-        calendar: _Calendar,
-        'caret-down': _CaretDown,
-        'caret-down-small': _CaretDownSmall,
-        chat: _Chat,
-        'child-services': _ChildServices,
-        close: _Close,
-        company_logo: _Company_Logo,
-        cs: _Cs,
-        doctor: _Doctor,
-        facebook: _Facebook,
-        instagram: _Instagram,
-        location: _Location,
-        mail: _Mail,
-        passion: _Passion,
-        'personal-escort': _PersonalEscort,
-        'personal-services': _PersonalServices,
-        person: _Person,
-        phone: _Phone,
-        plus: _Plus,
-        quote: _Quote,
-        services: _Services,
-        'services-for-all-age': _ServicesForAllAge,
-        'services-for-the-elderly': _ServicesForTheElderly,
-        team: _Team,
-        transparency: _Transparency,
-        trust: _Trust,
-        twitter: _Twitter,
-        website: _Website,
-        wellness: _Wellness,
+        alzheimer: <_Alzheimer {...props} />,
+        badge: <_Badge {...props} />,
+        'best-home-services': <_BestHomeServices {...props} />,
+        'best-prices': <_BestPrices {...props} />,
+        'best-staff': <_BestStaff {...props} />,
+        calendar: <_Calendar {...props} />,
+        'caret-down': <_CaretDown {...props} />,
+        'caret-down-small': <_CaretDownSmall {...props} />,
+        chat: <_Chat {...props} />,
+        'child-services': <_ChildServices {...props} />,
+        close: <_Close {...props} />,
+        company_logo: <_Company_Logo {...props} />,
+        cs: <_Cs {...props} />,
+        doctor: <_Doctor {...props} />,
+        facebook: <_Facebook {...props} />,
+        instagram: <_Instagram {...props} />,
+        location: <_Location {...props} />,
+        mail: <_Mail {...props} />,
+        passion: <_Passion {...props} />,
+        'personal-escort': <_PersonalEscort {...props} />,
+        'personal-services': <_PersonalServices {...props} />,
+        person: <_Person {...props} />,
+        phone: <_Phone {...props} />,
+        plus: <_Plus {...props} />,
+        quote: <_Quote {...props} />,
+        services: <_Services {...props} />,
+        'services-for-all-age': <_ServicesForAllAge {...props} />,
+        'services-for-the-elderly': <_ServicesForTheElderly {...props} />,
+        team: <_Team {...props} />,
+        transparency: <_Transparency {...props} />,
+        trust: <_Trust {...props} />,
+        twitter: <_Twitter {...props} />,
+        website: <_Website {...props} />,
+        wellness: <_Wellness {...props} />,
     };
 
-    return <Icon component={iconList[icon]} style={style} />;
+    return iconList[icon];
 };
 
 export default SVGIcon;
