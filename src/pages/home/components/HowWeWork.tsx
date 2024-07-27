@@ -38,7 +38,7 @@ const HowWeWork: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: -80 }}>
+                    <div className="icons-container" style={{ marginTop: -60 }}>
                         <div className="icons">
                             <SVGIcon icon="cs" />
                         </div>
