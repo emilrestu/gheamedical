@@ -1,15 +1,17 @@
 import Translate from '@/components/translate';
-import { Card, Col, Collapse, Row, theme, Typography } from 'antd';
-import React, { useMemo } from 'react';
+import { Button, Card, Col, Collapse, Row, theme, Typography } from 'antd';
+import React, { useMemo, useState } from 'react';
 import ServicesEnglish from '@/data/services/en.json';
 import ServicesArabic from '@/data/services/ar.json';
 import { useTranslateContext } from '@/context/TranslateContext';
+import SVGIcon from '@/components/svg-icon';
 
 const Services: React.FC = () => {
     const {
         token: { colorPrimary },
     } = theme.useToken();
     const { langCode } = useTranslateContext();
+    const [activeKey, setActiveKey] = useState<string[]>(['0']);
 
     const ServiceData = useMemo(() => {
         if (langCode === 'ar') return ServicesArabic;
@@ -42,7 +44,37 @@ const Services: React.FC = () => {
                     </Col>
 
                     <Col span={24} className="service-accordion">
-                        <Collapse accordion ghost items={ServiceData} style={{ width: '100%' }} />
+                        <Collapse
+                            accordion
+                            ghost
+                            items={ServiceData.map((item) => ({
+                                ...item,
+                                label: <div className="title">{item.label}</div>,
+                                children: <div className="description" dangerouslySetInnerHTML={{ __html: item.children }} />,
+                            }))}
+                            expandIcon={(props) => (
+                                <Button
+                                    {...(!props.isActive && { ghost: true })}
+                                    type="primary"
+                                    icon={
+                                        <SVGIcon
+                                            icon={props.isActive ? 'close' : 'plus'}
+                                            style={props.isActive ? { fill: 'white' } : { fill: colorPrimary }}
+                                        />
+                                    }
+                                />
+                            )}
+                            expandIconPosition="right"
+                            defaultActiveKey={activeKey}
+                            onChange={(key) => {
+                                if (Array.isArray(key)) {
+                                    setActiveKey(key);
+                                } else {
+                                    setActiveKey([key]);
+                                }
+                            }}
+                            style={{ width: '100%' }}
+                        />
                     </Col>
                 </Row>
             </Col>
