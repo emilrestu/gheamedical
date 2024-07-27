@@ -5,6 +5,7 @@ import CompanyLogo from '../company-logo';
 import Translate from '../translate';
 import { useTranslateContext } from '@/context/TranslateContext';
 import { useThemesContext } from '@/context/ThemesContext';
+import Link from 'next/link';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
@@ -38,31 +39,43 @@ const Navbar = () => {
     return (
         <Header className="header-wrapper">
             <Row style={{ display: 'flex', alignItems: 'center', flexDirection: isArabic ? 'row-reverse' : 'row', width: '100%' }}>
-                <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <CompanyLogo />
-                </Col>
-                <Col flex={1}>
-                    <div className="menu-wrapper">
-                        {MenuItems.map((item, index) => (
-                            <div key={index}>{item.label}</div>
-                        ))}
-                    </div>
-                </Col>
-                <Col>
-                    <Space>
-                        <Button ghost type="primary">
-                            <Translate>Contact Us</Translate>
-                        </Button>
+                {xs ? (
+                    <>
+                        <Col xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <CompanyLogo />
+                        </Col>
+                    </>
+                ) : (
+                    <>
+                        <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <CompanyLogo />
+                        </Col>
+                        <Col flex={1}>
+                            <div className="menu-wrapper">
+                                {MenuItems.map((item, index) => (
+                                    <div key={index}>{item.label}</div>
+                                ))}
+                            </div>
+                        </Col>
+                        <Col>
+                            <Space>
+                                <Button ghost type="primary">
+                                    <Link href="contact-us">
+                                        <Translate>Contact Us</Translate>
+                                    </Link>
+                                </Button>
 
-                        <Select
-                            value={langCode.toString()}
-                            options={ArrLang}
-                            onSelect={(val) => {
-                                setLangCode(val);
-                            }}
-                        />
-                    </Space>
-                </Col>
+                                <Select
+                                    value={langCode.toString()}
+                                    options={ArrLang}
+                                    onSelect={(val) => {
+                                        setLangCode(val);
+                                    }}
+                                />
+                            </Space>
+                        </Col>
+                    </>
+                )}
             </Row>
         </Header>
     );
