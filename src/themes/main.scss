@@ -495,23 +495,61 @@ body {
             .about-us-strength {
                 padding-inline: 224px;
 
-                .strenght-card-wrapper {
+                .strength-image {
+                    height: 368px;
+                    padding: 8px;
+                    border-radius: 8px;
+                    background-size: cover;
+                    background-position: center;
+
+                    .strength-image-mask {
+                        background: linear-gradient(180deg, rgba(140, 201, 201, 0.1) 1.03%, rgba(6, 37, 33, 0.7) 100%);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        border-radius: 16px;
+                    }
+                }
+
+                .strengh-card-wrapper {
+                    padding-inline: 16px;
+
                     .ant-card-body {
                         display: flex;
                         flex-direction: column;
                         gap: 16px;
+                        padding: 0;
+
+                        .icon-container {
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 4px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-right: 8px;
+
+                            svg * {
+                                fill: white;
+                            }
+                        }
                     }
                 }
 
-                .ant-card.strenght-card {
+                .ant-card.strengh-card {
                     background-color: #ebf8f6;
                     border-color: #ebf8f6;
                     border-radius: 8px;
+                    padding: 16px;
+                    height: 100%;
 
                     .ant-card-body {
                         display: flex;
                         flex-direction: column;
                         gap: 8px;
+                        padding: 0;
 
                         .button-title {
                             background-color: #2a8074;

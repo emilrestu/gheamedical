@@ -1,7 +1,9 @@
+import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
-import { DARK_BACKGROUND } from '@/data/constants';
+import { DARK_BACKGROUND, SECONDARY_COLOR } from '@/data/constants';
 import { Card, Col, Row, Typography } from 'antd';
 import React from 'react';
+import StrengthImage from '../assets/strength.jpeg';
 
 const Strength = () => {
     return (
@@ -9,7 +11,11 @@ const Strength = () => {
             <Col span={24}>
                 <Row gutter={[24, 24]} className="about-us-strength">
                     <Col span={12}>
-                        <Card className="strenght-card">
+                        <Card className="strengh-card">
+                            <Card className="strength-image" style={{ backgroundImage: `url(${StrengthImage.src})` }}>
+                                <div className="strength-image-mask" />
+                            </Card>
+
                             <Typography.Text className="title">
                                 <Translate>Our Strength</Translate>
                             </Typography.Text>
@@ -24,10 +30,10 @@ const Strength = () => {
                         </Card>
                     </Col>
                     <Col span={12}>
-                        <Card className="strenght-card-wrapper">
-                            <Card className="strenght-card">
-                                <div className="button-title">
-                                    <Translate>Our Mission</Translate>
+                        <Card className="strengh-card-wrapper">
+                            <Card className="strengh-card">
+                                <div className="icon-container" style={{ backgroundColor: SECONDARY_COLOR }}>
+                                    <SVGIcon icon="best-staff" />
                                 </div>
                                 <Typography.Text className="title">
                                     <Translate>Best-trained and experienced staff</Translate>
@@ -40,9 +46,9 @@ const Strength = () => {
                                 </Typography.Text>
                             </Card>
 
-                            <Card className="strenght-card">
-                                <div className="button-title">
-                                    <Translate>Our Mission</Translate>
+                            <Card className="strengh-card">
+                                <div className="icon-container" style={{ backgroundColor: SECONDARY_COLOR }}>
+                                    <SVGIcon icon="best-home-services" />
                                 </div>
                                 <Typography.Text className="title">
                                     <Translate>Best Home Care System</Translate>
@@ -55,9 +61,9 @@ const Strength = () => {
                                 </Typography.Text>
                             </Card>
 
-                            <Card className="strenght-card">
-                                <div className="button-title">
-                                    <Translate>Our Mission</Translate>
+                            <Card className="strengh-card">
+                                <div className="icon-container" style={{ backgroundColor: SECONDARY_COLOR }}>
+                                    <SVGIcon icon="best-prices" />
                                 </div>
                                 <Typography.Text className="title">
                                     <Translate>Best Prices for Everyone</Translate>
