@@ -64,7 +64,7 @@ const Services: React.FC = () => {
                                     }
                                 />
                             )}
-                            expandIconPosition="right"
+                            expandIconPosition="end"
                             defaultActiveKey={activeKey}
                             onChange={(key) => {
                                 if (Array.isArray(key)) {

@@ -56,13 +56,34 @@ body {
                     justify-content: center;
                     align-items: center;
                     height: 480px;
-                    padding: 16px;
+
+                    background-size: cover;
+                    background-position: center;
+
+                    .banner-card-mask {
+                        position: absolute;
+                        border-radius: 16px;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        z-index: 1;
+                        background: linear-gradient(
+                            90deg,
+                            rgba(140, 201, 201, 0.3) 0%,
+                            rgba(76, 146, 136, 0.432762) 27.08%,
+                            rgba(28, 80, 73, 0.6) 54.59%,
+                            rgba(22, 74, 67, 0.6) 73.52%,
+                            rgba(6, 37, 33, 0.8) 100%
+                        );
+                    }
 
                     .testi-title {
                         position: absolute;
                         right: 16px;
                         top: 72px;
                         width: 574px;
+                        z-index: 2;
 
                         .ant-typography {
                             font-size: 30px;
