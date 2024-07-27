@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Superior Quality Assistant",
+        "icon": "badge",
+        "description": "GHEA Services offers exceptional quality assistance and support tailored to meet your family' health and personal care needs, ensuring you receive the best possible service.",
+        "image": "",
+        "alt": "superior-quality-assistant"
+    },
+    {
+        "title": "Personalized Wellness Care",
+        "icon": "wellness",
+        "description": "Our comprehensive approach ensures that every aspect of your well-being is addressed, providing you and your family with exceptional care and support..",
+        "image": "",
+        "alt": "personalized-wellness-care"
+    },
+    {
+        "title": "Services with Best Individuals",
+        "icon": "doctor",
+        "description": "We have assembled a team of highly skilled and compassionate professionals dedicated to providing the highest quality care. Our team brings expertise, experience, and a genuine commitment to your well-being.",
+        "image": "",
+        "alt": "services-with-best-individuals"
+    }
+]

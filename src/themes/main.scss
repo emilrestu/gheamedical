@@ -187,6 +187,32 @@ body {
                     }
                 }
             }
+
+            .ant-carousel {
+                .ant-card-body {
+                    padding: 0;
+                    overflow: hidden;
+
+                    .why-choose-image {
+                        background-size: cover;
+                        background-position: center;
+                        width: 100%;
+                        height: 687px;
+                        border-radius: 8px;
+                    }
+
+                    .why-choose-background-mask {
+                        position: absolute;
+                        border-radius: 8px;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        z-index: 1;
+                        background: linear-gradient(180deg, rgba(140, 201, 201, 0.1) 1.03%, rgba(28, 80, 73, 0.6) 75.01%, rgba(6, 37, 33, 0.7) 100%);
+                    }
+                }
+            }
         }
 
         .service-container {
