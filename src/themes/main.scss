@@ -9,6 +9,12 @@ body {
         fill: currentColor;
     }
 
+    .company-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .header-wrapper {
         background: #fff;
         height: 100px;
@@ -476,6 +482,26 @@ body {
 
         .ant-float-btn-body:hover {
             background-color: #128c7e;
+        }
+    }
+
+    .arabic {
+        .description,
+        .title {
+            text-align: right !important;
+        }
+
+        .how-we-work-header-wrapper,
+        .how-we-work-icons-wrapper {
+            .description,
+            .title {
+                text-align: center !important;
+            }
+        }
+
+        .ant-layout-content .why-choose-container .card-slider .icon-container {
+            margin-right: 0;
+            margin-left: 8px;
         }
     }
 }
