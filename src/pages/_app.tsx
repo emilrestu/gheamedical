@@ -7,17 +7,14 @@ import { FloatButton, Layout } from 'antd';
 import Footer from '../components/footer';
 import { PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { PHONE_NUMBER } from '@/data/constants';
-import { useThemesContext } from '@/context/ThemesContext';
 import '../themes/main.scss';
 
 const { Content } = Layout;
 
 const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const { isArabic } = useThemesContext();
-
     return (
         <>
-            <Layout className={isArabic ? 'arabic' : 'english'}>
+            <Layout>
                 <Navbar />
 
                 <Content className="content-wrapper">{children}</Content>
