@@ -2,6 +2,10 @@ import Translate from '@/components/translate';
 import useTranslate from '@/hooks/useTranslate';
 import { Card, Col, Row, theme, Typography } from 'antd';
 import React from 'react';
+import WelcomeBanner01 from '../assets/welcome-banner-01.png';
+import WelcomeBanner02 from '../assets/welcome-banner-02.png';
+import WelcomeBanner03 from '../assets/welcome-banner-03.png';
+import WelcomeBanner04 from '../assets/welcome-banner-04.png';
 
 const WelcomeBanner: React.FC = () => {
     const {
@@ -14,12 +18,20 @@ const WelcomeBanner: React.FC = () => {
     return (
         <Row className="home-content-wrapper welcome-banner-wrapper" gutter={[16, 16]}>
             <Col span={14} className="welcome-banner-image">
-                <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
+                <Card style={{ background: colorPrimary, height: '100%', flex: 1, backgroundImage: `url(${WelcomeBanner01.src})` }}>
+                    <div className="image-mask" />
+                </Card>
                 <div style={{ display: 'flex', flex: 1, rowGap: 16, flexDirection: 'column' }}>
-                    <Card style={{ background: colorPrimary, height: '50%', flex: 1 }} />
-                    <Card style={{ background: colorPrimary, height: '50%', flex: 1 }} />
+                    <Card style={{ background: colorPrimary, height: '50%', flex: 1, backgroundImage: `url(${WelcomeBanner02.src})` }}>
+                        <div className="image-mask" />
+                    </Card>
+                    <Card style={{ background: colorPrimary, height: '50%', flex: 1, backgroundImage: `url(${WelcomeBanner03.src})` }}>
+                        <div className="image-mask" />
+                    </Card>
                 </div>
-                <Card style={{ background: colorPrimary, height: '100%', flex: 1 }} />
+                <Card style={{ background: colorPrimary, height: '100%', flex: 1, backgroundImage: `url(${WelcomeBanner04.src})` }}>
+                    <div className="image-mask" />
+                </Card>
             </Col>
             <Col span={10}>
                 <Typography.Paragraph className="title welcome-title">
