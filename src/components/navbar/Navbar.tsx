@@ -24,14 +24,13 @@ const Navbar = () => {
         },
     ];
     const MenuItems = useMemo(
-        () =>
-            [
-                { key: 'home', label: <NavLink path={`/`} title="Home" />, order: 1 },
-                { key: 'about-us', label: <NavLink path={`/about-us`} title="About Us" />, order: 2 },
-                { key: 'services', label: <NavLink path={`/services`} title="Services" />, order: 3 },
-                { key: 'reservations', label: <NavLink path={`/reservations`} title="Reservations" />, order: 4 },
-            ].sort((a, b) => (langCode.toUpperCase() === 'AR' ? b.order - a.order : a.order - b.order)),
-        [langCode]
+        () => [
+            { key: 'home', label: <NavLink path={`/`} title="Home" />, order: 1 },
+            { key: 'about-us', label: <NavLink path={`/about-us`} title="About Us" />, order: 2 },
+            { key: 'services', label: <NavLink path={`/services`} title="Services" />, order: 3 },
+            { key: 'reservations', label: <NavLink path={`/reservations`} title="Reservations" />, order: 4 },
+        ],
+        []
     );
 
     return (
