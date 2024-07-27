@@ -36,45 +36,43 @@ const Testimonial = () => {
                 <Translate>What Our Customers Say About Us</Translate>
             </Col>
             <Col span={24} className="testi-carousel-wrapper">
-                {TestiData.map((testi, i) => {
-                    return (
-                        <Carousel
-                            key={`carousel-${i}`}
-                            dots={false}
-                            arrows={false}
-                            infinite
-                            variableWidth
-                            draggable
-                            slidesToShow={1}
-                            autoplay
-                            speed={3000}
-                            className={`carousel-${i + 1}`}
-                        >
-                            {(testi as { content: string; title: string }[]).map((item, i) => (
-                                <div key={i}>
-                                    <div className="testi-card-wrapper">
-                                        <Card className="testi-card" style={{ backgroundColor: colorPrimary, border: 0 }}>
-                                            <Image className="ellips-01" src={EllipsOne} alt="Ghea SERVICES Testimonials" />
-                                            <Image className="ellips-02" src={EllipsTwo} alt="Ghea SERVICES Testimonials" />
-                                            <div className="content-wrapper">
-                                                <Typography.Paragraph
-                                                    className="content-text"
-                                                    style={{ marginBottom: 24, textAlign: langCode === 'ar' ? 'right' : 'left' }}
-                                                >
-                                                    {item.content}
-                                                </Typography.Paragraph>
-                                            </div>
-                                            <div className="title-wrapper">
-                                                <Typography.Text>{item.title}</Typography.Text>
-                                                <Image className="quotes" src={Quotes} alt="Ghea SERVICES Testimonials" />
-                                            </div>
-                                        </Card>
-                                    </div>
+                {TestiData.map((testi, i) => (
+                    <Carousel
+                        key={`carousel-${i}`}
+                        dots={false}
+                        arrows={false}
+                        infinite
+                        variableWidth
+                        draggable
+                        slidesToShow={1}
+                        autoplay
+                        speed={3000}
+                        className={`carousel-${i + 1}`}
+                    >
+                        {(testi as { content: string; title: string }[]).map((item, i) => (
+                            <div key={i}>
+                                <div className="testi-card-wrapper">
+                                    <Card className="testi-card" style={{ backgroundColor: colorPrimary, border: 0 }}>
+                                        <Image className="ellips-01" src={EllipsOne} alt="Ghea SERVICES Testimonials" />
+                                        <Image className="ellips-02" src={EllipsTwo} alt="Ghea SERVICES Testimonials" />
+                                        <div className="content-wrapper">
+                                            <Typography.Paragraph
+                                                className="content-text"
+                                                style={{ marginBottom: 24, textAlign: langCode === 'ar' ? 'right' : 'left' }}
+                                            >
+                                                {item.content}
+                                            </Typography.Paragraph>
+                                        </div>
+                                        <div className="title-wrapper">
+                                            <Typography.Text>{item.title}</Typography.Text>
+                                            <Image className="quotes" src={Quotes} alt="Ghea SERVICES Testimonials" />
+                                        </div>
+                                    </Card>
                                 </div>
-                            ))}
-                        </Carousel>
-                    );
-                })}
+                            </div>
+                        ))}
+                    </Carousel>
+                ))}
             </Col>
         </Row>
     );
