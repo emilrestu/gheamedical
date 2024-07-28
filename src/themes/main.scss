@@ -1107,5 +1107,23 @@ body {
             font-weight: 400;
             color: #505154;
         }
+
+        .ant-drawer-header {
+            .ant-drawer-header-title {
+                flex-direction: row-reverse;
+
+                .ant-drawer-close {
+                    border: 1px solid #3bb4a3;
+                    border-radius: 50%;
+                    color: #3bb4a3;
+                }
+
+                .ant-drawer-title {
+                    .company-logo {
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
     }
 }

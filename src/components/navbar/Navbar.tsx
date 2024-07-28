@@ -1,12 +1,12 @@
 import { Layout, Grid, Button, Row, Col, Select, Drawer, theme } from 'antd';
-import NavLink from '../navlink';
 import { useMemo, useState } from 'react';
 import CompanyLogo from '../company-logo';
 import { useTranslateContext } from '@/context/TranslateContext';
 import { MenuOutlined } from '@ant-design/icons';
-import SVGIcon from '../svg-icon';
 import Translate from '../translate';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
@@ -36,9 +36,10 @@ const Navbar = () => {
     const { langCode, setLangCode } = useTranslateContext();
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [selectMobileOpen, setSelectMobileOpen] = useState<boolean>(false);
+    const pathname = usePathname();
 
     const {
-        token: { colorPrimary },
+        token: { colorText, colorTextSecondary },
     } = theme.useToken();
 
     const ArrLang = [
@@ -53,21 +54,33 @@ const Navbar = () => {
     ];
     const MenuItems = useMemo(
         () => [
-            { key: 'home', label: <NavLink {...(xs && { onClick: () => setOpenMenu(false) })} path={`/`} title="Home" />, order: 1 },
-            { key: 'about-us', label: <NavLink {...(xs && { onClick: () => setOpenMenu(false) })} path={`/about-us`} title="About Us" />, order: 2 },
-            { key: 'services', label: <NavLink {...(xs && { onClick: () => setOpenMenu(false) })} path={`/services`} title="Services" />, order: 3 },
+            { key: 'home', path: '/', title: <Translate>Home</Translate>, order: 1 },
+            {
+                key: 'about-us',
+                path: '/about-us',
+                title: <Translate>About Us</Translate>,
+                order: 2,
+            },
+            {
+                key: 'services',
+                path: '/services',
+                title: <Translate>Services</Translate>,
+                order: 3,
+            },
             {
                 key: 'reservations',
-                label: <NavLink {...(xs && { onClick: () => setOpenMenu(false) })} path={`/reservations`} title="Reservations" />,
+                path: '/reservations',
+                title: <Translate>Reservations</Translate>,
                 order: 4,
             },
             {
                 key: 'contact-us',
-                label: <NavLink {...(xs && { onClick: () => setOpenMenu(false) })} path={`/contact-us`} title="Contact Us" />,
+                path: '/contact-us',
+                title: <Translate>Contact Us</Translate>,
                 order: 4,
             },
         ],
-        [xs]
+        []
     );
 
     return (
@@ -87,12 +100,22 @@ const Navbar = () => {
                         <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <CompanyLogo />
                         </Col>
-                        <Col flex={1}>
-                            <div className="menu-wrapper">
-                                {MenuItems.map((item, index) => (
-                                    <div key={index}>{item.label}</div>
-                                ))}
-                            </div>
+                        <Col flex={1} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: 16 }}>
+                            {MenuItems.map((item, index) => {
+                                const isActive = pathname === item.path;
+
+                                return (
+                                    <div key={index}>
+                                        <Link
+                                            href={item.path}
+                                            onClick={() => setOpenMenu(false)}
+                                            style={{ fontWeight: isActive ? 600 : 500, color: isActive ? colorText : colorTextSecondary }}
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </div>
+                                );
+                            })}
                         </Col>
                         <Col>
                             <Select
@@ -120,21 +143,23 @@ const Navbar = () => {
                                 <CompanyLogo />
                             </>
                         }
-                        closeIcon={
-                            <Button
-                                ghost
-                                type="primary"
-                                style={{ height: 32, width: 32 }}
-                                icon={<SVGIcon icon="close" style={{ fill: colorPrimary }} />}
-                            />
-                        }
                     >
                         <div className="menu-wrapper">
-                            {MenuItems.map((item, index) => (
-                                <div key={index} className="nav-item">
-                                    {item.label}
-                                </div>
-                            ))}
+                            {MenuItems.map((item, index) => {
+                                const isActive = pathname === item.path;
+
+                                return (
+                                    <div key={index} className="nav-item">
+                                        <Link
+                                            href={item.path}
+                                            onClick={() => setOpenMenu(false)}
+                                            style={{ fontWeight: isActive ? 600 : 500, color: isActive ? colorText : colorTextSecondary }}
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </div>
+                                );
+                            })}
 
                             <div className="nav-item">
                                 <Select
