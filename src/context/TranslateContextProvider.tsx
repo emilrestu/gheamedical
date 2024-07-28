@@ -10,7 +10,7 @@ const TranslateContextProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
     const setDefaultLangCode = () => {
         const ArrHostName = window?.location.hostname.split('.');
-        const lang_code = ArrHostName?.[0];
+        const lang_code = ArrHostName?.[0] === 'dev' ? 'ar' : ArrHostName?.[0];
 
         if (ArrHostName.length === 3 && process.env.NODE_ENV === 'production') {
             setLangCode(lang_code);
