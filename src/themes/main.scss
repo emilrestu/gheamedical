@@ -1051,6 +1051,14 @@ body {
                     }
                 }
             }
+
+            .services-banner-container {
+                .ant-carousel {
+                    .slick-list {
+                        margin-left: 0;
+                    }
+                }
+            }
         }
 
         .reservations-care-givers,
