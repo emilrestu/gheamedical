@@ -36,7 +36,7 @@ const Strength = () => {
                                     <SVGIcon icon="best-staff" />
                                 </div>
                                 <Typography.Text className="title">
-                                    <Translate>Best-trained and experienced staff</Translate>
+                                    <Translate>Best Trained and experienced staff</Translate>
                                 </Typography.Text>
                                 <Typography.Text className="description">
                                     <Translate>

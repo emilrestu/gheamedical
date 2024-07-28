@@ -410,7 +410,11 @@ body {
                         font-size: 30px;
                         font-weight: 600;
                         line-height: 42px;
-                        text-align: center;
+                    }
+
+                    .title,
+                    .description {
+                        text-align: center !important;
                     }
                 }
             }
@@ -776,7 +780,7 @@ body {
 
                     .title,
                     .description {
-                        text-align: center;
+                        text-align: center !important;
                     }
                 }
             }
@@ -881,6 +885,25 @@ body {
 
         .ant-layout-content .welcome-banner-wrapper .title {
             text-align: right;
+        }
+
+        .services-detail-container {
+            margin-inline: -120px;
+            padding-block: 56px;
+            background: #eefcfa;
+
+            .services-detail-item {
+                .left-item {
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    border-right: 0;
+                    border-left: 1px solid #dcdfe6;
+                }
+
+                .right-item {
+                    padding-right: 16px;
+                }
+            }
         }
     }
 
