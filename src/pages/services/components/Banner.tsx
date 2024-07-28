@@ -9,7 +9,7 @@ const Banner = () => {
 
     return (
         <Row className="services-banner-container">
-            <Col span={24}>
+            <Col span={24} xs={24}>
                 <Carousel arrows={false} dots={false} slidesToShow={1} infinite variableWidth draggable autoplay>
                     {BannerData.map((item, i) => (
                         <div key={i}>
