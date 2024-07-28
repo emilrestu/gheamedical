@@ -1,10 +1,8 @@
-import { Layout, Grid, Button, Row, Col, Space, Select, Drawer, theme } from 'antd';
+import { Layout, Grid, Button, Row, Col, Select, Drawer, theme } from 'antd';
 import NavLink from '../navlink';
 import { useMemo, useState } from 'react';
 import CompanyLogo from '../company-logo';
-import Translate from '../translate';
 import { useTranslateContext } from '@/context/TranslateContext';
-import Link from 'next/link';
 import { MenuOutlined } from '@ant-design/icons';
 import SVGIcon from '../svg-icon';
 
@@ -39,8 +37,13 @@ const Navbar = () => {
                 label: <NavLink {...(xs && { onClick: () => setOpenMenu(false) })} path={`/reservations`} title="Reservations" />,
                 order: 4,
             },
+            {
+                key: 'contact-us',
+                label: <NavLink {...(xs && { onClick: () => setOpenMenu(false) })} path={`/contact-us`} title="Contact Us" />,
+                order: 4,
+            },
         ],
-        []
+        [xs]
     );
 
     return (
@@ -68,22 +71,22 @@ const Navbar = () => {
                             </div>
                         </Col>
                         <Col>
-                            <Space>
-                                <Button ghost type="primary">
+                            {/* <Space>
+                                {<Button ghost type="primary">
                                     <Link href="contact-us">
                                         <Translate>Contact Us</Translate>
                                     </Link>
-                                </Button>
+                                </Button>}
 
-                                <Select
-                                    value={langCode.toString()}
-                                    options={ArrLang}
-                                    onSelect={(val) => {
-                                        setLangCode(val);
-                                    }}
-                                    popupMatchSelectWidth={false}
-                                />
-                            </Space>
+                            </Space> */}
+                            <Select
+                                value={langCode.toString()}
+                                options={ArrLang}
+                                onSelect={(val) => {
+                                    setLangCode(val);
+                                }}
+                                popupMatchSelectWidth={false}
+                            />
                         </Col>
                     </>
                 )}

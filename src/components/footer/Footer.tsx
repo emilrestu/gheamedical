@@ -20,6 +20,7 @@ const Footer = () => {
             { href: '/about-us', label: 'About' },
             { href: '/services', label: 'Services' },
             { href: '/reservations', label: 'Reservations' },
+            { href: '/contact-us', label: 'Contact Us' },
         ],
         []
     );
