@@ -378,7 +378,8 @@ body {
             }
         }
 
-        .about-us-main-header {
+        .about-us-main-header,
+        .contact-us-main-header {
             padding-top: 64px;
             padding-bottom: 40px;
 
@@ -411,7 +412,8 @@ body {
             }
         }
 
-        .about-us-vision-mission {
+        .about-us-vision-mission,
+        .contact-us-details {
             padding-block: 46px;
             padding-inline: 104px;
 
@@ -686,6 +688,88 @@ body {
         }
     }
 
+    .reservations-care-givers,
+    .contact-us-details {
+        padding-block-end: 80px;
+        padding-inline: 30px !important;
+
+        .ant-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+
+            .ant-card {
+                width: max-content;
+
+                .ant-card-body {
+                    padding: 16px;
+                    width: 352px;
+
+                    .caregiver-avatar {
+                        height: 384px;
+                        padding: 66px 17px 0px 17px;
+                        border-radius: 8px;
+                        background: #3bb4a3;
+                    }
+
+                    .caregiver-description {
+                        padding: 16px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    }
+
+                    .caregiver-button-group {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        gap: 8px;
+
+                        .ant-button {
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-us-details {
+        .ant-col {
+            .ant-card {
+                .ant-card-body {
+                    .icons-container {
+                        .icons {
+                            background-color: #128c7e;
+
+                            svg * {
+                                fill: white;
+                            }
+                        }
+                    }
+
+                    .title,
+                    .description {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .address-wrapper {
+            display: flex;
+            justify-content: center;
+
+            .ant-card {
+                width: 100%;
+                margin-right: 24px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+        }
+    }
+
     .icons-container {
         display: flex;
         justify-content: center;
@@ -774,6 +858,36 @@ body {
 
         .ant-layout-content .welcome-banner-wrapper .title {
             text-align: right;
+        }
+    }
+
+    .mobile {
+        .header-wrapper {
+            padding: 16px;
+        }
+
+        .ant-drawer-content-wrapper {
+            width: 100% !important;
+        }
+
+        .ant-drawer-close {
+            width: 32px;
+            height: 32px;
+        }
+
+        .ant-layout-content .banner-container .book-services-card {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: 192px;
+            width: 90vw;
+        }
+
+        .ant-layout-content .banner-container .ant-carousel .testi-title .ant-typography {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+            text-align: left;
         }
     }
 }
