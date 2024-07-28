@@ -12,6 +12,10 @@ const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
 const SelectMobileWrapper = styled.div`
+    .ant-select {
+        width: 100%;
+    }
+
     .ant-select-dropdown {
         position: relative;
         margin-top: 8px;
@@ -19,10 +23,6 @@ const SelectMobileWrapper = styled.div`
         inset: unset !important;
         z-index: unset !important;
         box-shadow: unset !important;
-
-        .ant-select {
-            width: 100%;
-        }
 
         .ant-select-item {
             margin: 4px;

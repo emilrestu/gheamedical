@@ -1091,11 +1091,19 @@ body {
 
                 .left-item {
                     border-right: 0;
+                    border-left: 0;
                 }
 
                 .left-item,
                 .right-item {
                     padding-block: 16px;
+                }
+            }
+
+            .services-detail-item:last-child {
+                .left-item,
+                .right-item {
+                    border-bottom: 1px solid #dcdfe6;
                 }
             }
         }
