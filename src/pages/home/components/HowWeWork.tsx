@@ -8,7 +8,7 @@ const HowWeWork: React.FC = () => {
     return (
         <>
             <Row className="how-we-work-header-wrapper">
-                <Col span={24}>
+                <Col span={24} xs={24}>
                     <div className="text-wrapper">
                         <Typography.Text className="title">
                             <Translate>How We Work</Translate>

@@ -89,7 +89,7 @@ const ServiceDetail = () => {
             <Col span={24}>
                 {ServiceData.map((item, i) => (
                     <Row className="services-detail-item" key={i}>
-                        <Col span={12} className="left-item">
+                        <Col span={12} xs={24} className="left-item">
                             <div className="icons-container">
                                 <div className="icons">
                                     <SVGIcon icon={item.icon as 'personal-services'} />
@@ -110,7 +110,7 @@ const ServiceDetail = () => {
                                 </Link>
                             </Button>
                         </Col>
-                        <Col span={12} className="right-item">
+                        <Col span={12} xs={24} className="right-item">
                             <Typography.Text className="title">
                                 <Translate>What will you get</Translate>
                             </Typography.Text>

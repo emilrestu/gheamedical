@@ -32,10 +32,10 @@ const Testimonial = () => {
 
     return (
         <Row className="testimonial-wrapper" style={{ backgroundColor: DARK_BACKGROUND }}>
-            <Col span={24} className="testi-title">
+            <Col span={24} xs={24} className="testi-title">
                 <Translate>What Our Customers Say About Us</Translate>
             </Col>
-            <Col span={24} className="testi-carousel-wrapper">
+            <Col span={24} xs={24} className="testi-carousel-wrapper">
                 {TestiData.map((testi, i) => (
                     <Carousel
                         key={`carousel-${i}`}

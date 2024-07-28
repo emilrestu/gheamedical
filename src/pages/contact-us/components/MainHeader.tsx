@@ -19,7 +19,7 @@ const MainHeader = () => {
                 </Col>
             </Row>
             <Row className="contact-us-details">
-                <Col span={24}>
+                <Col span={24} className="details-wrapper">
                     <Card>
                         <div className="icons-container">
                             <div className="icons">
@@ -75,7 +75,7 @@ const MainHeader = () => {
                             </div>
                         </div>
                         <Typography.Text className="title">
-                            <Translate>Our Location</Translate>
+                            <Translate>Address</Translate>
                         </Typography.Text>
                         <Typography.Text className="description">
                             <Translate>3703 Dammam Road Gharnata h, Riyadh 1324 2, Saudi Arabia</Translate>

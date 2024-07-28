@@ -19,7 +19,7 @@ const CareGivers = () => {
 
     return (
         <Row className="reservations-care-givers">
-            <Col span={24}>
+            <Col span={24} xs={24}>
                 {BannerData.map((item, key) => (
                     <Card key={key}>
                         <div className="caregiver-avatar">{/* <Image /> */}</div>
@@ -36,7 +36,7 @@ const CareGivers = () => {
                             </Button>
 
                             <Button type="primary">
-                                <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref>
+                                <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
                                     <Translate>Book Now</Translate>
                                 </Link>
                             </Button>

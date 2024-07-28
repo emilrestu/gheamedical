@@ -35,9 +35,9 @@ const WhyChoose: React.FC = () => {
 
     return (
         <Row className="home-content-wrapper why-choose-container" gutter={[16, 16]}>
-            <Col span={12}>
+            <Col span={12} xs={24}>
                 <Row gutter={[16, 16]} style={{ marginBlockEnd: 24 }}>
-                    <Col span={24}>
+                    <Col span={24} xs={24}>
                         <Typography.Text className="title why-choose-title">
                             <Translate>Why Choose GHEA Services</Translate>
                         </Typography.Text>
@@ -59,14 +59,14 @@ const WhyChoose: React.FC = () => {
                                 }}
                             >
                                 <Row gutter={[16, 16]}>
-                                    <Col span={24} className="title">
+                                    <Col span={24} xs={24} className="title">
                                         <div className="icon-container" {...(activeSlide === i && { style: { backgroundColor: SECONDARY_COLOR } })}>
                                             <SVGIcon icon={item.icon as 'badge' | 'wellness' | 'doctor'} />
                                         </div>
                                         <Typography.Text>{item.title}</Typography.Text>
                                     </Col>
 
-                                    <Col span={24}>
+                                    <Col span={24} xs={24}>
                                         <Typography.Paragraph>{item.description}</Typography.Paragraph>
                                     </Col>
                                 </Row>
@@ -76,7 +76,7 @@ const WhyChoose: React.FC = () => {
                 </Row>
             </Col>
 
-            <Col span={12} style={{ height: 687 }}>
+            <Col span={12} xs={24} style={{ height: 687 }}>
                 <Carousel
                     ref={sliderRef}
                     arrows={false}

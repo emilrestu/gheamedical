@@ -591,6 +591,17 @@ body {
         }
     }
 
+    .ant-layout-footer {
+        padding-inline: 120px;
+        padding-block: 24px;
+
+        .footer-right {
+            display: flex;
+            column-gap: 40px;
+            justify-content: flex-end;
+        }
+    }
+
     .services-banner-container {
         position: relative;
         padding-block: 40px;
@@ -736,6 +747,9 @@ body {
 
     .contact-us-details {
         .ant-col {
+            display: flex;
+            justify-content: center;
+
             .ant-card {
                 .ant-card-body {
                     .icons-container {
@@ -762,7 +776,6 @@ body {
 
             .ant-card {
                 width: 100%;
-                margin-right: 24px;
                 justify-content: center;
                 align-items: center;
                 display: flex;
@@ -875,19 +888,57 @@ body {
             height: 32px;
         }
 
-        .ant-layout-content .banner-container .book-services-card {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            top: 192px;
-            width: 90vw;
+        .ant-layout-content {
+            .banner-container {
+                .book-services-card {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    top: 192px;
+                    width: 90vw;
+                }
+
+                .ant-carousel .testi-title .ant-typography {
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 32px;
+                    text-align: left;
+                }
+            }
+
+            .about-us-vision-mission,
+            .contact-us-details {
+                padding-inline: 16px;
+            }
         }
 
-        .ant-layout-content .banner-container .ant-carousel .testi-title .ant-typography {
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 32px;
-            text-align: left;
+        .reservations-care-givers,
+        .contact-us-details {
+            padding-inline: 0px !important;
+
+            .ant-card {
+                width: 100%;
+
+                .ant-card-body {
+                    width: 100%;
+                }
+            }
+        }
+
+        /* .contact-us-details {
+            .address-wrapper {
+                .ant-card {
+                    margin-right: 0px;
+                }
+            }
+        } */
+
+        .ant-layout-footer {
+            padding-inline: 16px;
+
+            .footer-right {
+                justify-content: flex-start;
+            }
         }
     }
 }

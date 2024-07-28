@@ -17,7 +17,7 @@ const WelcomeBanner: React.FC = () => {
 
     return (
         <Row className="home-content-wrapper welcome-banner-wrapper" gutter={[16, 16]}>
-            <Col span={14} className="welcome-banner-image">
+            <Col span={14} xs={24} className="welcome-banner-image">
                 <Card style={{ background: colorPrimary, height: '100%', flex: 1, backgroundImage: `url(${WelcomeBanner01.src})` }}>
                     <div className="image-mask" />
                 </Card>
@@ -33,7 +33,7 @@ const WelcomeBanner: React.FC = () => {
                     <div className="image-mask" />
                 </Card>
             </Col>
-            <Col span={10}>
+            <Col span={10} xs={24}>
                 <Typography.Paragraph className="title welcome-title">
                     {textwelcometogheaserviceswherewedeliver}{' '}
                     <Typography.Text italic underline style={{ color: colorPrimary }}>
