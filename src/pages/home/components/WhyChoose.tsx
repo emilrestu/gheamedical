@@ -35,7 +35,7 @@ const WhyChoose: React.FC = () => {
     };
 
     return (
-        <Row className="home-content-wrapper why-choose-container" gutter={[16, 16]}>
+        <Row className="home-content-wrapper why-choose-container" gutter={[16, 16]} style={{ paddingBlock: 16 }}>
             <Col md={12} xs={24}>
                 <Row gutter={[16, 16]} style={{ marginBlockEnd: 24 }}>
                     <Col md={24} xs={24}>

@@ -303,6 +303,13 @@ body {
             .bg-wrapper {
                 position: absolute;
                 margin-top: 20px;
+                height: 256px;
+                left: 0;
+                right: 0;
+
+                img {
+                    width: 100%;
+                }
             }
 
             .icons-group-container {
@@ -1008,7 +1015,7 @@ body {
             }
 
             .how-we-work-icons-wrapper {
-                height: unset;
+                // height: unset;
 
                 .bg-wrapper {
                     margin-top: 0;

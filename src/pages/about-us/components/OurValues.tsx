@@ -2,8 +2,9 @@ import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
 import { Col, Grid, Row, Typography } from 'antd';
 import React from 'react';
-import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.svg';
-import OurValuesIconsBGXS from '@/assets/components/OurValuesIconsBGXS.svg';
+import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.png';
+import OurValuesIconsBGXS from '@/assets/components/OurValuesIconsBGXS.png';
+import Image from 'next/image';
 
 const OurValues = () => {
     const { xs } = Grid.useBreakpoint();
@@ -27,11 +28,38 @@ const OurValues = () => {
                 </Col>
             </Row>
 
-            <Row className="how-we-work-icons-wrapper about-us-our-values-icons">
-                <div className="bg-wrapper">{xs ? <OurValuesIconsBGXS /> : <HowWeWorkIconsBG />}</div>
+            <Row
+                className="how-we-work-icons-wrapper about-us-our-values-icons"
+                {...(xs && {
+                    style: {
+                        height: 628,
+                    },
+                })}
+            >
+                {/* <div className="bg-wrapper">{xs ? <OurValuesIconsBGXS /> : <HowWeWorkIconsBG />}</div> */}
+                <div
+                    className="bg-wrapper"
+                    {...(xs && {
+                        style: {
+                            height: 628,
+                            display: 'flex',
+                            justifyContent: 'center',
+                        },
+                    })}
+                >
+                    <Image
+                        {...(xs && {
+                            style: {
+                                width: 'unset',
+                            },
+                        })}
+                        src={xs ? OurValuesIconsBGXS : HowWeWorkIconsBG}
+                        alt="GHEA Services - How We Work"
+                    />
+                </div>
 
                 <div className="icons-group-container">
-                    <div className="icons-container" style={{ marginTop: xs ? -20 : 60 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 40 : 60 }}>
                         <div className="icons">
                             <SVGIcon icon="transparency" />
                         </div>

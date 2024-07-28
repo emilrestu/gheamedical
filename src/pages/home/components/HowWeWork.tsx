@@ -2,15 +2,16 @@ import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
 import { Col, Grid, Row, Typography } from 'antd';
 import React from 'react';
-import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.svg';
-import HowWeWorkIconsBGXS from '@/assets/components/HowWeWorkIconsBGXS.svg';
+import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.png';
+import HowWeWorkIconsBGXS from '@/assets/components/HowWeWorkIconsBGXS.png';
+import Image from 'next/image';
 
 const HowWeWork: React.FC = () => {
     const { xs } = Grid.useBreakpoint();
 
     return (
         <>
-            <Row className="how-we-work-header-wrapper">
+            <Row className="how-we-work-header-wrapper" {...(xs && { style: { marginBottom: -140 } })}>
                 <Col md={24} xs={24}>
                     <div className="text-wrapper">
                         <Typography.Text className="title">
@@ -26,11 +27,38 @@ const HowWeWork: React.FC = () => {
                 </Col>
             </Row>
 
-            <Row className="how-we-work-icons-wrapper">
-                <div className="bg-wrapper">{xs ? <HowWeWorkIconsBGXS /> : <HowWeWorkIconsBG />}</div>
+            <Row
+                className="how-we-work-icons-wrapper"
+                {...(xs && {
+                    style: {
+                        height: 628,
+                    },
+                })}
+            >
+                {/* <div className="bg-wrapper">{xs ? <HowWeWorkIconsBGXS /> : <HowWeWorkIconsBG />}</div> */}
+                <div
+                    className="bg-wrapper"
+                    {...(xs && {
+                        style: {
+                            height: 628,
+                            display: 'flex',
+                            justifyContent: 'center',
+                        },
+                    })}
+                >
+                    <Image
+                        {...(xs && {
+                            style: {
+                                width: 'unset',
+                            },
+                        })}
+                        src={xs ? HowWeWorkIconsBGXS : HowWeWorkIconsBG}
+                        alt="GHEA Services - How We Work"
+                    />
+                </div>
 
                 <div className="icons-group-container">
-                    <div className="icons-container" style={{ marginTop: xs ? 0 : 60 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 80 : 60 }}>
                         <div className="icons">
                             <SVGIcon icon="chat" />
                         </div>
@@ -39,7 +67,7 @@ const HowWeWork: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: xs ? 0 : -60, ...(xs && { marginLeft: 120 }) }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 20 : -60, ...(xs && { marginLeft: 180 }) }}>
                         <div className="icons">
                             <SVGIcon icon="cs" />
                         </div>
