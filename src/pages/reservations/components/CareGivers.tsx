@@ -31,15 +31,15 @@ const CareGivers = () => {
                         </div>
 
                         <div className="caregiver-button-group">
-                            <Button type="primary" ghost>
+                            {/* <Button type="primary" ghost>
                                 <Translate>View CV</Translate>
-                            </Button>
+                            </Button> */}
 
-                            <Button type="primary">
-                                <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
+                            <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
+                                <Button type="primary">
                                     <Translate>Book Now</Translate>
-                                </Link>
-                            </Button>
+                                </Button>
+                            </Link>
                         </div>
                     </Card>
                 ))}

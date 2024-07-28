@@ -104,11 +104,11 @@ const ServiceDetail = () => {
                                 <Translate>{item.description}</Translate>
                             </Typography.Paragraph>
 
-                            <Button type="primary">
-                                <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref>
+                            <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
+                                <Button type="primary">
                                     <Translate>Book Now</Translate>
-                                </Link>
-                            </Button>
+                                </Button>
+                            </Link>
                         </Col>
                         <Col md={12} xs={24} className="right-item">
                             <Typography.Text className="title">
