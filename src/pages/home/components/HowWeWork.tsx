@@ -5,9 +5,11 @@ import React from 'react';
 import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.png';
 import HowWeWorkIconsBGXS from '@/assets/components/HowWeWorkIconsBGXS.png';
 import Image from 'next/image';
+import { useThemesContext } from '@/context/ThemesContext';
 
 const HowWeWork: React.FC = () => {
     const { xs } = Grid.useBreakpoint();
+    const { isArabic } = useThemesContext();
 
     return (
         <>
@@ -58,7 +60,7 @@ const HowWeWork: React.FC = () => {
                 </div>
 
                 <div className="icons-group-container">
-                    <div className="icons-container" style={{ marginTop: xs ? 80 : 60 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 80 : 60, ...(isArabic && xs && { marginRight: 62 }) }}>
                         <div className="icons">
                             <SVGIcon icon="chat" />
                         </div>
@@ -76,7 +78,7 @@ const HowWeWork: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: xs ? 0 : 50 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 0 : 50, ...(isArabic && xs && { marginRight: 62 }) }}>
                         <div className="icons">
                             <SVGIcon icon="team" />
                         </div>

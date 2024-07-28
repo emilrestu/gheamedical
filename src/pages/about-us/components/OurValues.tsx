@@ -5,9 +5,11 @@ import React from 'react';
 import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.png';
 import OurValuesIconsBGXS from '@/assets/components/OurValuesIconsBGXS.png';
 import Image from 'next/image';
+import { useThemesContext } from '@/context/ThemesContext';
 
 const OurValues = () => {
     const { xs } = Grid.useBreakpoint();
+    const { isArabic } = useThemesContext();
 
     return (
         <>
@@ -59,7 +61,7 @@ const OurValues = () => {
                 </div>
 
                 <div className="icons-group-container">
-                    <div className="icons-container" style={{ marginTop: xs ? 40 : 60 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 40 : 60, ...(isArabic && xs && { marginRight: 120 }) }}>
                         <div className="icons">
                             <SVGIcon icon="transparency" />
                         </div>
@@ -77,7 +79,7 @@ const OurValues = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: xs ? 60 : -30 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 60 : -30, ...(isArabic && xs && { marginRight: 120 }) }}>
                         <div className="icons">
                             <SVGIcon icon="trust" />
                         </div>
