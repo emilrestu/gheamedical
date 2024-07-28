@@ -102,7 +102,7 @@ const Navbar = () => {
                         </Col>
                         <Col flex={1} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: 16 }}>
                             {MenuItems.map((item, index) => {
-                                const isActive = pathname === item.path;
+                                const isActive = pathname === item.path || `${pathname}/` === item.path;
 
                                 return (
                                     <div key={index}>
@@ -146,7 +146,7 @@ const Navbar = () => {
                     >
                         <div className="menu-wrapper">
                             {MenuItems.map((item, index) => {
-                                const isActive = pathname === item.path;
+                                const isActive = pathname === item.path || `${pathname}/` === item.path;
 
                                 return (
                                     <div key={index} className="nav-item">
