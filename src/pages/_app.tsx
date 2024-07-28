@@ -16,6 +16,8 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isArabic } = useThemesContext();
     const { xs } = Grid.useBreakpoint();
 
+    if (xs === undefined) return <></>;
+
     return (
         <>
             <Layout id="app-layout" className={`${isArabic ? 'arabic' : 'english'} ${xs ? 'mobile' : ''}`.trim()}>
