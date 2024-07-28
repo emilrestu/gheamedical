@@ -72,18 +72,18 @@ const BookServiceCard = () => {
                     <Form.Item>
                         <Row gutter={[8, 8]}>
                             <Col flex={1}>
-                                <Button type="primary" block>
-                                    <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref>
+                                <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
+                                    <Button type="primary" block>
                                         <Translate>Book Now</Translate>
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             </Col>
                             <Col flex={1}>
-                                <Button ghost type="primary" block>
-                                    <Link href={`tel:${PHONE_NUMBER}`} passHref>
+                                <Link href={`tel:${PHONE_NUMBER}`} passHref target="_blank">
+                                    <Button ghost type="primary" block>
                                         <Translate>Call Now</Translate>
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             </Col>
                         </Row>
                     </Form.Item>

@@ -77,6 +77,7 @@ const Services: React.FC = () => {
                                                 style={props.isActive ? { fill: 'white' } : { fill: colorPrimary }}
                                             />
                                         }
+                                        aria-label="expand"
                                     />
                                 </div>
                             )}
