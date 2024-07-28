@@ -78,7 +78,11 @@ const MainHeader = () => {
                             <Translate>Address</Translate>
                         </Typography.Text>
                         <Typography.Text className="description">
-                            <Translate>3703 Dammam Road Gharnata h, Riyadh 1324 2, Saudi Arabia</Translate>
+                            <Link href="https://maps.app.goo.gl/YYDMibRzYyfDC6JH8" passHref target="_blank">
+                                <Translate>
+                                    بيسكس مساحات عمل مشتركة Basix Coworking Space No 2, 7755 Ahmad Al Attas, Al Zahra, Jeddah 23425, Saudi Arabia
+                                </Translate>
+                            </Link>
                         </Typography.Text>
                     </Card>
                 </Col>

@@ -1,13 +1,16 @@
 import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
-import { Col, Row, Typography } from 'antd';
+import { Col, Grid, Row, Typography } from 'antd';
 import React from 'react';
 import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.svg';
+import OurValuesIconsBGXS from '@/assets/components/OurValuesIconsBGXS.svg';
 
 const OurValues = () => {
+    const { xs } = Grid.useBreakpoint();
+
     return (
         <>
-            <Row className="how-we-work-header-wrapper">
+            <Row className="how-we-work-header-wrapper about-us-our-values-header">
                 <Col md={24} xs={24}>
                     <div className="text-wrapper">
                         <Typography.Text className="title">
@@ -24,13 +27,11 @@ const OurValues = () => {
                 </Col>
             </Row>
 
-            <Row className="how-we-work-icons-wrapper">
-                <div className="bg-wrapper">
-                    <HowWeWorkIconsBG />
-                </div>
+            <Row className="how-we-work-icons-wrapper about-us-our-values-icons">
+                <div className="bg-wrapper">{xs ? <OurValuesIconsBGXS /> : <HowWeWorkIconsBG />}</div>
 
                 <div className="icons-group-container">
-                    <div className="icons-container" style={{ marginTop: 60 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? -20 : 60 }}>
                         <div className="icons">
                             <SVGIcon icon="transparency" />
                         </div>
@@ -39,7 +40,7 @@ const OurValues = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: -30 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 40 : -30, ...(xs && { marginLeft: 120 }) }}>
                         <div className="icons">
                             <SVGIcon icon="doctor" />
                         </div>
@@ -48,7 +49,7 @@ const OurValues = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: -30 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 60 : -30 }}>
                         <div className="icons">
                             <SVGIcon icon="trust" />
                         </div>
@@ -57,7 +58,7 @@ const OurValues = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: 30 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 60 : 30, ...(xs && { marginLeft: 120 }) }}>
                         <div className="icons">
                             <SVGIcon icon="passion" />
                         </div>

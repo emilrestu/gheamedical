@@ -1,10 +1,13 @@
 import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
-import { Col, Row, Typography } from 'antd';
+import { Col, Grid, Row, Typography } from 'antd';
 import React from 'react';
 import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.svg';
+import HowWeWorkIconsBGXS from '@/assets/components/HowWeWorkIconsBGXS.svg';
 
 const HowWeWork: React.FC = () => {
+    const { xs } = Grid.useBreakpoint();
+
     return (
         <>
             <Row className="how-we-work-header-wrapper">
@@ -24,12 +27,10 @@ const HowWeWork: React.FC = () => {
             </Row>
 
             <Row className="how-we-work-icons-wrapper">
-                <div className="bg-wrapper">
-                    <HowWeWorkIconsBG />
-                </div>
+                <div className="bg-wrapper">{xs ? <HowWeWorkIconsBGXS /> : <HowWeWorkIconsBG />}</div>
 
                 <div className="icons-group-container">
-                    <div className="icons-container" style={{ marginTop: 60 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 0 : 60 }}>
                         <div className="icons">
                             <SVGIcon icon="chat" />
                         </div>
@@ -38,7 +39,7 @@ const HowWeWork: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: -60 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 0 : -60, ...(xs && { marginLeft: 120 }) }}>
                         <div className="icons">
                             <SVGIcon icon="cs" />
                         </div>
@@ -47,7 +48,7 @@ const HowWeWork: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="icons-container" style={{ marginTop: 50 }}>
+                    <div className="icons-container" style={{ marginTop: xs ? 0 : 50 }}>
                         <div className="icons">
                             <SVGIcon icon="team" />
                         </div>

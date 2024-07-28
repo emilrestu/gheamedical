@@ -67,16 +67,18 @@ const Services: React.FC = () => {
                                 children: <div className="description" dangerouslySetInnerHTML={{ __html: item.children }} />,
                             }))}
                             expandIcon={(props) => (
-                                <Button
-                                    {...(!props.isActive && { ghost: true })}
-                                    type="primary"
-                                    icon={
-                                        <SVGIcon
-                                            icon={props.isActive ? 'close' : 'plus'}
-                                            style={props.isActive ? { fill: 'white' } : { fill: colorPrimary }}
-                                        />
-                                    }
-                                />
+                                <div className="collapse-expand">
+                                    <Button
+                                        {...(!props.isActive && { ghost: true })}
+                                        type="primary"
+                                        icon={
+                                            <SVGIcon
+                                                icon={props.isActive ? 'close' : 'plus'}
+                                                style={props.isActive ? { fill: 'white' } : { fill: colorPrimary }}
+                                            />
+                                        }
+                                    />
+                                </div>
                             )}
                             expandIconPosition="end"
                             defaultActiveKey={activeKey}

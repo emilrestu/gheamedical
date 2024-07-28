@@ -29,7 +29,7 @@ const Banner = () => {
     return (
         <Row className="banner-container">
             <Col md={24} xs={24}>
-                <Carousel arrows={false} dots={false} draggable autoplay>
+                <Carousel arrows={false} dots={false} draggable autoplay autoplaySpeed={10000}>
                     {BannerData.map((item, index) => (
                         <div key={index}>
                             <div className="banner-card-wrapper">

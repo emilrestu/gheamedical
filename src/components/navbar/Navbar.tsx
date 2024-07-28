@@ -5,14 +5,38 @@ import CompanyLogo from '../company-logo';
 import { useTranslateContext } from '@/context/TranslateContext';
 import { MenuOutlined } from '@ant-design/icons';
 import SVGIcon from '../svg-icon';
+import Translate from '../translate';
+import styled from 'styled-components';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
+const SelectMobileWrapper = styled.div`
+    .ant-select-dropdown {
+        position: relative;
+        margin-top: 8px;
+        top: unset !important;
+        inset: unset !important;
+        z-index: unset !important;
+        box-shadow: unset !important;
+
+        .ant-select {
+            width: 100%;
+        }
+
+        .ant-select-item {
+            margin: 4px;
+            padding: 12px 16px;
+        }
+    }
+`;
+
 const Navbar = () => {
     const { xs } = useBreakpoint();
     const { langCode, setLangCode } = useTranslateContext();
-    const [openMenu, setOpenMenu] = useState(false);
+    const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const [selectMobileOpen, setSelectMobileOpen] = useState<boolean>(false);
+
     const {
         token: { colorPrimary },
     } = theme.useToken();
@@ -55,7 +79,7 @@ const Navbar = () => {
                             <CompanyLogo />
                         </Col>
                         <Col xs={12} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-                            <Button icon={<MenuOutlined />} type="primary" ghost onClick={() => setOpenMenu((open) => !open)} />
+                            <Button icon={<MenuOutlined />} type="primary" ghost onClick={() => setOpenMenu(true)} />
                         </Col>
                     </>
                 ) : (
@@ -71,14 +95,6 @@ const Navbar = () => {
                             </div>
                         </Col>
                         <Col>
-                            {/* <Space>
-                                {<Button ghost type="primary">
-                                    <Link href="contact-us">
-                                        <Translate>Contact Us</Translate>
-                                    </Link>
-                                </Button>}
-
-                            </Space> */}
                             <Select
                                 value={langCode.toString()}
                                 options={ArrLang}
@@ -92,32 +108,92 @@ const Navbar = () => {
                 )}
             </Row>
             {xs && (
-                <Drawer
-                    open={openMenu}
-                    onClose={() => setOpenMenu(false)}
-                    placement="left"
-                    className="drawer-navbar-menu"
-                    getContainer={() => document?.getElementById('app-layout') || document.body}
-                    title={
-                        <>
-                            <CompanyLogo />
-                        </>
-                    }
-                    closeIcon={
-                        <Button
-                            ghost
-                            type="primary"
-                            style={{ height: 32, width: 32 }}
-                            icon={<SVGIcon icon="close" style={{ fill: colorPrimary }} />}
-                        />
-                    }
-                >
-                    <div className="menu-wrapper">
-                        {MenuItems.map((item, index) => (
-                            <div key={index}>{item.label}</div>
-                        ))}
-                    </div>
-                </Drawer>
+                <>
+                    <Drawer
+                        open={openMenu}
+                        onClose={() => setOpenMenu(false)}
+                        placement="left"
+                        className="drawer-navbar-menu"
+                        getContainer={() => document?.getElementById('app-layout') || document.body}
+                        title={
+                            <>
+                                <CompanyLogo />
+                            </>
+                        }
+                        closeIcon={
+                            <Button
+                                ghost
+                                type="primary"
+                                style={{ height: 32, width: 32 }}
+                                icon={<SVGIcon icon="close" style={{ fill: colorPrimary }} />}
+                            />
+                        }
+                    >
+                        <div className="menu-wrapper">
+                            {MenuItems.map((item, index) => (
+                                <div key={index} className="nav-item">
+                                    {item.label}
+                                </div>
+                            ))}
+
+                            <div className="nav-item">
+                                <Select
+                                    value={langCode.toString()}
+                                    options={ArrLang}
+                                    onSelect={(val) => {
+                                        setLangCode(val);
+                                        setOpenMenu(false);
+                                    }}
+                                    {...(xs && {
+                                        onClick: () => {
+                                            if (xs) setSelectMobileOpen(true);
+                                        },
+                                        open: false,
+                                        showSearch: false,
+                                    })}
+                                    popupMatchSelectWidth={false}
+                                />
+                            </div>
+                        </div>
+                    </Drawer>
+                    <Drawer
+                        title={<Translate>Select Language</Translate>}
+                        height={402}
+                        open={selectMobileOpen}
+                        onClose={() => setSelectMobileOpen(false)}
+                        closeIcon={null}
+                        maskClosable
+                        placement="bottom"
+                        styles={{
+                            header: {
+                                textAlign: 'center',
+                            },
+                            content: {
+                                borderTopRightRadius: 8,
+                                borderTopLeftRadius: 8,
+                            },
+                            footer: {
+                                display: 'flex',
+                                justifyContent: 'center',
+                            },
+                        }}
+                    >
+                        <SelectMobileWrapper id="select-mobile-wrapper">
+                            <Select
+                                placeholder={<Translate>Select Language</Translate>}
+                                onSelect={(val) => {
+                                    setLangCode(val);
+                                    setSelectMobileOpen(false);
+                                    setOpenMenu(false);
+                                }}
+                                getPopupContainer={() => document.getElementById('select-mobile-wrapper') || document.body}
+                                open
+                                size="large"
+                                options={ArrLang}
+                            />
+                        </SelectMobileWrapper>
+                    </Drawer>
+                </>
             )}
         </Header>
     );

@@ -1,7 +1,7 @@
 import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
 import { SECONDARY_COLOR } from '@/data/constants';
-import { Card, Carousel, Col, Row, theme, Typography } from 'antd';
+import { Card, Carousel, Col, Grid, Row, theme, Typography } from 'antd';
 import { CarouselRef } from 'antd/es/carousel';
 import React, { useMemo, useRef, useState } from 'react';
 import WhyChooseImage01 from '../assets/why-choose-01.jpeg';
@@ -17,6 +17,7 @@ const WhyChoose: React.FC = () => {
         token: { colorPrimary },
     } = theme.useToken();
     const { langCode } = useTranslateContext();
+    const { xs } = Grid.useBreakpoint();
 
     const [activeSlide, setActiveSlide] = useState(0);
     const sliderRef = useRef<CarouselRef>(null);
@@ -76,7 +77,7 @@ const WhyChoose: React.FC = () => {
                 </Row>
             </Col>
 
-            <Col md={12} xs={24} style={{ height: 687 }}>
+            <Col md={12} xs={24} style={{ height: xs ? 343 : 687 }}>
                 <Carousel
                     ref={sliderRef}
                     arrows={false}
@@ -90,7 +91,7 @@ const WhyChoose: React.FC = () => {
                 >
                     {WhyChooseData.map((item, i) => (
                         <div key={i}>
-                            <Card style={{ flex: 1, height: 687 }}>
+                            <Card style={{ flex: 1, height: xs ? 343 : 687 }}>
                                 <div className="why-choose-image" style={{ backgroundImage: `url(${WhyChooseImage[item.image].src})` }} />
                                 <div className="why-choose-background-mask" />
                             </Card>

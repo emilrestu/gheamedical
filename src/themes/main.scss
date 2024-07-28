@@ -223,7 +223,19 @@ body {
                 }
                 .ant-collapse-item {
                     padding: 8px;
+                    border-bottom: 1px solid #dcdfe6;
                 }
+
+                .ant-collapse-header {
+                    display: flex;
+                    align-items: center;
+                    height: 42px;
+
+                    .ant-collapse-expand-icon {
+                        height: 44px;
+                    }
+                }
+
                 .ant-collapse-header,
                 .ant-collapse-content-box {
                     padding: 0px;
@@ -775,7 +787,7 @@ body {
             justify-content: center;
 
             .ant-card {
-                width: 100%;
+                width: 50%;
                 justify-content: center;
                 align-items: center;
                 display: flex;
@@ -805,8 +817,6 @@ body {
 
             svg,
             svg * {
-                // width: 24px;
-                // height: 24px;
                 fill: #2a8074;
             }
         }
@@ -874,6 +884,25 @@ body {
         }
     }
 
+    .drawer-navbar-menu {
+        .menu-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 21px;
+
+            .nav-item {
+                width: 100%;
+                height: 32px;
+                padding: 5px 8px 5px 8px;
+
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 22px;
+                text-align: center;
+            }
+        }
+    }
+
     .mobile {
         .header-wrapper {
             padding: 16px;
@@ -890,25 +919,114 @@ body {
 
         .ant-layout-content {
             .banner-container {
-                .book-services-card {
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    top: 192px;
-                    width: 90vw;
+                height: 658px;
+                margin-inline: -32px;
+
+                .banner-card-wrapper {
+                    .banner-card {
+                        border-radius: 0;
+                        .banner-card-mask {
+                            border-radius: 0;
+                        }
+                    }
                 }
 
-                .ant-carousel .testi-title .ant-typography {
-                    font-size: 24px;
-                    font-weight: 600;
-                    line-height: 32px;
-                    text-align: left;
+                .book-services-card {
+                    position: absolute;
+                    left: 32px;
+                    right: 32px;
+                    bottom: 0;
+                    top: 192px;
+                    width: unset;
+                }
+
+                .ant-carousel {
+                    .testi-title {
+                        top: 40px;
+                        left: 40px;
+                        right: 40px;
+                        width: 85%;
+
+                        .ant-typography {
+                            font-size: 24px;
+                            font-weight: 600;
+                            line-height: 32px;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+
+            .welcome-banner-wrapper {
+                height: unset;
+                padding-block-end: 0;
+            }
+
+            .why-choose-container {
+                padding-block: 0;
+                flex-direction: column-reverse;
+
+                .ant-carousel {
+                    .ant-card-body {
+                        .why-choose-image {
+                            height: 343px;
+                        }
+                    }
                 }
             }
 
             .about-us-vision-mission,
             .contact-us-details {
                 padding-inline: 16px;
+            }
+
+            .service-container {
+                padding-block: 0;
+            }
+
+            .how-we-work-icons-wrapper {
+                height: unset;
+
+                .bg-wrapper {
+                    margin-top: 0;
+                    left: 0;
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .icons-group-container {
+                    display: flex;
+                    flex-direction: column;
+
+                    .icons-container {
+                        max-width: 300px;
+
+                        .description {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .testimonial-wrapper {
+                margin-inline: -16px;
+
+                .testi-carousel-wrapper {
+                    .ant-carousel {
+                        height: 224px;
+                    }
+                }
+
+                .testi-title {
+                    padding-inline: 100px;
+
+                    div {
+                        font-size: 20px;
+                    }
+                }
             }
         }
 
@@ -925,13 +1043,45 @@ body {
             }
         }
 
-        /* .contact-us-details {
-            .address-wrapper {
-                .ant-card {
-                    margin-right: 0px;
+        .about-us-highlight,
+        .about-us-our-values-header,
+        .about-us-our-values {
+            padding-block: 0;
+        }
+
+        .about-us-strength-wrapper {
+            margin-inline: -16px;
+            padding-block: 32px;
+
+            .about-us-strength {
+                padding-inline: 16px;
+            }
+        }
+
+        .services-banner-container {
+            padding-block: 16px;
+        }
+
+        .services-detail-container {
+            .services-detail-item {
+                height: unset;
+
+                .left-item {
+                    border-right: 0;
+                }
+
+                .left-item,
+                .right-item {
+                    padding-block: 16px;
                 }
             }
-        } */
+        }
+
+        .contact-us-main-header,
+        .contact-us-details,
+        .about-us-main-header {
+            padding-block: 16px;
+        }
 
         .ant-layout-footer {
             padding-inline: 16px;
@@ -939,6 +1089,23 @@ body {
             .footer-right {
                 justify-content: flex-start;
             }
+        }
+
+        .title,
+        .title i,
+        .title u {
+            line-height: 32px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .description {
+            font-size: 14px;
+            text-align: center;
+            line-height: 24px;
+            font-weight: 400;
+            color: #505154;
         }
     }
 }
