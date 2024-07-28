@@ -28,7 +28,7 @@ const Banner = () => {
 
     return (
         <Row className="banner-container">
-            <Col span={24} xs={24}>
+            <Col md={24} xs={24}>
                 <Carousel arrows={false} dots={false} draggable autoplay>
                     {BannerData.map((item, index) => (
                         <div key={index}>

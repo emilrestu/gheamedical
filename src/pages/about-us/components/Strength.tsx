@@ -8,9 +8,9 @@ import StrengthImage from '../assets/strength.jpeg';
 const Strength = () => {
     return (
         <Row className="about-us-strength-wrapper" style={{ backgroundColor: DARK_BACKGROUND }}>
-            <Col span={24} xs={24}>
+            <Col md={24} xs={24}>
                 <Row gutter={[24, 24]} className="about-us-strength">
-                    <Col span={12} xs={24}>
+                    <Col md={12} xs={24}>
                         <Card className="strengh-card">
                             <Card className="strength-image" style={{ backgroundImage: `url(${StrengthImage.src})` }}>
                                 <div className="strength-image-mask" />
@@ -29,7 +29,7 @@ const Strength = () => {
                             </Typography.Text>
                         </Card>
                     </Col>
-                    <Col span={12} xs={24}>
+                    <Col md={12} xs={24}>
                         <Card className="strengh-card-wrapper">
                             <Card className="strengh-card">
                                 <div className="icon-container" style={{ backgroundColor: SECONDARY_COLOR }}>

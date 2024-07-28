@@ -27,7 +27,7 @@ const Services: React.FC = () => {
 
     return (
         <Row className="service-container" gutter={[48, 48]}>
-            <Col span={12} xs={24} className="service-image">
+            <Col md={12} xs={24} className="service-image">
                 <Card style={{ minHeight: 240, height: 240, flex: 1, backgroundImage: `url(${Services01.src})` }}>
                     <div className="image-mask" />
                 </Card>
@@ -43,9 +43,9 @@ const Services: React.FC = () => {
                     <div className="image-mask" />
                 </Card>
             </Col>
-            <Col span={12} xs={24} className="service-description">
+            <Col md={12} xs={24} className="service-description">
                 <Row>
-                    <Col span={24} xs={24} className="service-description-header">
+                    <Col md={24} xs={24} className="service-description-header">
                         <Typography.Text className="title">
                             <Translate>Our Best Services for Your Health</Translate>
                         </Typography.Text>
@@ -57,7 +57,7 @@ const Services: React.FC = () => {
                         </Typography.Paragraph>
                     </Col>
 
-                    <Col span={24} xs={24} className={`service-accordion ${isArabic ? 'arabic' : ''}`.trim()}>
+                    <Col md={24} xs={24} className={`service-accordion ${isArabic ? 'arabic' : ''}`.trim()}>
                         <Collapse
                             accordion
                             ghost

@@ -5,7 +5,7 @@ import React from 'react';
 const VisionMission = () => {
     return (
         <Row className="about-us-vision-mission" gutter={[24, 24]}>
-            <Col span={12} xs={24}>
+            <Col md={12} xs={24}>
                 <Card>
                     <div className="button-title">
                         <Translate>Our Vision</Translate>
@@ -21,7 +21,7 @@ const VisionMission = () => {
                     </Typography.Text>
                 </Card>
             </Col>
-            <Col span={12} xs={24}>
+            <Col md={12} xs={24}>
                 <Card>
                     <div className="button-title">
                         <Translate>Our Mission</Translate>

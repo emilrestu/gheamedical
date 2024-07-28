@@ -5,7 +5,7 @@ import Translate from '@/components/translate';
 const MainHeader = () => {
     return (
         <Row className="about-us-main-header">
-            <Col span={24} xs={24}>
+            <Col md={24} xs={24}>
                 <div className="text-wrapper">
                     <Typography.Text className="title">
                         <Translate>Meet GHEA Services We Provide You With the Best Care For You and Your Family.</Translate>

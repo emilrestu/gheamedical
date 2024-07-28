@@ -5,7 +5,7 @@ import HightlightImage from '../assets/highlight.jpeg';
 const Highlight = () => {
     return (
         <Row className="about-us-highlight">
-            <Col span={24} xs={24}>
+            <Col md={24} xs={24}>
                 <div className="banner-card" style={{ backgroundImage: `url(${HightlightImage.src})` }}>
                     <div className="banner-card-mask" />
                 </div>

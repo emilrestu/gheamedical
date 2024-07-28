@@ -37,7 +37,7 @@ const Footer = () => {
     return (
         <Footer_ style={{ background: DARK_BACKGROUND }}>
             <Row gutter={[8, 8]} style={{ padding: 16 }}>
-                <Col span={12} xs={24}>
+                <Col md={12} xs={24}>
                     <div style={{ width: 249 }}>
                         <Typography.Paragraph style={{ color: 'white', fontSize: 24, fontWeight: 600, marginBottom: 8 }}>
                             <Translate>We care for you and your family</Translate>
@@ -47,7 +47,7 @@ const Footer = () => {
                         </Typography.Paragraph>
                     </div>
                 </Col>
-                <Col className="footer-right" span={12} xs={24}>
+                <Col className="footer-right" md={12} xs={24}>
                     <div style={{ display: 'flex', flexDirection: 'column', rowGap: 8 }}>
                         <Typography.Text style={{ color: 'white', fontSize: 14, fontWeight: 500 }}>
                             <Translate>Our Pages</Translate>
@@ -75,10 +75,10 @@ const Footer = () => {
                 </Col>
             </Row>
             <Row gutter={[8, 8]} style={{ padding: 16, borderTop: `1px solid ${colorPrimary}` }}>
-                <Col span={24} xs={24} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Col md={24} xs={24} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Image src={LogoFooter} height={32} alt="Ghea Services" />
                 </Col>
-                <Col span={24} xs={24} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Col md={24} xs={24} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Typography.Text style={{ color: 'white', fontSize: 10 }}>
                         <Translate>Copyright &copy; GHEA Services 2024</Translate>
                     </Typography.Text>

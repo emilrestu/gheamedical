@@ -10,7 +10,7 @@ const MainHeader = () => {
     return (
         <>
             <Row className="contact-us-main-header">
-                <Col span={24}>
+                <Col md={24}>
                     <div className="text-wrapper">
                         <Typography.Text className="title">
                             <Translate>Get in touch</Translate>
@@ -19,7 +19,7 @@ const MainHeader = () => {
                 </Col>
             </Row>
             <Row className="contact-us-details">
-                <Col span={24} className="details-wrapper">
+                <Col md={24} className="details-wrapper">
                     <Card>
                         <div className="icons-container">
                             <div className="icons">
@@ -67,7 +67,7 @@ const MainHeader = () => {
                     </Card>
                 </Col>
 
-                <Col span={24} style={{ marginTop: 16 }} className="address-wrapper">
+                <Col md={24} style={{ marginTop: 16 }} className="address-wrapper">
                     <Card>
                         <div className="icons-container">
                             <div className="icons">

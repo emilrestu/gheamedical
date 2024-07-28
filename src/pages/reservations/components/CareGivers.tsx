@@ -19,7 +19,7 @@ const CareGivers = () => {
 
     return (
         <Row className="reservations-care-givers">
-            <Col span={24} xs={24}>
+            <Col md={24} xs={24}>
                 {BannerData.map((item, key) => (
                     <Card key={key}>
                         <div className="caregiver-avatar">{/* <Image /> */}</div>
