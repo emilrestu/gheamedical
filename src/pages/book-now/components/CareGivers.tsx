@@ -31,9 +31,9 @@ const CareGivers = () => {
                         </div>
 
                         <div className="caregiver-button-group">
-                            {/* <Button type="primary" ghost>
+                            <Button type="primary" ghost>
                                 <Translate>View CV</Translate>
-                            </Button> */}
+                            </Button>
 
                             <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
                                 <Button type="primary">
