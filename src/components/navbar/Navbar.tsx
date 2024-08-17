@@ -1,12 +1,11 @@
-import { Layout, Grid, Button, Row, Col, Drawer, theme } from 'antd';
+import { Layout, Grid, Button, Row, Col, Drawer, theme, Space } from 'antd';
 import { useMemo, useState } from 'react';
 import CompanyLogo from '../company-logo';
 import { useTranslateContext } from '@/context/TranslateContext';
-import { MenuOutlined } from '@ant-design/icons';
+import { GlobalOutlined, MenuOutlined } from '@ant-design/icons';
 import Translate from '../translate';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Select from '../select';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
@@ -21,16 +20,24 @@ const Navbar = () => {
         token: { colorText, colorTextSecondary },
     } = theme.useToken();
 
-    const ArrLang = [
-        {
-            label: 'English',
-            value: 'en',
-        },
-        {
-            label: 'عربي',
-            value: 'ar',
-        },
-    ];
+    const ArrLang = useMemo(
+        () => [
+            {
+                label: 'English',
+                value: 'en',
+            },
+            {
+                label: 'عربي',
+                value: 'ar',
+            },
+        ],
+        []
+    );
+
+    const NotActiveLang = useMemo(() => {
+        return ArrLang.filter((item) => item.value.toString() !== langCode.toString())?.[0];
+    }, [ArrLang, langCode]);
+
     const MenuItems = useMemo(
         () => [
             { key: 'home', path: '/', title: <Translate>Home</Translate>, order: 1 },
@@ -60,6 +67,25 @@ const Navbar = () => {
             },
         ],
         []
+    );
+
+    const SelectLanguage = () => (
+        <Col>
+            <div
+                style={{ cursor: 'pointer', fontWeight: 600 }}
+                onClick={() => {
+                    setLangCode(NotActiveLang.value);
+                    if (xs) {
+                        setOpenMenu(false);
+                    }
+                }}
+            >
+                <Space>
+                    <div>{NotActiveLang.label}</div>
+                    <GlobalOutlined />
+                </Space>
+            </div>
+        </Col>
     );
 
     return (
@@ -97,15 +123,7 @@ const Navbar = () => {
                             })}
                         </Col>
                         <Col>
-                            <Select
-                                value={langCode.toString()}
-                                options={ArrLang}
-                                onSelect={(val) => {
-                                    setLangCode(val);
-                                }}
-                                popupMatchSelectWidth={false}
-                                showSearch={false}
-                            />
+                            <SelectLanguage />
                         </Col>
                     </>
                 )}
@@ -142,15 +160,7 @@ const Navbar = () => {
                             })}
 
                             <div className="nav-item">
-                                <Select
-                                    value={langCode.toString()}
-                                    options={ArrLang}
-                                    onSelect={(val) => {
-                                        setLangCode(val);
-                                        setOpenMenu(false);
-                                    }}
-                                    popupMatchSelectWidth={false}
-                                />
+                                <SelectLanguage />
                             </div>
                         </div>
                     </Drawer>
