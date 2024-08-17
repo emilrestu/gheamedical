@@ -54,9 +54,9 @@ const Navbar = () => {
                 order: 3,
             },
             {
-                key: 'reservations',
-                path: '/reservations',
-                title: <Translate>Reservations</Translate>,
+                key: 'book-now',
+                path: '/book-now',
+                title: <Translate>Book Now</Translate>,
                 order: 4,
             },
             {

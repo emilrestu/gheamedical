@@ -26,7 +26,7 @@ const Services: React.FC = () => {
     }, [langCode]);
 
     return (
-        <Row className="service-container" gutter={[48, 48]}>
+        <Row className="service-container" gutter={[48, 48]} style={{ paddingBlock: 16, marginLeft: -8, marginRight: -8 }}>
             <Col md={12} xs={24} className="service-image">
                 <Card style={{ minHeight: 240, height: 240, flex: 1, backgroundImage: `url(${Services01.src})` }}>
                     <div className="image-mask" />
