@@ -1,9 +1,10 @@
 import Translate from '@/components/translate';
 import useTranslate from '@/hooks/useTranslate';
-import { CalendarOutlined, EnvironmentOutlined, MailOutlined, MedicineBoxOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
-import { theme, Row, Col, Card, Typography, Form, Input, DatePicker, Select, Button } from 'antd';
+import { EnvironmentOutlined, MailOutlined, MedicineBoxOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
+import { theme, Row, Col, Card, Typography, Form, Input, Button } from 'antd';
 import { PHONE_NUMBER } from '@/data/constants';
 import Link from 'next/link';
+import Select from '../select';
 
 const BookServiceCard = () => {
     const {
@@ -15,7 +16,6 @@ const BookServiceCard = () => {
     const textPhoneNumber = useTranslate('PhoneNumber', 'Phone Number');
     const textSelectLocation = useTranslate('SelectLocation', 'Select Location');
     const textSelectServices = useTranslate('SelectServices', 'Select Services');
-    const textSelectDate = useTranslate('SelectDate', 'Select Date');
 
     return (
         <Card
@@ -47,6 +47,7 @@ const BookServiceCard = () => {
 
                     <Form.Item name="location">
                         <Select
+                            title={textSelectLocation}
                             placeholder={
                                 <>
                                     <EnvironmentOutlined style={{ color: colorPrimary }} /> {textSelectLocation}
@@ -57,16 +58,13 @@ const BookServiceCard = () => {
 
                     <Form.Item name="services">
                         <Select
+                            title={textSelectServices}
                             placeholder={
                                 <>
                                     <MedicineBoxOutlined style={{ color: colorPrimary }} /> {textSelectServices}
                                 </>
                             }
                         />
-                    </Form.Item>
-
-                    <Form.Item name="date">
-                        <DatePicker placeholder={textSelectDate} suffixIcon={<CalendarOutlined style={{ color: colorPrimary }} />} />
                     </Form.Item>
 
                     <Form.Item>

@@ -1,41 +1,20 @@
-import { Layout, Grid, Button, Row, Col, Select, Drawer, theme } from 'antd';
+import { Layout, Grid, Button, Row, Col, Drawer, theme } from 'antd';
 import { useMemo, useState } from 'react';
 import CompanyLogo from '../company-logo';
 import { useTranslateContext } from '@/context/TranslateContext';
 import { MenuOutlined } from '@ant-design/icons';
 import Translate from '../translate';
-import styled from 'styled-components';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Select from '../select';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
-
-const SelectMobileWrapper = styled.div`
-    .ant-select {
-        width: 100%;
-    }
-
-    .ant-select-dropdown {
-        position: relative;
-        margin-top: 8px;
-        top: unset !important;
-        inset: unset !important;
-        z-index: unset !important;
-        box-shadow: unset !important;
-
-        .ant-select-item {
-            margin: 4px;
-            padding: 12px 16px;
-        }
-    }
-`;
 
 const Navbar = () => {
     const { xs } = useBreakpoint();
     const { langCode, setLangCode } = useTranslateContext();
     const [openMenu, setOpenMenu] = useState<boolean>(false);
-    const [selectMobileOpen, setSelectMobileOpen] = useState<boolean>(false);
     const pathname = usePathname();
 
     const {
@@ -125,6 +104,7 @@ const Navbar = () => {
                                     setLangCode(val);
                                 }}
                                 popupMatchSelectWidth={false}
+                                showSearch={false}
                             />
                         </Col>
                     </>
@@ -169,54 +149,10 @@ const Navbar = () => {
                                         setLangCode(val);
                                         setOpenMenu(false);
                                     }}
-                                    {...(xs && {
-                                        onClick: () => {
-                                            if (xs) setSelectMobileOpen(true);
-                                        },
-                                        open: false,
-                                        showSearch: false,
-                                    })}
                                     popupMatchSelectWidth={false}
                                 />
                             </div>
                         </div>
-                    </Drawer>
-                    <Drawer
-                        title={<Translate>Select Language</Translate>}
-                        height={402}
-                        open={selectMobileOpen}
-                        onClose={() => setSelectMobileOpen(false)}
-                        closeIcon={null}
-                        maskClosable
-                        placement="bottom"
-                        styles={{
-                            header: {
-                                textAlign: 'center',
-                            },
-                            content: {
-                                borderTopRightRadius: 8,
-                                borderTopLeftRadius: 8,
-                            },
-                            footer: {
-                                display: 'flex',
-                                justifyContent: 'center',
-                            },
-                        }}
-                    >
-                        <SelectMobileWrapper id="select-mobile-wrapper">
-                            <Select
-                                placeholder={<Translate>Select Language</Translate>}
-                                onSelect={(val) => {
-                                    setLangCode(val);
-                                    setSelectMobileOpen(false);
-                                    setOpenMenu(false);
-                                }}
-                                getPopupContainer={() => document.getElementById('select-mobile-wrapper') || document.body}
-                                open
-                                size="large"
-                                options={ArrLang}
-                            />
-                        </SelectMobileWrapper>
                     </Drawer>
                 </>
             )}
