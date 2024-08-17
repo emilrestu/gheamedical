@@ -27,7 +27,7 @@ body {
         z-index: 2;
         width: 100%;
         padding: 0;
-        padding-inline: 120px;
+
         height: 64px !important;
 
         .menu-wrapper {
@@ -204,7 +204,9 @@ body {
 
             .service-image {
                 flex-direction: column;
-                padding: 0 !important;
+                // padding: 0 !important;
+                padding-left: 8px !important;
+                padding-right: 8px !important;
             }
 
             .service-description {
@@ -1172,6 +1174,43 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    .page,
+    .header-wrapper {
+        padding-inline: 120px;
+    }
+
+    .mobile {
+        .page,
+        .header-wrapper {
+            padding-inline: 16px;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        .page,
+        .header-wrapper {
+            padding-inline: 50px;
+        }
+
+        .ant-layout-content {
+            .banner-container {
+                .ant-carousel {
+                    .testi-title {
+                        right: 0px;
+                        width: 500px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .page,
+        .header-wrapper {
+            padding-inline: 16px;
         }
     }
 }
