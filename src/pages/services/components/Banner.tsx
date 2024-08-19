@@ -1,8 +1,8 @@
 import { Carousel, Col, Row } from 'antd';
 import React from 'react';
-import Banner01 from '../../home/assets/banner-01.jpeg';
-import Banner02 from '../../home/assets/banner-02.png';
-import Banner03 from '../../home/assets/banner-03.jpeg';
+import Banner01 from '@/assets/images/banner-01.jpg';
+import Banner02 from '@/assets/images/banner-02.jpg';
+import Banner03 from '@/assets/images/banner-03.jpg';
 
 const Banner = () => {
     const BannerData = [Banner01, Banner02, Banner03, Banner02];

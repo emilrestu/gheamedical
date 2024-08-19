@@ -4,10 +4,10 @@ import BannerEnglish from '@/data/banner/en.json';
 import BannerArabic from '@/data/banner/ar.json';
 import { useMemo } from 'react';
 import { useTranslateContext } from '@/context/TranslateContext';
-import Banner01 from '../assets/banner-01.jpeg';
-import Banner02 from '../assets/banner-02.png';
-import Banner03 from '../assets/banner-03.jpeg';
-import Banner04 from '../assets/banner-04.jpeg';
+import Banner01 from '@/assets/images/banner-01.jpg';
+import Banner02 from '@/assets/images/banner-02.jpg';
+import Banner03 from '@/assets/images/banner-03.jpg';
+import Banner04 from '@/assets/images/banner-04.jpg';
 import { StaticImageData } from 'next/image';
 
 const Banner = () => {

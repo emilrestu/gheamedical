@@ -2,10 +2,10 @@ import Translate from '@/components/translate';
 import useTranslate from '@/hooks/useTranslate';
 import { Card, Col, Grid, Row, theme, Typography } from 'antd';
 import React from 'react';
-import WelcomeBanner01 from '../assets/welcome-banner-01.png';
-import WelcomeBanner02 from '../assets/welcome-banner-02.png';
-import WelcomeBanner03 from '../assets/welcome-banner-03.png';
-import WelcomeBanner04 from '../assets/welcome-banner-04.png';
+import WelcomeBanner01 from '@/assets/images/banner-10.jpg';
+import WelcomeBanner02 from '@/assets/images/banner-06.jpg';
+import WelcomeBanner03 from '@/assets/images/banner-07.jpg';
+import WelcomeBanner04 from '@/assets/images/banner-04.jpg';
 
 const WelcomeBanner: React.FC = () => {
     const {

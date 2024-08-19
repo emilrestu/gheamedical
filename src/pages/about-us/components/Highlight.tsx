@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd';
 import React from 'react';
-import HightlightImage from '../assets/highlight.jpeg';
+import HightlightImage from '@/assets/images/banner-09.jpg';
 
 const Highlight = () => {
     return (

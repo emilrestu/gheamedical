@@ -3,7 +3,7 @@ import Translate from '@/components/translate';
 import { DARK_BACKGROUND, SECONDARY_COLOR } from '@/data/constants';
 import { Card, Col, Row, Typography } from 'antd';
 import React from 'react';
-import StrengthImage from '../assets/strength.jpeg';
+import StrengthImage from '@/assets/images/banner-01.jpg';
 
 const Strength = () => {
     return (
