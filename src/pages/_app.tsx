@@ -9,12 +9,14 @@ import { PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { PHONE_NUMBER } from '@/data/constants';
 import { useThemesContext } from '@/context/ThemesContext';
 import '../themes/main.scss';
+import useTranslate from '@/hooks/useTranslate';
 
 const { Content } = Layout;
 
 const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isArabic } = useThemesContext();
     const { xs } = Grid.useBreakpoint();
+    const textIwantBookServices = useTranslate('HELLOIWANTTOBOOKYOURSERVICES', 'Hello, I want to book your services');
 
     if (xs === undefined) return <></>;
 
@@ -33,7 +35,7 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 icon={<WhatsAppOutlined style={{ color: 'white' }} />}
                 style={{ color: 'white', width: 65, height: 65 }}
                 onClick={() => {
-                    window.open(`https://wa.me/${PHONE_NUMBER}`, '_blank');
+                    window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(textIwantBookServices)}`, '_blank');
                 }}
             />
 
