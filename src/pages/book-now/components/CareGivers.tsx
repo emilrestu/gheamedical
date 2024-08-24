@@ -6,15 +6,27 @@ import { useTranslateContext } from '@/context/TranslateContext';
 import Link from 'next/link';
 import Translate from '@/components/translate';
 import { PHONE_NUMBER } from '@/data/constants';
+import useTranslate from '@/hooks/useTranslate';
 
 const CareGivers = () => {
     const { langCode } = useTranslateContext();
+
+    const textIwantBookServices = useTranslate('HELLOIWANTTOBOOKYOURSERVICES', 'Hello, I want to book your services');
+    const textCareGivers = useTranslate('CareGiver', 'Caregiver');
 
     const BannerData = useMemo(() => {
         if (langCode === 'ar') return CareGiversArabic;
 
         return CareGiversEnglish;
     }, [langCode]);
+
+    const bookHandler = (name: string) => {
+        const ArrValue = [`${textIwantBookServices}\n`];
+
+        ArrValue.push(`${textCareGivers}: ${name}`);
+
+        window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(ArrValue.join('\n'))}`, '_blank');
+    };
 
     return (
         <Row className="reservations-care-givers">
@@ -35,11 +47,14 @@ const CareGivers = () => {
                                 </Link>
                             </Button>
 
-                            <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
-                                <Button type="primary">
-                                    <Translate>Book Now</Translate>
-                                </Button>
-                            </Link>
+                            <Button
+                                type="primary"
+                                onClick={() => {
+                                    bookHandler(item.name);
+                                }}
+                            >
+                                <Translate>Book Now</Translate>
+                            </Button>
                         </div>
                     </Card>
                 ))}

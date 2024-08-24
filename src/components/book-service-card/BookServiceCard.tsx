@@ -18,12 +18,17 @@ const BookServiceCard = () => {
     } = theme.useToken();
 
     const { langCode } = useTranslateContext();
+    const [form] = Form.useForm();
 
     const textFullName = useTranslate('FullName', 'Full Name');
     const textEmail = useTranslate('Email', 'Email');
     const textPhoneNumber = useTranslate('PhoneNumber', 'Phone Number');
     const textSelectLocation = useTranslate('SelectLocation', 'Select Location');
     const textSelectServices = useTranslate('SelectServices', 'Select Services');
+    const textIwantBookServices = useTranslate('HELLOIWANTTOBOOKYOURSERVICES', 'Hello, I want to book your services');
+    const textMyDetails = useTranslate('HERESMYDETAILS', "Here's my details");
+    const textLocation = useTranslate('LOCATION', ' Location');
+    const textServices = useTranslate('SERVICES', ' Services');
 
     const CityData = useMemo(() => {
         if (langCode === 'ar') return CityArabic;
@@ -36,6 +41,24 @@ const BookServiceCard = () => {
 
         return ServicesEnglish;
     }, [langCode]);
+
+    const bookHandler = () => {
+        const formValue = form.getFieldsValue();
+
+        const ArrValue = [`${textIwantBookServices}\n`];
+
+        if (formValue?.full_name || formValue?.email || formValue?.phone || formValue?.location || formValue?.services) {
+            ArrValue.push(`${textMyDetails}:`);
+
+            if (formValue?.full_name) ArrValue.push(`${textFullName}: ${formValue?.full_name}`);
+            if (formValue?.email) ArrValue.push(`${textEmail}: ${formValue?.email}`);
+            if (formValue?.phone) ArrValue.push(`${textPhoneNumber}: ${formValue?.phone}`);
+            if (formValue?.location) ArrValue.push(`${textLocation}: ${formValue?.location}`);
+            if (formValue?.location) ArrValue.push(`${textServices}: ${formValue?.services}`);
+        }
+
+        window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(ArrValue.join('\n'))}`, '_blank');
+    };
 
     return (
         <Card
@@ -52,7 +75,7 @@ const BookServiceCard = () => {
             }
         >
             <div>
-                <Form>
+                <Form form={form}>
                     <Form.Item name="full_name">
                         <Input prefix={<UserOutlined style={{ color: colorPrimary }} />} placeholder={textFullName} />
                     </Form.Item>
@@ -84,7 +107,8 @@ const BookServiceCard = () => {
 
                     <Form.Item name="services">
                         <Select
-                            options={ServiceData.map((item) => ({
+                            options={ServiceData.map((item, index) => ({
+                                key: index,
                                 value: item.label,
                                 label: item.label,
                             }))}
@@ -101,11 +125,15 @@ const BookServiceCard = () => {
                     <Form.Item>
                         <Row gutter={[8, 8]}>
                             <Col flex={1}>
-                                <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">
-                                    <Button type="primary" block>
-                                        <Translate>Book Now</Translate>
-                                    </Button>
-                                </Link>
+                                <Button
+                                    type="primary"
+                                    block
+                                    onClick={() => {
+                                        bookHandler();
+                                    }}
+                                >
+                                    <Translate>Book Now</Translate>
+                                </Button>
                             </Col>
                             <Col flex={1}>
                                 <Link href={`tel:${PHONE_NUMBER}`} passHref target="_blank">

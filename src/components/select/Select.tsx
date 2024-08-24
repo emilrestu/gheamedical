@@ -1,6 +1,7 @@
-import { Grid, Select, Drawer, SelectProps } from 'antd';
+import { Grid, Select, Drawer, SelectProps, Empty } from 'antd';
 import { useState } from 'react';
 import styled from 'styled-components';
+import Translate from '../translate';
 
 const { useBreakpoint } = Grid;
 
@@ -51,6 +52,8 @@ const Select_: React.FC<SelectProps & SelectType_> = ({ title, onSelect, showSea
                           showSearch,
                       })}
                 virtual
+                filterOption={(value, options) => (options?.label ?? '')?.toString()?.toLowerCase().includes(value.toLowerCase())}
+                notFoundContent={<Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<Translate>No Data</Translate>} />}
             />
 
             {xs && (
@@ -89,6 +92,7 @@ const Select_: React.FC<SelectProps & SelectType_> = ({ title, onSelect, showSea
                             getPopupContainer={() => document.getElementById('select-mobile-wrapper') || document.body}
                             open
                             virtual
+                            notFoundContent={<Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<Translate>No Data</Translate>} />}
                         />
                     </SelectMobileWrapper>
                 </Drawer>

@@ -1,37 +1,35 @@
 [
     {
         "name": "Angela Dakwah",
-        "position": "Nurse Assistant",
+        "position": "مساعد ممرض",
         "cv_link": "angela-dakwah-cv.pdf"
     },
     {
         "name": "Anita Akosua Ohemeng",
-        "position": "Nurse Assistant",
         "cv_link": "anita-akosua-ohemeng-cv.pdf"
     },
     {
         "name": "Anne Muthani",
-        "position": "Nurse Assistant",
         "cv_link": "anne-muthani-cv.pdf"
     },
     {
         "name": "Mavis Ampim Danku",
-        "position": "Nurse Assistant",
+        "position": "مقدم الرعاية / ممرضة",
         "cv_link": "mavis-ampim-danku-cv.pdf"
     },
     {
         "name": "Rebecca Nechesa Yabunga",
-        "position": "Nurse Assistant",
+        "position": "ممرضة",
         "cv_link": "rebecca-nechesa-yabunga-cv.pdf"
     },
     {
         "name": "Saffantu Issah",
-        "position": "Nurse Assistant",
+        "position": "مساعد ممرض",
         "cv_link": "saffantu-issah-cv.pdf"
     },
     {
         "name": "Vera Sasu Nyarko",
-        "position": "Nurse Assistant",
+        "position": "مساعد ممرض",
         "cv_link": "vera-sasu-nyarko-cv.pdf"
     }
 ]
