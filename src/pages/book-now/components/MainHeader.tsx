@@ -8,7 +8,7 @@ const MainHeader = () => {
             <Col md={24}>
                 <div className="text-wrapper">
                     <Typography.Text className="title">
-                        <Translate>Meet Out Best Team and Book Your Session with Our Expert.</Translate>
+                        <Translate>Meet our exceptional team and book a session with our expert.</Translate>
                     </Typography.Text>
 
                     <Typography.Paragraph className="description">

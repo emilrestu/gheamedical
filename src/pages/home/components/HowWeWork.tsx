@@ -22,7 +22,7 @@ const HowWeWork: React.FC = () => {
 
                         <Typography.Paragraph className="description">
                             <Translate>
-                                We combine expertise, compassion, and state-of-the-art resources to ensure you receive the highest quality care.
+                                We combine expertise, compassion, and modern resources to ensure you receive the highest quality care.
                             </Translate>
                         </Typography.Paragraph>
                     </div>
@@ -83,7 +83,7 @@ const HowWeWork: React.FC = () => {
                             <SVGIcon icon="team" />
                         </div>
                         <div className="description">
-                            <Translate>Our team will serve you at the right time and place for you</Translate>
+                            <Translate>Our team will assist you at a time and place that suits you best.</Translate>
                         </div>
                     </div>
                 </div>

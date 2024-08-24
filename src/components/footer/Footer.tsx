@@ -19,7 +19,7 @@ const Footer = () => {
             { href: '/', label: 'Home' },
             { href: '/about-us', label: 'About' },
             { href: '/services', label: 'Services' },
-            { href: '/reservations', label: 'Reservations' },
+            { href: '/book-now', label: 'Book Now' },
             { href: '/contact-us', label: 'Contact Us' },
         ],
         []
@@ -40,10 +40,10 @@ const Footer = () => {
                 <Col md={12} xs={24}>
                     <div style={{ width: 249 }}>
                         <Typography.Paragraph style={{ color: 'white', fontSize: 24, fontWeight: 600, marginBottom: 8 }}>
-                            <Translate>We care for you and your family</Translate>
+                            <Translate>We look after you and your family</Translate>
                         </Typography.Paragraph>
                         <Typography.Paragraph style={{ color: 'white', fontSize: 12, fontWeight: 400, marginBottom: 8 }}>
-                            <Translate>You deserve the best from GHEA Medical Services</Translate>
+                            <Translate>GHEA Medical Services is committed to providing you with the best services.</Translate>
                         </Typography.Paragraph>
                     </div>
                 </Col>

@@ -33,7 +33,7 @@ const Testimonial = () => {
     return (
         <Row className="testimonial-wrapper" style={{ backgroundColor: DARK_BACKGROUND }}>
             <Col md={24} xs={24} className="testi-title">
-                <Translate>What Our Customers Say About Us</Translate>
+                <Translate>Customer Feedback on Our Services</Translate>
             </Col>
             <Col md={24} xs={24} className="testi-carousel-wrapper">
                 {TestiData.map((testi, i) => (

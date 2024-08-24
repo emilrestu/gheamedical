@@ -728,7 +728,7 @@ body {
     .reservations-care-givers,
     .contact-us-details {
         padding-block-end: 80px;
-        padding-inline: 30px !important;
+        // padding-inline: 30px !important;
 
         .ant-col {
             display: flex;
@@ -741,10 +741,10 @@ body {
 
                 .ant-card-body {
                     padding: 16px;
-                    width: 352px;
+                    width: 332px;
 
                     .caregiver-avatar {
-                        height: 384px;
+                        height: 364px;
                         padding: 66px 17px 0px 17px;
                         border-radius: 8px;
                         background: #3bb4a3;
@@ -1201,6 +1201,19 @@ body {
                     .testi-title {
                         right: 0px;
                         width: 500px;
+                    }
+                }
+            }
+        }
+
+        .arabic {
+            .ant-layout-content {
+                .banner-container {
+                    .ant-carousel {
+                        .testi-title {
+                            right: 50px;
+                            width: 500px;
+                        }
                     }
                 }
             }

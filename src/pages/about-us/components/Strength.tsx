@@ -36,12 +36,12 @@ const Strength = () => {
                                     <SVGIcon icon="best-staff" />
                                 </div>
                                 <Typography.Text className="title">
-                                    <Translate>Best Trained and experienced staff</Translate>
+                                    <Translate>Highly trained and experienced staff</Translate>
                                 </Typography.Text>
                                 <Typography.Text className="description">
                                     <Translate>
-                                        Our professionals are not only experts in their respective fields but are also continuously updated with the
-                                        latest advancements in healthcare.
+                                        Our professionals are not only specialists in their fields but also stay current with the latest advancements
+                                        in healthcare.
                                     </Translate>
                                 </Typography.Text>
                             </Card>
@@ -55,8 +55,8 @@ const Strength = () => {
                                 </Typography.Text>
                                 <Typography.Text className="description">
                                     <Translate>
-                                        Our comprehensive home care system combines advanced technology, personalized care plans, and a the best
-                                        possible care in your own home.
+                                        Our comprehensive home care system combines , personalized care plans, with the highest quality care in the
+                                        comfort of your own home.
                                     </Translate>
                                 </Typography.Text>
                             </Card>
@@ -69,10 +69,7 @@ const Strength = () => {
                                     <Translate>Best Prices for Everyone</Translate>
                                 </Typography.Text>
                                 <Typography.Text className="description">
-                                    <Translate>
-                                        Our comprehensive range includes expert consultations, diagnostic tests, and treatments, all at prices
-                                        designed to fit every budget.
-                                    </Translate>
+                                    <Translate>Our prices are designed to fit every budget.</Translate>
                                 </Typography.Text>
                             </Card>
                         </Card>

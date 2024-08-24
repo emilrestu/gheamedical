@@ -1,5 +1,4 @@
 import { Button, Card, Col, Row, Typography } from 'antd';
-// import Image from 'next/image';
 import CareGiversEnglish from '@/data/caregivers/en.json';
 import CareGiversArabic from '@/data/caregivers/ar.json';
 import React, { useMemo } from 'react';
@@ -26,13 +25,14 @@ const CareGivers = () => {
 
                         <div className="caregiver-description">
                             <Typography.Text className="title">{item.name}</Typography.Text>
-
                             <Typography.Text className="description">{item.position}</Typography.Text>
                         </div>
 
                         <div className="caregiver-button-group">
                             <Button type="primary" ghost>
-                                <Translate>View CV</Translate>
+                                <Link href={`/assets/cv/${item.cv_link}`} passHref target="_blank">
+                                    <Translate>View CV</Translate>
+                                </Link>
                             </Button>
 
                             <Link href={`https://wa.me/${PHONE_NUMBER}`} passHref target="_blank">

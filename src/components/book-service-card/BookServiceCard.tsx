@@ -5,17 +5,37 @@ import { theme, Row, Col, Card, Typography, Form, Input, Button } from 'antd';
 import { PHONE_NUMBER } from '@/data/constants';
 import Link from 'next/link';
 import Select from '../select';
+import { useMemo } from 'react';
+import { useTranslateContext } from '@/context/TranslateContext';
+import CityEnglish from '@/data/city/en.json';
+import CityArabic from '@/data/city/ar.json';
+import ServicesEnglish from '@/data/services/en.json';
+import ServicesArabic from '@/data/services/ar.json';
 
 const BookServiceCard = () => {
     const {
         token: { colorPrimary, colorText },
     } = theme.useToken();
 
+    const { langCode } = useTranslateContext();
+
     const textFullName = useTranslate('FullName', 'Full Name');
     const textEmail = useTranslate('Email', 'Email');
     const textPhoneNumber = useTranslate('PhoneNumber', 'Phone Number');
     const textSelectLocation = useTranslate('SelectLocation', 'Select Location');
     const textSelectServices = useTranslate('SelectServices', 'Select Services');
+
+    const CityData = useMemo(() => {
+        if (langCode === 'ar') return CityArabic;
+
+        return CityEnglish;
+    }, [langCode]);
+
+    const ServiceData = useMemo(() => {
+        if (langCode === 'ar') return ServicesArabic;
+
+        return ServicesEnglish;
+    }, [langCode]);
 
     return (
         <Card
@@ -47,23 +67,34 @@ const BookServiceCard = () => {
 
                     <Form.Item name="location">
                         <Select
+                            options={CityData.map((item, index) => ({
+                                key: index,
+                                value: item,
+                                label: item,
+                            }))}
                             title={textSelectLocation}
                             placeholder={
                                 <>
                                     <EnvironmentOutlined style={{ color: colorPrimary }} /> {textSelectLocation}
                                 </>
                             }
+                            virtual
                         />
                     </Form.Item>
 
                     <Form.Item name="services">
                         <Select
+                            options={ServiceData.map((item) => ({
+                                value: item.label,
+                                label: item.label,
+                            }))}
                             title={textSelectServices}
                             placeholder={
                                 <>
                                     <MedicineBoxOutlined style={{ color: colorPrimary }} /> {textSelectServices}
                                 </>
                             }
+                            virtual
                         />
                     </Form.Item>
 

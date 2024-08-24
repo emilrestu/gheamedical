@@ -4,16 +4,16 @@
         "description": "We tailor our approach to suit each individual's circumstances and develop a personalized care plan that meets their specific needs.",
         "icon": "personal-services",
         "details": [
-            "Assisting with personal hygiene, such as dressing, toileting, bathing, and grooming.",
+            "Helping with personal hygiene tasks such as dressing, toileting, bathing, and grooming.",
             "Administering and monitoring medication, ensuring adherence to prescribed schedules.",
-            "Providing escort services for appointments, outings, or social activities.",
-            "Assisting with mobility, including transferring and walking support.",
+            "Providing Assistive services for appointments, outings, or social activities.",
+            "Assisting with mobility, including support for transferring and walking.",
             "Accompanying clients for shopping and other errands.",
-            "Light housekeeping and meal preparation to maintain a clean and comfortable environment."
+            "Performing light housekeeping and meal preparation to maintain a clean and comfortable environment."
         ]
     },
     {
-        "title": "Personal Service Escort",
+        "title": "Personal Service Assistance",
         "description": "Chronic diseases or short-term mobility problems can lead to loneliness and social isolation in patients. This difficult period requires a companion that can bring a sense of humanity and participation so that loneliness does not affect their health and well-being.",
         "icon": "personal-escort",
         "details": [
@@ -21,7 +21,7 @@
             "Provide social participation, intellectual stimulation, and continued engagement in activities to combat loneliness.",
             "Light home cleaning and laundry service.",
             "Prepare and plan meals.",
-            "Transport for medical appointments or other activities.",
+            "Accompany for medical appointments or other activities.",
             "Assisting in routine tasks."
         ]
     },
@@ -39,7 +39,7 @@
     },
     {
         "title": "Service for the Elderly",
-        "description": "Older people in health care's neediest age groups help them go about their lives quickly. We spend our time creating a plan tailored to the requirements and objectives of the elderly who receive care.",
+        "description": "Older people in health care is among the neediest age groups in need of help to go about their lives comfortablly. We spend our time creating a plan tailored to the requirements and objectives of the elderly who receive care.",
         "icon": "services-for-the-elderly",
         "details": [
             "Daily activities, such as shopping, regulation, cleaning, etc.",
@@ -54,10 +54,10 @@
         "icon": "services-for-all-age",
         "details": [
             "Perform certain tasks.",
-            "Regulate the menu.",
-            "Help wear clothes or shower.",
-            "Escort and transport at medical appointments.",
-            "Assistance in walking."
+            "Regulating meal plans.",
+            "Assisting with dressing or bathing.",
+            "Providing escort and transportation to medical appointments.",
+            "Assisting with walking."
         ]
     },
     {

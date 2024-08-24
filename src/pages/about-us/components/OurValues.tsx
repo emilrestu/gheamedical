@@ -1,15 +1,25 @@
 import SVGIcon from '@/components/svg-icon';
 import Translate from '@/components/translate';
-import { Col, Grid, Row, Typography } from 'antd';
-import React from 'react';
+import { Card, Col, Grid, Row, Typography } from 'antd';
+import React, { useMemo } from 'react';
 import HowWeWorkIconsBG from '@/assets/components/HowWeWorkIconsBG.png';
 import OurValuesIconsBGXS from '@/assets/components/OurValuesIconsBGXS.png';
 import Image from 'next/image';
 import { useThemesContext } from '@/context/ThemesContext';
+import OurValuesEnglish from '@/data/our-values/en.json';
+import OurValuesArabic from '@/data/our-values/ar.json';
+import { useTranslateContext } from '@/context/TranslateContext';
 
 const OurValues = () => {
     const { xs } = Grid.useBreakpoint();
     const { isArabic } = useThemesContext();
+    const { langCode } = useTranslateContext();
+
+    const OurValuesData = useMemo(() => {
+        if (langCode === 'ar') return OurValuesArabic;
+
+        return OurValuesEnglish;
+    }, [langCode]);
 
     return (
         <>
@@ -30,6 +40,21 @@ const OurValues = () => {
                 </Col>
             </Row>
 
+            <Row className="about-us-vision-mission" gutter={[24, 24]}>
+                {OurValuesData.map((item, index) => (
+                    <Col key={index} md={24} xs={24}>
+                        <Card>
+                            <Typography.Text className="title">
+                                <Translate>{item.title}</Translate>
+                            </Typography.Text>
+                            <Typography.Text className="description">
+                                <Translate>{item.description}</Translate>
+                            </Typography.Text>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
+
             <Row
                 className="how-we-work-icons-wrapper about-us-our-values-icons"
                 {...(xs && {
@@ -38,7 +63,6 @@ const OurValues = () => {
                     },
                 })}
             >
-                {/* <div className="bg-wrapper">{xs ? <OurValuesIconsBGXS /> : <HowWeWorkIconsBG />}</div> */}
                 <div
                     className="bg-wrapper"
                     {...(xs && {

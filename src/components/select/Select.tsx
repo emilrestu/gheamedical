@@ -50,7 +50,7 @@ const Select_: React.FC<SelectProps & SelectType_> = ({ title, onSelect, showSea
                     : {
                           showSearch,
                       })}
-                popupMatchSelectWidth={false}
+                virtual
             />
 
             {xs && (
@@ -88,6 +88,7 @@ const Select_: React.FC<SelectProps & SelectType_> = ({ title, onSelect, showSea
                             }}
                             getPopupContainer={() => document.getElementById('select-mobile-wrapper') || document.body}
                             open
+                            virtual
                         />
                     </SelectMobileWrapper>
                 </Drawer>

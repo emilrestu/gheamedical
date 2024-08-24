@@ -14,7 +14,10 @@ const WelcomeBanner: React.FC = () => {
     const { xs } = Grid.useBreakpoint();
 
     const textwelcometogheaserviceswherewedeliver = useTranslate('WELCOMETOGHEASERVICESWHEREWEDELIVER', 'Welcome to GHEA Services, Where We Deliver');
-    const textexceptionalcareforyouandyourfamily = useTranslate('EXCEPTIONALCAREFORYOUANDYOURFAMILY', 'Exceptional Care for You and Your Family');
+    const textexceptionalcareforyouandyourfamily = useTranslate(
+        'EXCEPTIONALCAREFORYOUANDYOURLOVEDONES',
+        'Exceptional Care for You and Your Loved ones'
+    );
 
     return (
         <Row className="home-content-wrapper welcome-banner-wrapper" gutter={[16, 16]}>
@@ -76,18 +79,7 @@ const WelcomeBanner: React.FC = () => {
                 </Typography.Paragraph>
 
                 <Typography.Paragraph className="description welcome-description">
-                    <Translate>
-                        GHEA Services is a top provider specializing in comprehensive family support for all ages and needs. We supply individuals
-                        trained to meet client&apos;s needs.
-                    </Translate>
-                </Typography.Paragraph>
-
-                <Typography.Paragraph className="description welcome-description">
-                    <Translate>We aspire to provide our services to everyone to gain their trust and let us be their first choice.</Translate>
-                </Typography.Paragraph>
-
-                <Typography.Paragraph className="description welcome-description">
-                    <Translate>We are dedicated to delivering exceptional assistance, and facilitating our client&apos;s daily lives.</Translate>
+                    <Translate>To receive the resume of our staff for home healthcare services, please contact us via WhatsApp immediately</Translate>
                 </Typography.Paragraph>
             </Col>
         </Row>
