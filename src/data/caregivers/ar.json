@@ -2,34 +2,41 @@
     {
         "name": "Angela Dakwah",
         "position": "مساعد ممرض",
-        "cv_link": "angela-dakwah-cv.pdf"
+        "cv_link": "angela-dakwah-cv.pdf",
+        "image": "AngelaDakwah"
     },
     {
         "name": "Anita Akosua Ohemeng",
-        "cv_link": "anita-akosua-ohemeng-cv.pdf"
+        "cv_link": "anita-akosua-ohemeng-cv.pdf",
+        "image": "AnitaAkosuaOhemeng"
     },
     {
         "name": "Anne Muthani",
-        "cv_link": "anne-muthani-cv.pdf"
+        "cv_link": "anne-muthani-cv.pdf",
+        "image": "AnneMuthani"
     },
     {
         "name": "Mavis Ampim Danku",
         "position": "مقدم الرعاية / ممرضة",
-        "cv_link": "mavis-ampim-danku-cv.pdf"
+        "cv_link": "mavis-ampim-danku-cv.pdf",
+        "image": "MavisAmpimDanku"
     },
     {
         "name": "Rebecca Nechesa Yabunga",
         "position": "ممرضة",
-        "cv_link": "rebecca-nechesa-yabunga-cv.pdf"
+        "cv_link": "rebecca-nechesa-yabunga-cv.pdf",
+        "image": "RebeccaNechesaYabunga"
     },
     {
         "name": "Saffantu Issah",
         "position": "مساعد ممرض",
-        "cv_link": "saffantu-issah-cv.pdf"
+        "cv_link": "saffantu-issah-cv.pdf",
+        "image": "SaffantuIssah"
     },
     {
         "name": "Vera Sasu Nyarko",
         "position": "مساعد ممرض",
-        "cv_link": "vera-sasu-nyarko-cv.pdf"
+        "cv_link": "vera-sasu-nyarko-cv.pdf",
+        "image": "VeraSasuNyarko"
     }
 ]

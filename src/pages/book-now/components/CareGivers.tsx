@@ -7,6 +7,15 @@ import Link from 'next/link';
 import Translate from '@/components/translate';
 import { PHONE_NUMBER } from '@/data/constants';
 import useTranslate from '@/hooks/useTranslate';
+// import Image from 'next/image';
+import AngelaDakwah from '../images/angela-dakwah.png';
+import AnitaAkosuaOhemeng from '../images/anita-akosua-ohemeng.png';
+import AnneMuthani from '../images/anne-muthani.png';
+import MavisAmpimDanku from '../images/mavis-ampim-danku.png';
+import RebeccaNechesaYabunga from '../images/rebecca-nechesa-yabunga.png';
+import SaffantuIssah from '../images/saffantu-issah.png';
+import VeraSasuNyarko from '../images/vera-sasu-nyarko.png';
+import { StaticImageData } from 'next/image';
 
 const CareGivers = () => {
     const { langCode } = useTranslateContext();
@@ -28,12 +37,32 @@ const CareGivers = () => {
         window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(ArrValue.join('\n'))}`, '_blank');
     };
 
+    const imageData: { [key: string]: StaticImageData } = {
+        AngelaDakwah: AngelaDakwah,
+        AnitaAkosuaOhemeng: AnitaAkosuaOhemeng,
+        AnneMuthani: AnneMuthani,
+        MavisAmpimDanku: MavisAmpimDanku,
+        RebeccaNechesaYabunga: RebeccaNechesaYabunga,
+        SaffantuIssah: SaffantuIssah,
+        VeraSasuNyarko: VeraSasuNyarko,
+    };
+
     return (
         <Row className="reservations-care-givers">
             <Col md={24} xs={24}>
                 {BannerData.map((item, key) => (
                     <Card key={key}>
-                        <div className="caregiver-avatar">{/* <Image /> */}</div>
+                        <div
+                            className="caregiver-avatar"
+                            style={{
+                                backgroundSize: 'cover',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundPosition: 'center',
+                                backgroundImage: `url(${imageData[item.image].src})`,
+                            }}
+                        >
+                            {/* <Image src={AngelaDakwah} alt="GHEA Services Care Givers" /> */}
+                        </div>
 
                         <div className="caregiver-description">
                             <Typography.Text className="title">{item.name}</Typography.Text>
