@@ -34,7 +34,7 @@ const MainHeader = () => {
                                         <SVGIcon icon="phone" />
                                     </div>
 
-                                    <Row style={{ flex: 'inherit' }}>
+                                    <Row style={{ flex: 'inherit', flexDirection: 'column' }}>
                                         <Col sm={24}>
                                             <Typography.Text className="title">
                                                 <Translate>Phone</Translate>
@@ -58,7 +58,7 @@ const MainHeader = () => {
                                         <SVGIcon icon="mail" />
                                     </div>
 
-                                    <Row style={{ flex: 'inherit' }}>
+                                    <Row style={{ flex: 'inherit', flexDirection: 'column' }}>
                                         <Col sm={24}>
                                             <Typography.Text className="title">
                                                 <Translate>Email</Translate>
@@ -82,7 +82,7 @@ const MainHeader = () => {
                                         <ClockCircleOutlined width={32} height={32} style={{ fontSize: 28 }} />
                                     </div>
 
-                                    <Row style={{ flex: 'inherit' }}>
+                                    <Row style={{ flex: 'inherit', flexDirection: 'column' }}>
                                         <Col sm={24}>
                                             <Typography.Text className="title">
                                                 <Translate>Work Hours</Translate>
@@ -103,7 +103,7 @@ const MainHeader = () => {
                                         <SVGIcon icon="location" />
                                     </div>
 
-                                    <Row style={{ flex: 'inherit' }}>
+                                    <Row style={{ flex: 'inherit', flexDirection: 'column' }}>
                                         <Col sm={24}>
                                             <Typography.Text className="title">
                                                 <Translate>Address</Translate>
