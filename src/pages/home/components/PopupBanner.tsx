@@ -44,7 +44,7 @@ const PopupBanner = () => {
             destroyOnClose
         >
             <div>
-                <Carousel arrows={false} dotPosition="bottom" draggable autoplay autoplaySpeed={10000}>
+                <Carousel arrows={false} dotPosition="bottom" draggable autoplay autoplaySpeed={5000}>
                     {ArrImage.map((item, index) => (
                         <div key={index}>
                             <div
