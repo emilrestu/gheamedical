@@ -7,6 +7,7 @@ import WelcomeBanner from './components/WelcomeBanner';
 import WhyChoose from './components/WhyChoose';
 import Services from './components/Services';
 import HowWeWork from './components/HowWeWork';
+import PopupBanner from './components/PopupBanner';
 
 const Home: React.FC = () => {
     const textGheaMedicalServicesCompanyHealthCareCenter = useTranslate(
@@ -22,6 +23,7 @@ const Home: React.FC = () => {
             <Services />
             <HowWeWork />
             <Testimonial />
+            <PopupBanner />
         </Page>
     );
 };
