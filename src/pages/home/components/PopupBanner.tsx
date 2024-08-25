@@ -17,7 +17,7 @@ const PopupBanner = () => {
     useEffect(() => {
         const lastVisit = localStorage.getItem('lastVisit');
         const now = new Date().getTime();
-        const oneHour = 60 * 60 * 1000; // One hour in milliseconds
+        const oneHour = 30 * 60 * 1000; // One hour in milliseconds
 
         if (!lastVisit || now - parseInt(lastVisit) > oneHour) {
             // If the last visit was more than an hour ago or no visit recorded, show the popup
