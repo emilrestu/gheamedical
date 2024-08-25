@@ -1246,6 +1246,20 @@ body {
         }
     }
 
+    .arabic.mobile {
+        .ant-layout-content {
+            .banner-container {
+                .ant-carousel {
+                    .testi-title {
+                        left: unset;
+                        right: 20px;
+                        width: 100vw;
+                    }
+                }
+            }
+        }
+    }
+
     @media (max-width: 1280px) {
         .page,
         .header-wrapper {
@@ -1270,6 +1284,10 @@ body {
                         .testi-title {
                             right: 50px;
                             width: 500px;
+
+                            .ant-typography {
+                                text-align: right !important;
+                            }
                         }
                     }
                 }
