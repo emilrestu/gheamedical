@@ -1,7 +1,7 @@
 import { Button, Carousel, Modal } from 'antd';
 import React, { useEffect, useState } from 'react';
 import PopUpBanner1 from '@/assets/home-popup/ghea-services-01.jpg';
-import PopUpBanner2 from '@/assets/home-popup/ghea-services-02.jpg';
+// import PopUpBanner2 from '@/assets/home-popup/ghea-services-02.jpg';
 import PopUpBanner3 from '@/assets/home-popup/ghea-services-03.jpg';
 import { CloseOutlined } from '@ant-design/icons';
 
@@ -10,7 +10,7 @@ const PopupBanner = () => {
 
     const ArrImage = [
         { src: PopUpBanner1.src, width: 540 },
-        { src: PopUpBanner2.src, width: 684 },
+        // { src: PopUpBanner2.src, width: 684 },
         { src: PopUpBanner3.src, width: 540 },
     ];
 
