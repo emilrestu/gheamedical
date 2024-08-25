@@ -615,6 +615,46 @@ body {
                 );
             }
         }
+
+        .contact-us {
+            padding-block: 40px;
+
+            .ant-card {
+                background-color: #ebf8f6;
+                border-color: #ebf8f6;
+                border-radius: 8px;
+                height: 100%;
+                box-shadow: 0px 2px 8px 0px #3333331f;
+
+                .icons-container {
+                    padding-top: 24px;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: start;
+                }
+
+                .title,
+                .description {
+                    text-align: left;
+                    flex: inherit;
+                }
+
+                .title {
+                    color: #128c7e;
+                    font-size: 18px;
+                }
+
+                .description,
+                .description a {
+                    color: #505154 !important;
+                    font-size: 16px;
+                }
+            }
+
+            .book-services-card {
+                background-color: #fff;
+            }
+        }
     }
 
     .ant-layout-footer {
@@ -918,6 +958,17 @@ body {
 
                 .right-item {
                     padding-right: 16px;
+                }
+            }
+        }
+
+        .ant-layout-content {
+            .contact-us {
+                .ant-card {
+                    .title,
+                    .description {
+                        text-align: right;
+                    }
                 }
             }
         }
