@@ -12,7 +12,7 @@ const TranslateContextProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     const setDefaultLangCode = () => {
         const lang_code = process.env.NODE_ENV === 'production' ? 'ar' : 'en';
 
-        if (process.env.NODE_ENV === 'production') {
+        if (process.env.NODE_ENV === 'production' && !localStorage.getItem('LANG_CODE')) {
             setLangCode(lang_code);
         }
     };
