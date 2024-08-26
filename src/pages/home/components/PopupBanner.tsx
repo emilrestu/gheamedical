@@ -1,18 +1,29 @@
 import { Button, Carousel, Modal } from 'antd';
-import React, { useEffect, useState } from 'react';
-import PopUpBanner1 from '@/assets/home-popup/ghea-services-01.jpg';
-// import PopUpBanner2 from '@/assets/home-popup/ghea-services-02.jpg';
-import PopUpBanner3 from '@/assets/home-popup/ghea-services-03.jpg';
+import React, { useEffect, useMemo, useState } from 'react';
+import PopUpBannerEn1 from '@/assets/home-popup/ghea-services-en-01.jpg';
+import PopUpBannerEn2 from '@/assets/home-popup/ghea-services-en-02.jpg';
+import PopUpBannerAr1 from '@/assets/home-popup/ghea-services-ar-01.jpg';
+import PopUpBannerAr2 from '@/assets/home-popup/ghea-services-ar-02.jpg';
 import { CloseOutlined } from '@ant-design/icons';
+import { useTranslateContext } from '@/context/TranslateContext';
 
 const PopupBanner = () => {
+    const { langCode } = useTranslateContext();
+
     const [showPopup, setShowPopup] = useState(false);
 
-    const ArrImage = [
-        { src: PopUpBanner1.src, width: 540 },
-        // { src: PopUpBanner2.src, width: 684 },
-        { src: PopUpBanner3.src, width: 540 },
-    ];
+    const ArrImage = useMemo(() => {
+        if (langCode === 'ar')
+            return [
+                { src: PopUpBannerAr1.src, width: 540 },
+                { src: PopUpBannerAr2.src, width: 540 },
+            ];
+
+        return [
+            { src: PopUpBannerEn1.src, width: 540 },
+            { src: PopUpBannerEn2.src, width: 540 },
+        ];
+    }, [langCode]);
 
     useEffect(() => {
         const lastVisit = localStorage.getItem('lastVisit');
