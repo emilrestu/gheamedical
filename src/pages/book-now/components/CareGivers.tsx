@@ -20,8 +20,17 @@ import { StaticImageData } from 'next/image';
 const CareGivers = () => {
     const { langCode } = useTranslateContext();
 
-    const textIwantBookServices = useTranslate('HELLOIWANTTOBOOKYOURSERVICES', 'Hello, I want to book your services');
-    const textCareGivers = useTranslate('CareGiver', 'Caregiver');
+    const textHello = useTranslate('HELLO', 'Hello');
+    const textLine2 = useTranslate(
+        'IWOULDLIKETOINQUIREABOUTTHEAVAILABILITYOFYOURHEALTHCAREWORKER',
+        'I would like to inquire about the availability of your healthcare worker'
+    );
+    const textLine3 = useTranslate(
+        'COULDYOUPLEASELETMEKNOWWHENTHEYWILLBEAVAILABLETOSTARTWORK',
+        'Could you please let me know when they will be available to start work'
+    );
+    const textThankyou = useTranslate('THANKYOUMSG', 'Thank You');
+    const textBestRegards = useTranslate('BESTREGARDS', 'Best Regards');
 
     const BannerData = useMemo(() => {
         if (langCode === 'ar') return CareGiversArabic;
@@ -30,9 +39,9 @@ const CareGivers = () => {
     }, [langCode]);
 
     const bookHandler = (name: string) => {
-        const ArrValue = [`${textIwantBookServices}\n`];
-
-        ArrValue.push(`${textCareGivers}: ${name}`);
+        const ArrValue = [
+            `${textHello}\n\n${textLine2} ${name} ${textLine3}?\n\n${textThankyou}${textBestRegards === ' ' ? '' : `\n\n${textBestRegards}`}`,
+        ];
 
         window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(ArrValue.join('\n'))}`, '_blank');
     };

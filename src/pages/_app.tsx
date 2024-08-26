@@ -16,7 +16,12 @@ const { Content } = Layout;
 const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isArabic } = useThemesContext();
     const { xs } = Grid.useBreakpoint();
-    const textIwantBookServices = useTranslate('HELLOIWANTTOBOOKYOURSERVICES', 'Hello, I want to book your services');
+    const textHello = useTranslate('HELLO', 'Hello');
+    const textLine2 = useTranslate(
+        'IWOULDLIKETOINQUIREABOUTTHESERVICESYOUOFFERANDHOWICANBOOKTHEMCOULDYOUPLEASEPROVIDEMEWITHMOREDETAILS',
+        'I would like to inquire about the services you offer and how I can book them. Could you please provide me with more details'
+    );
+    const textThankyou = useTranslate('THANKYOUMSG', 'Thank You');
 
     if (xs === undefined) return <></>;
 
@@ -35,7 +40,7 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 icon={<WhatsAppOutlined style={{ color: 'white' }} />}
                 style={{ color: 'white', width: 65, height: 65 }}
                 onClick={() => {
-                    window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(textIwantBookServices)}`, '_blank');
+                    window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(`${textHello}\n\n${textLine2}\n\n${textThankyou}`)}`, '_blank');
                 }}
             />
 
