@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import TranslateContext, { TranslateContextType } from './TranslateContext';
 import ar from '../data/translate/ar.json';
+import { useRouter } from 'next/router';
 
 const TranslateContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const router = useRouter();
+    const { lang: langParam } = router?.query;
+
     const cacheLangCode = typeof window !== 'undefined' ? localStorage.getItem('LANG_CODE') : null;
     const [langCode, setLangCode] = useState<TranslateContextType['langCode']>(cacheLangCode || 'en');
     const [translations, setTranslations] = useState<TranslateContextType['translations']>({
@@ -24,6 +28,13 @@ const TranslateContextProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     useEffect(() => {
         if (typeof window !== 'undefined') localStorage.setItem('LANG_CODE', langCode);
     }, [langCode]);
+
+    useEffect(() => {
+        if (langParam) {
+            setLangCode(langParam.toString());
+            router.push('/');
+        }
+    }, [langParam, router]);
 
     return (
         <TranslateContext.Provider
