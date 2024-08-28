@@ -35,7 +35,10 @@ const Banner = () => {
                             <div className="banner-card-wrapper">
                                 <div className="banner-card" style={{ backgroundImage: `url(${BannerImage[item.image].src})` }}>
                                     <div className="banner-card-mask" />
-                                    <div className={`testi-title ${langCode === 'ar' ? 'arabic' : ''}`.trim()}>
+                                    <div
+                                        className={`testi-title ${langCode === 'ar' ? 'arabic' : ''}`.trim()}
+                                        dir={langCode === 'ar' ? 'rtl' : 'ltr'}
+                                    >
                                         <Typography.Text style={{ whiteSpace: 'break-spaces' }}>{item.title}</Typography.Text>
                                     </div>
                                 </div>
