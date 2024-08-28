@@ -9,3 +9,19 @@ RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
 RewriteRule (.*)$ /$1/ [R=301,L]
 # RewriteCond %{REQUEST_FILENAME} !-f
 # RewriteRule ^ maintanance.html [QSA,L]
+
+# Redirect /en to the root domain
+RewriteCond %{HTTP_HOST} ^(www\.)?gheamedical\.com$ [NC]
+RewriteRule ^en/?$ https://www.gheamedical.com/?lang=en [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/en/?$ [NC]
+RewriteRule ^ https://%{HTTP_HOST}/?lang=en [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?gheamedical\.com$ [NC]
+RewriteRule ^ar/?$ https://www.gheamedical.com/?lang=ar [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/ar/?$ [NC]
+RewriteRule ^ https://%{HTTP_HOST}/?lang=ar [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/backup/?$ [NC]
+RewriteRule ^ / [R=301,L]
