@@ -25,3 +25,11 @@ RewriteRule ^ https://%{HTTP_HOST}/?lang=ar [R=301,L]
 
 RewriteCond %{REQUEST_URI} ^/backup/?$ [NC]
 RewriteRule ^ / [R=301,L]
+
+# Redirect /ar/* to /?lang=ar
+RewriteCond %{REQUEST_URI} ^/ar/ [NC]
+RewriteRule ^(ar/.*)$ /?lang=ar [R=301,L]
+
+# Redirect /en/* to /?lang=en
+RewriteCond %{REQUEST_URI} ^/en/ [NC]
+RewriteRule ^(en/.*)$ /?lang=en [R=301,L]
