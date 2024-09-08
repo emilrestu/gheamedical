@@ -75,7 +75,7 @@ const CareGivers = () => {
 
                         <div className="caregiver-description">
                             <Typography.Text className="title">{item.name}</Typography.Text>
-                            <Typography.Text className="description">{item.position}</Typography.Text>
+                            {/* <Typography.Text className="description">{item.position}</Typography.Text> */}
                         </div>
 
                         <div className="caregiver-button-group">
