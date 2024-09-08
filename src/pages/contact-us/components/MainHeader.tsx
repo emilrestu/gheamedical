@@ -6,8 +6,11 @@ import Link from 'next/link';
 import { PHONE_NUMBER } from '@/data/constants';
 import { ClockCircleOutlined } from '@ant-design/icons';
 import BookServiceCard from '@/components/book-service-card';
+import { useThemesContext } from '@/context/ThemesContext';
 
 const MainHeader = () => {
+    const { isArabic } = useThemesContext();
+
     return (
         <>
             <Row className="contact-us-main-header">
@@ -43,7 +46,7 @@ const MainHeader = () => {
 
                                         <Col sm={24}>
                                             <Typography.Text className="description">
-                                                <Link href={`tel:${PHONE_NUMBER}`} passHref>
+                                                <Link href={`tel:${PHONE_NUMBER}`} passHref {...(isArabic && { dir: 'ltr' })}>
                                                     <Translate>+966 54 114 2624</Translate>
                                                 </Link>
                                             </Typography.Text>
