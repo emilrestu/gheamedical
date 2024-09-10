@@ -8,8 +8,9 @@ import Footer from '../components/footer';
 import { PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { PHONE_NUMBER } from '@/data/constants';
 import { useThemesContext } from '@/context/ThemesContext';
-import '../themes/main.scss';
 import useTranslate from '@/hooks/useTranslate';
+import { GoogleTagManager } from '@next/third-parties/google';
+import '../themes/main.scss';
 
 const { Content } = Layout;
 
@@ -64,13 +65,17 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 const App = ({ Component, pageProps }: AppProps) => (
-    <TranslateContextProvider>
-        <ThemesContextProvider>
-            <InnerApp_>
-                <Component {...pageProps} />
-            </InnerApp_>
-        </ThemesContextProvider>
-    </TranslateContextProvider>
+    <>
+        <TranslateContextProvider>
+            <ThemesContextProvider>
+                <InnerApp_>
+                    <Component {...pageProps} />
+                </InnerApp_>
+            </ThemesContextProvider>
+        </TranslateContextProvider>
+        <GoogleTagManager gtmId="AW-10944457511" />
+        <GoogleTagManager gtmId="GTM-5B7GKLF" />
+    </>
 );
 
 export default App;
