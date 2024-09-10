@@ -74,7 +74,7 @@ const App = ({ Component, pageProps }: AppProps) => (
             </ThemesContextProvider>
         </TranslateContextProvider>
         <GoogleTagManager gtmId="AW-10944457511" />
-        <GoogleTagManager gtmId="GTM-5B7GKLF" />
+        {/* <GoogleTagManager gtmId="GTM-5B7GKLF" /> */}
     </>
 );
 
