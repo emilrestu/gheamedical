@@ -17,7 +17,7 @@ const MetaHead: React.FC<MetaHeadType> = ({ pageTitle }) => {
     );
     const textMetaDescription = useTranslate(
         'METADESCRIPTION',
-        "Providing comprehensive healthcare services in Saudi Arabia, including personalized care, child services, elderly assistance, Alzheimer's support, and care for all ages. Our dedicated team ensures compassionate and professional assistance tailored to your needs."
+        "Providing comprehensive home care services in Saudi Arabia, including personal assistance, child care, elderly support, Alzheimer's care, home nursing, and services for all ages. Our skilled caregivers and nurses deliver compassionate care at your doorstep, ensuring personalized support for every client's needs"
     );
 
     return (
