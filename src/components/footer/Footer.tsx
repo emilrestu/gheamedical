@@ -66,7 +66,16 @@ const Footer = () => {
                         </Typography.Text>
                         {SocialMediaItems.map((item, index) => (
                             <Link key={index} href={item.link} target="_blank">
-                                <Typography.Text style={{ display: 'flex', color: colorTextSecondary, fontSize: 14, gap: 8 }}>
+                                <Typography.Text
+                                    style={{
+                                        display: 'flex',
+                                        // justifyContent: 'center',
+                                        alignItems: 'center',
+                                        color: colorTextSecondary,
+                                        fontSize: 14,
+                                        gap: 8,
+                                    }}
+                                >
                                     {item.icon} <Translate>{item.title}</Translate>
                                 </Typography.Text>
                             </Link>
