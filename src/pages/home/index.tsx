@@ -1,5 +1,4 @@
 import React from 'react';
-import useTranslate from '@/hooks/useTranslate';
 import Page from '@/components/page';
 import Banner from './components/Banner';
 import Testimonial from './components/Testimonial';
@@ -10,13 +9,8 @@ import HowWeWork from './components/HowWeWork';
 import PopupBanner from './components/PopupBanner';
 
 const Home: React.FC = () => {
-    const textGheaMedicalServicesCompanyHealthCareCenter = useTranslate(
-        'GheaMedicalServicesCompanyHealthCareCenter',
-        'Ghea Medical Services Company - Health Care Center'
-    );
-
     return (
-        <Page pageTitle={textGheaMedicalServicesCompanyHealthCareCenter}>
+        <Page>
             <Banner />
             <WelcomeBanner />
             <WhyChoose />

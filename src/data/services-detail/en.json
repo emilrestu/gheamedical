@@ -1,6 +1,8 @@
 [
     {
+        "serviceId": "personal-service",
         "title": "Personal Service",
+        "pageTitle": "Personal Service in Saudi Arabia",
         "description": "We tailor our approach to suit each individual's circumstances and develop a personalized care plan that meets their specific needs.",
         "icon": "personal-services",
         "details": [
@@ -13,7 +15,9 @@
         ]
     },
     {
+        "serviceId": "personal-service-assistance",
         "title": "Personal Service Assistance",
+        "pageTitle": "Personal Service Assistance in Saudi Arabia",
         "description": "Chronic diseases or short-term mobility problems can lead to loneliness and social isolation in patients. This difficult period requires a companion that can bring a sense of humanity and participation so that loneliness does not affect their health and well-being.",
         "icon": "personal-escort",
         "details": [
@@ -26,7 +30,9 @@
         ]
     },
     {
+        "serviceId": "child-services",
         "title": "Child Services",
+        "pageTitle": "Child Services in Saudi Arabia",
         "description": "Children need special Service that gives them good health care, comfort, and safety, whether the child has a disability, illness, or other problem that requires constant and regular care and attention.",
         "icon": "child-services",
         "details": [
@@ -38,7 +44,9 @@
         ]
     },
     {
+        "serviceId": "service-for-the-elderly",
         "title": "Service for the Elderly",
+        "pageTitle": "Service for the Elderly in Saudi Arabia",
         "description": "Older people in health care is among the neediest age groups in need of help to go about their lives comfortablly. We spend our time creating a plan tailored to the requirements and objectives of the elderly who receive care.",
         "icon": "services-for-the-elderly",
         "details": [
@@ -49,7 +57,9 @@
         ]
     },
     {
+        "serviceId": "service-for-all-ages",
         "title": "Service for all Ages",
+        "pageTitle": "Service for all Ages in Saudi Arabia",
         "description": "Our care is not limited to the elderly or children. We provide home service for all ages and conditions, whether they are in need or have other health conditions requiring home care.",
         "icon": "services-for-all-age",
         "details": [
@@ -61,7 +71,9 @@
         ]
     },
     {
+        "serviceId": "alzheimers-service",
         "title": "Alzheimer's Service",
+        "pageTitle": "Alzheimer's Service in Saudi Arabia",
         "description": "We provide our services to people living with Alzheimer's to help them go about their lives easier and do their daily needs and help them feel independent to ensure that the quality of life provided to them is greatly improved.",
         "icon": "alzheimer",
         "details": [

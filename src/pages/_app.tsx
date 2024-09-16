@@ -17,12 +17,12 @@ const { Content } = Layout;
 const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isArabic } = useThemesContext();
     const { xs } = Grid.useBreakpoint();
-    const textHello = useTranslate('HELLO', 'Hello');
+    const textLine1 = useTranslate('GREETINGS', 'Greetings');
     const textLine2 = useTranslate(
-        'IWOULDLIKETOINQUIREABOUTTHESERVICESYOUOFFERANDHOWICANBOOKTHEMCOULDYOUPLEASEPROVIDEMEWITHMOREDETAILS',
-        'I would like to inquire about the services you offer and how I can book them. Could you please provide me with more details'
+        'IHAVEACASETHATREQUIRESHOMEHEALTHCAREANDIWOULDLIKETOINQUIREMOREABOUTTHESERVICESYOUPROVIDEINTHISAREARELATEDTOHOMEHEALTHCARE',
+        'I have a case that requires home healthcare, and I would like to inquire more about the services you provide in this area related to home healthcare'
     );
-    const textThankyou = useTranslate('THANKYOUMSG', 'Thank You');
+    const textLine3 = useTranslate('THANKYOUFORYOURCOOPERATION', 'Thank you for your cooperation');
 
     if (xs === undefined) return <></>;
 
@@ -41,7 +41,7 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 icon={<WhatsAppOutlined style={{ color: 'white' }} />}
                 style={{ color: 'white', width: 65, height: 65 }}
                 onClick={() => {
-                    window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(`${textHello}\n\n${textLine2}\n\n${textThankyou}`)}`, '_blank');
+                    window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(`${textLine1}\n\n${textLine2}\n\n${textLine3}`)}`, '_blank');
                 }}
             />
 
@@ -73,8 +73,8 @@ const App = ({ Component, pageProps }: AppProps) => (
                 </InnerApp_>
             </ThemesContextProvider>
         </TranslateContextProvider>
+        <GoogleTagManager gtmId="GTM-5B7GKLF" />
         <GoogleTagManager gtmId="AW-10944457511" />
-        {/* <GoogleTagManager gtmId="GTM-5B7GKLF" /> */}
     </>
 );
 

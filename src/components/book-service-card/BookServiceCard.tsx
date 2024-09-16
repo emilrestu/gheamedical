@@ -69,7 +69,7 @@ const BookServiceCard = () => {
                         <Translate>Book Our Services</Translate>
                     </Typography.Title>
                     <Typography.Paragraph style={{ color: colorText, fontSize: 12, fontWeight: 400, textWrap: 'wrap' }}>
-                        <Translate>Schedule Your Appointment for Exceptional Family and Personal Health Care</Translate>
+                        <Translate>Schedule Your Appointment for Exceptional Family and Personal Health Care in Saudi Arabia</Translate>
                     </Typography.Paragraph>
                 </>
             }
