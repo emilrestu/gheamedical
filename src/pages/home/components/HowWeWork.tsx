@@ -22,7 +22,8 @@ const HowWeWork: React.FC = () => {
 
                         <Typography.Paragraph className="description">
                             <Translate>
-                                We combine expertise, compassion, and modern resources to ensure you receive the highest quality care.
+                                We combine expertise, compassion, and modern resources to ensure you receive the highest quality homecare in Saudi
+                                Arabia.
                             </Translate>
                         </Typography.Paragraph>
                     </div>
@@ -65,7 +66,10 @@ const HowWeWork: React.FC = () => {
                             <SVGIcon icon="chat" />
                         </div>
                         <div className="description">
-                            <Translate>Request Service from the Site</Translate>
+                            <Translate>
+                                You can easily request our services through our website. Alternatively, feel free to contact us via WhatsApp or phone
+                                call.
+                            </Translate>
                         </div>
                     </div>
 
@@ -74,7 +78,10 @@ const HowWeWork: React.FC = () => {
                             <SVGIcon icon="cs" />
                         </div>
                         <div className="description">
-                            <Translate>Customer service will contact you to schedule an appointment</Translate>
+                            <Translate>
+                                We will provide you with the caregiver&apos;s CV and arrange an online interview to ensure a perfect match for your
+                                needs.
+                            </Translate>
                         </div>
                     </div>
 
@@ -83,7 +90,9 @@ const HowWeWork: React.FC = () => {
                             <SVGIcon icon="team" />
                         </div>
                         <div className="description">
-                            <Translate>Our team will assist you at a time and place that suits you best.</Translate>
+                            <Translate>
+                                Once you&apos;re satisfied, we will finalize the arrangement and provide any necessary documentation.
+                            </Translate>
                         </div>
                     </div>
                 </div>

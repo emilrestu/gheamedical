@@ -8,6 +8,7 @@ import Banner01 from '@/assets/images/banner-01.jpg';
 import Banner02 from '@/assets/images/banner-02.jpg';
 import Banner03 from '@/assets/images/banner-03.jpg';
 import Banner04 from '@/assets/images/banner-04.jpg';
+import Banner05 from '@/assets/images/banner-05.jpg';
 import { StaticImageData } from 'next/image';
 
 const Banner = () => {
@@ -18,6 +19,7 @@ const Banner = () => {
         banner02: Banner02,
         banner03: Banner03,
         banner04: Banner04,
+        banner05: Banner05,
     };
 
     const BannerData = useMemo(() => {

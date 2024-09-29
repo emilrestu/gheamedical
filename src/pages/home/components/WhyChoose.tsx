@@ -44,7 +44,10 @@ const WhyChoose: React.FC = () => {
                         </Typography.Text>
 
                         <Typography.Text className="why-choose-description">
-                            <Translate>Trust GHEA Services to deliver exceptional support and superior quality care every time.</Translate>
+                            <Translate>
+                                At GHEA Services, we provide premium homecare with dedication and exceptional support. Experience the difference in
+                                quality and care that you and your loved ones deserve
+                            </Translate>
                         </Typography.Text>
                     </Col>
                 </Row>

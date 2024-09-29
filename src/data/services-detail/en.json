@@ -15,21 +15,6 @@
         ]
     },
     {
-        "serviceId": "personal-service-assistance",
-        "title": "Personal Service Assistance",
-        "pageTitle": "Personal Service Assistance in Saudi Arabia",
-        "description": "Chronic diseases or short-term mobility problems can lead to loneliness and social isolation in patients. This difficult period requires a companion that can bring a sense of humanity and participation so that loneliness does not affect their health and well-being.",
-        "icon": "personal-escort",
-        "details": [
-            "Insurance and reduce the risk of falling.",
-            "Provide social participation, intellectual stimulation, and continued engagement in activities to combat loneliness.",
-            "Light home cleaning and laundry service.",
-            "Prepare and plan meals.",
-            "Accompany for medical appointments or other activities.",
-            "Assisting in routine tasks."
-        ]
-    },
-    {
         "serviceId": "child-services",
         "title": "Child Services",
         "pageTitle": "Child Services in Saudi Arabia",

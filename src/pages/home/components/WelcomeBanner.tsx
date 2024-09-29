@@ -79,7 +79,14 @@ const WelcomeBanner: React.FC = () => {
                 </Typography.Paragraph>
 
                 <Typography.Paragraph className="description welcome-description">
-                    <Translate>To receive the resume of our staff for home healthcare services, please contact us via WhatsApp immediately</Translate>
+                    <Translate>GHEA Services is a trusted homecare specializing in comprehensive family support for all ages and needs. </Translate>
+                    <br />
+                    <Translate>We supply individuals trained home healthcare to meet client&apos;s needs.</Translate>
+                    <br />
+                    <Translate>
+                        We aspire to provide homecare services to everyone to gain their trust and let us be their first choice. We are dedicated to
+                        delivering exceptional assistance, and facilitating our client&apos;s daily lives.
+                    </Translate>
                 </Typography.Paragraph>
             </Col>
         </Row>
