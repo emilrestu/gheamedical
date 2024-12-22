@@ -30,6 +30,8 @@ const BookServiceCard = () => {
     const textLocation = useTranslate('LOCATION', ' Location');
     const textServices = useTranslate('SERVICES', ' Services');
 
+    const formValue = Form.useWatch(null, form);
+
     const CityData = useMemo(() => {
         if (langCode === 'ar') return CityArabic;
 
@@ -42,9 +44,7 @@ const BookServiceCard = () => {
         return ServicesEnglish;
     }, [langCode]);
 
-    const bookHandler = () => {
-        const formValue = form.getFieldsValue();
-
+    const getWALink = () => {
         const ArrValue = [`${textIwantBookServices}\n`];
 
         if (formValue?.full_name || formValue?.email || formValue?.phone || formValue?.location || formValue?.services) {
@@ -57,7 +57,7 @@ const BookServiceCard = () => {
             if (formValue?.location) ArrValue.push(`${textServices}: ${formValue?.services}`);
         }
 
-        window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURI(ArrValue.join('\n'))}`, '_blank');
+        return `https://wa.me/${PHONE_NUMBER}?text=${encodeURI(ArrValue.join('\n'))}`;
     };
 
     return (
@@ -125,15 +125,11 @@ const BookServiceCard = () => {
                     <Form.Item>
                         <Row gutter={[8, 8]}>
                             <Col flex={1}>
-                                <Button
-                                    type="primary"
-                                    block
-                                    onClick={() => {
-                                        bookHandler();
-                                    }}
-                                >
-                                    <Translate>Book Now</Translate>
-                                </Button>
+                                <Link href={getWALink()} passHref target="_blank">
+                                    <Button type="primary" block>
+                                        <Translate>Book Now</Translate>
+                                    </Button>
+                                </Link>
                             </Col>
                             <Col flex={1}>
                                 <Link href={`tel:${PHONE_NUMBER}`} passHref target="_blank">

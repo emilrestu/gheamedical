@@ -6,9 +6,11 @@ import PopUpBannerAr1 from '@/assets/home-popup/ghea-services-ar-01.jpg';
 import PopUpBannerAr2 from '@/assets/home-popup/ghea-services-ar-02.jpg';
 import { CloseOutlined } from '@ant-design/icons';
 import { useTranslateContext } from '@/context/TranslateContext';
+import { useAppContext } from '@/context/AppContext';
 
 const PopupBanner = () => {
     const { langCode } = useTranslateContext();
+    const { cookiesAccepted } = useAppContext();
 
     const [showPopup, setShowPopup] = useState(false);
 
@@ -30,12 +32,12 @@ const PopupBanner = () => {
         const now = new Date().getTime();
         const oneHour = 30 * 60 * 1000; // One hour in milliseconds
 
-        if (!lastVisit || now - parseInt(lastVisit) > oneHour) {
+        if ((!lastVisit || now - parseInt(lastVisit) > oneHour) && cookiesAccepted) {
             // If the last visit was more than an hour ago or no visit recorded, show the popup
             setShowPopup(true);
             localStorage.setItem('lastVisit', now.toString()); // Update last visit time
         }
-    }, []);
+    }, [cookiesAccepted]);
 
     return (
         <Modal
