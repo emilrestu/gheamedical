@@ -860,6 +860,24 @@ body {
         }
     }
 
+    .privacy-policy,
+    .terms-conditions {
+        div,
+        p,
+        ul,
+        li {
+            color: #a8aaad;
+        }
+
+        .contact {
+            div {
+                color: black;
+            }
+        }
+
+        margin-block-end: 50px;
+    }
+
     .icons-container {
         display: flex;
         justify-content: center;

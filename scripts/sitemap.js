@@ -17,6 +17,8 @@ const pages = [
     { url: 'services/alzheimers-service/', changefreq: 'monthly', priority: 0.3 },
     { url: 'book-now', changefreq: 'monthly', priority: 0.9 },
     { url: 'contact-us', changefreq: 'monthly', priority: 0.6 },
+    { url: 'privacy-policy', changefreq: 'monthly', priority: 0.2 },
+    { url: 'terms-conditions', changefreq: 'monthly', priority: 0.2 },
     // Add more pages here
 ];
 

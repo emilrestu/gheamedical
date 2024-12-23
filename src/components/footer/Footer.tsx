@@ -21,6 +21,8 @@ const Footer = () => {
             { href: '/services', label: 'Services' },
             { href: '/book-now', label: 'Book Now' },
             { href: '/contact-us', label: 'Contact Us' },
+            { href: '/privacy-policy', label: 'Privacy and Policy' },
+            { href: '/terms-conditions', label: 'Terms and Conditions' },
         ],
         []
     );
