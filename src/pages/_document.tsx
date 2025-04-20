@@ -5,13 +5,23 @@ import type { DocumentContext } from 'next/document';
 
 const MyDocument = () => (
     <Html lang="en">
-        <Head />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <Head>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        </Head>
 
         <body>
+            {/* Google Tag Manager (noscript) */}
+            {/* <noscript>
+                <iframe
+                    src="https://www.googletagmanager.com/ns.html?id=GTM-5DQKNRZJ"
+                    height="0"
+                    width="0"
+                    style={{ display: 'none', visibility: 'hidden' }}
+                ></iframe>
+            </noscript> */}
+            {/* End Google Tag Manager (noscript) */}
             <Main />
             <NextScript />
         </body>

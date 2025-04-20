@@ -65,9 +65,9 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             />
             {cookiesAccepted && (
                 <>
-                    <GoogleTagManager gtmId="GTM-5B7GKLF" />
-                    <GoogleTagManager gtmId="G-LC2Y275PM4" />
-                    <GoogleTagManager gtmId="AW-10944457511" />
+                    <GoogleTagManager gtmId="GTM-5DQKNRZJ" />
+                    {/* <GoogleTagManager gtmId="G-LC2Y275PM4" />
+                    <GoogleTagManager gtmId="AW-10944457511" /> */}
                 </>
             )}
         </>
