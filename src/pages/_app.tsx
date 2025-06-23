@@ -9,18 +9,18 @@ import { PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { PHONE_NUMBER } from '@/data/constants';
 import { useThemesContext } from '@/context/ThemesContext';
 import useTranslate from '@/hooks/useTranslate';
-import { GoogleTagManager } from '@next/third-parties/google';
 import CookiesBanner from '@/components/cookies-banner';
 import AppContextProvider from '@/context/AppContextProvider';
-import { useAppContext } from '@/context/AppContext';
+// import { useAppContext } from '@/context/AppContext';
 import '../themes/main.scss';
 import Link from 'next/link';
+import { useGTM } from '@/hooks/useGTM';
 
 const { Content } = Layout;
 
 const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const { isArabic } = useThemesContext();
-    const { cookiesAccepted } = useAppContext();
+    // const { cookiesAccepted } = useAppContext();
     const { xs } = Grid.useBreakpoint();
     const textLine1 = useTranslate('GREETINGS', 'Greetings');
     const textLine2 = useTranslate(
@@ -28,6 +28,8 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         'I have a case that requires home healthcare, and I would like to inquire more about the services you provide in this area related to home healthcare'
     );
     const textLine3 = useTranslate('THANKYOUFORYOURCOOPERATION', 'Thank you for your cooperation');
+
+    useGTM();
 
     if (xs === undefined) return <></>;
 
@@ -63,13 +65,6 @@ const InnerApp_: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 visibilityHeight={1000}
                 style={{ color: 'white', width: 65, height: 65, marginBottom: 160 }}
             />
-            {cookiesAccepted && (
-                <>
-                    <GoogleTagManager gtmId="GTM-5DQKNRZJ" />
-                    {/* <GoogleTagManager gtmId="G-LC2Y275PM4" />
-                    <GoogleTagManager gtmId="AW-10944457511" /> */}
-                </>
-            )}
         </>
     );
 };
