@@ -40,8 +40,7 @@ const Strength = () => {
                                 </Typography.Text>
                                 <Typography.Text className="description">
                                     <Translate>
-                                        Our professionals are not only specialists in their fields but also stay current with the latest advancements
-                                        in healthcare.
+                                        Our professionals are not only specialists in their fields but also stay current with the latest advancements in personal and homecare.
                                     </Translate>
                                 </Typography.Text>
                             </Card>
