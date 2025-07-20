@@ -1,22 +1,22 @@
 [
     {
-        "title": "Superior Homecare Quality Assistant",
+        "title": "Superior Personal and Homecare Quality Assistant",
         "icon": "badge",
-        "description": "GHEA Services offers exceptional quality assistance and support tailored to meet your family health and personal care needs, ensuring you receive the best possible homecare service.",
+        "description": "GHEA Services offers exceptional quality assistance and support tailored to meet your family health and personal care needs, ensuring you receive the best possible personal and homecare service.",
         "image": "whychoose01",
         "alt": "superior-quality-assistant"
     },
     {
         "title": "Personalized Wellness Care",
         "icon": "wellness",
-        "description": "Our comprehensive approach ensures that every aspect of your well-being is addressed, providing you and your family with exceptional homecare and support.",
+        "description": "Our comprehensive approach ensures that every aspect of your well-being is addressed, providing you and your family with exceptional personal and homecare and support.",
         "image": "whychoose02",
         "alt": "personalized-wellness-care"
     },
     {
-        "title": "Services with Best Individuals Homecare",
+        "title": "Services with Best Individuals Personal and Homecare",
         "icon": "doctor",
-        "description": "We have assembled a team of highly skilled and compassionate professionals dedicated to providing the highest quality homecare. Our team brings expertise, experience, and a genuine commitment to your well-being.",
+        "description": "We have assembled a team of highly skilled and compassionate professionals dedicated to providing the highest quality personal and homecare. Our team brings expertise, experience, and a genuine commitment to your well-being.",
         "image": "whychoose03",
         "alt": "services-with-best-individuals"
     }

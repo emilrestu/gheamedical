@@ -13,9 +13,7 @@ const MainHeader = () => {
 
                     <Typography.Paragraph className="description">
                         <Translate>
-                            GHEA Services is a leading provider specializing in homecare for all ages and needs. We provide skilled professionals
-                            trained to address client needs. Our commitment is to offer exceptional assistance and enhance our client&apos;s daily
-                            lives.
+                            GHEA Services is a leading provider specializing in personal and homecare for all ages and needs. We provide skilled professionals trained to address client needs. Our commitment is to offer exceptional assistance and enhance our client&apos;s daily lives.
                         </Translate>
                     </Typography.Paragraph>
                 </div>

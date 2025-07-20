@@ -15,8 +15,8 @@ const WelcomeBanner: React.FC = () => {
 
     const textwelcometogheaserviceswherewedeliver = useTranslate('WELCOMETOGHEASERVICESWHEREWEDELIVER', 'Welcome to GHEA Services, Where We Deliver');
     const textexceptionalcareforyouandyourfamily = useTranslate(
-        'EXCEPTIONALCAREFORYOUANDYOURLOVEDONES',
-        'Exceptional Care for You and Your Loved ones'
+        'EXCEPTIONALPERSONALANDHOMECAREINSAUDIARABIAFORYOUANDYOURLOVEDONES',
+        'Exceptional Personal and Homecare in Saudi Arabia for You and Your Loved ones'
     );
 
     return (
@@ -79,13 +79,15 @@ const WelcomeBanner: React.FC = () => {
                 </Typography.Paragraph>
 
                 <Typography.Paragraph className="description welcome-description">
-                    <Translate>GHEA Services is a trusted homecare specializing in comprehensive family support for all ages and needs. </Translate>
+                    <Translate>
+                        GHEA Services is a trusted personal and homecare specializing in comprehensive family support for all ages and needs.
+                    </Translate>
                     <br />
-                    <Translate>We supply individuals trained home healthcare to meet client&apos;s needs.</Translate>
+                    <Translate> We supply individuals trainedpersonal and homecare to meet client&apos;s needs. </Translate>
                     <br />
                     <Translate>
-                        We aspire to provide homecare services to everyone to gain their trust and let us be their first choice. We are dedicated to
-                        delivering exceptional assistance, and facilitating our client&apos;s daily lives.
+                        We aspire to provide personal and homecare services to everyone to gain their trust and let us be their first choice. We are
+                        dedicated to delivering exceptional assistance, and facilitating our client&apos;s daily lives.
                     </Translate>
                 </Typography.Paragraph>
             </Col>
